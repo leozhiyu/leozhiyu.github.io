@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://leozhiyu.github.io/"/>
-  <updated>2017-08-29T11:52:47.522Z</updated>
+  <updated>2017-08-31T07:57:30.473Z</updated>
   <id>https://leozhiyu.github.io/</id>
   
   <author>
@@ -16,24 +16,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>测试博客</title>
-    <link href="https://leozhiyu.github.io/2017/08/29/first/"/>
-    <id>https://leozhiyu.github.io/2017/08/29/first/</id>
-    <published>2017-08-29T07:36:55.650Z</published>
-    <updated>2017-08-29T11:52:47.522Z</updated>
+    <title>Leo&#39;s start</title>
+    <link href="https://leozhiyu.github.io/2017/08/31/Leo-s-start/"/>
+    <id>https://leozhiyu.github.io/2017/08/31/Leo-s-start/</id>
+    <published>2017-08-31T14:28:02.000Z</published>
+    <updated>2017-08-31T07:57:30.473Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="这是一篇记录-Leo-站点成立的博客"><a href="#这是一篇记录-Leo-站点成立的博客" class="headerlink" title="这是一篇记录 Leo 站点成立的博客"></a>这是一篇记录 Leo 站点成立的博客</h5><p>也许是受「帅张」和圈友的影响，终于把博客当一回事了，花了两天时间把博客草草地搭建起来， 还有许多地方不完善。 尽管之前也有想过学着写博客， 最终还是停留在口头上， 今天作为新的开始。「可能吧」里面的一篇文章：<a href="http://mp.weixin.qq.com/s/ZACwzaP9lhjluHvA-o-z2A" target="_blank" rel="external">别做口头上的学习者</a>。</p>
+<p>简单叙述一下我搭建博客的流程：</p>
+<ol>
+<li><p>准备好 Google ( 这当然是学习必不可少的神器 )  </p>
+</li>
+<li><p>根据教程使用 Github + Hexo 方式搭建静态博客</p>
+</li>
+<li><p>修改博客主题以及对页面的一些配置</p>
+</li>
+<li><p>阿里云购买域名并连接 Github 博客站点</p>
+</li>
+<li><p>学习 Github + Git， 掌握最基本的命令</p>
+</li>
+<li><p>学习 Markdown 基本语法</p>
+</li>
+<li><p>开启博客之旅</p>
+</li>
+</ol>
+<p>至于为什么用 Leo 作为站点的名称， 那当然是英文名啊， 这么简单。</p>
+<p>告诉你们个秘密： 我写作能力是真的差。所以在这里除了记录自己的成长路线， 最重要的当然是与他人分享学习到的技术经验啊， 写作能力那只是附带的。</p>
+<p>目前的技术还真的不行， 所以只能从一些基础开始分享， 自己也从小白开始成长， 渴望成为所谓的「大神」。坚持当然是最重要的一点了， 很多人是按时间来约束自己， 一个月或者一周或者每天一篇博客， 但是对于我这种小白， 我的选择是学到了东西就发一篇， 也当是对知识的整理， 除了分享给他人还有重要的一点就是把自己积累的知识记录在这里。 </p>
+<p>技术源于分享， 分享阮一峰老师的一本书与大家共勉：<a href="http://survivor.ruanyifeng.com/" target="_blank" rel="external">未来世界的幸存者</a></p>
+<p>附上帅照一张<br><img src="/2017/08/31/Leo-s-start/leo.jpg" alt="This is Leo" title="This is Leo"></p>
+]]></content>
     
     <summary type="html">
     
+      &lt;h5 id=&quot;这是一篇记录-Leo-站点成立的博客&quot;&gt;&lt;a href=&quot;#这是一篇记录-Leo-站点成立的博客&quot; class=&quot;headerlink&quot; title=&quot;这是一篇记录 Leo 站点成立的博客&quot;&gt;&lt;/a&gt;这是一篇记录 Leo 站点成立的博客&lt;/h5&gt;&lt;p&gt;也许是受「帅
+    
     </summary>
     
-      <category term="实用技术" scheme="https://leozhiyu.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="个人博客" scheme="https://leozhiyu.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E6%9C%AF/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <category term="时光" scheme="https://leozhiyu.github.io/categories/%E6%97%B6%E5%85%89/"/>
     
     
-      <category term="实用" scheme="https://leozhiyu.github.io/tags/%E5%AE%9E%E7%94%A8/"/>
-    
-      <category term="个人博客" scheme="https://leozhiyu.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <category term="时光" scheme="https://leozhiyu.github.io/tags/%E6%97%B6%E5%85%89/"/>
     
   </entry>
   
