@@ -1992,7 +1992,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #73ffec;
+  background: #ff655c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3081,4 +3081,12 @@ body {
   padding: 60px 60px 60px 60px;
   background: #fff;
   min-height: 500px;
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #0477ab;
+  text-decoration: underline;
 }
