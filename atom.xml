@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.leozzy.com/"/>
-  <updated>2017-09-01T01:26:31.960Z</updated>
+  <updated>2017-09-01T02:54:35.339Z</updated>
   <id>www.leozzy.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="www.leozzy.com/2017/09/01/Github%E5%91%BD%E4%BB%A4%E7%AE%80%E8%AE%B0-%E5%9F%BA%E7%A1%80/"/>
     <id>www.leozzy.com/2017/09/01/Github命令简记-基础/</id>
     <published>2017-08-31T21:21:32.000Z</published>
-    <updated>2017-09-01T01:26:31.960Z</updated>
+    <updated>2017-09-01T02:54:35.339Z</updated>
     
     <content type="html"><![CDATA[<p>刚刚学习github， 本文记录最基本的github命令， 网上教程一大把， 我简单将命令记录在此， 方便查找。</p>
 <h3 id="本地环境操作"><a href="#本地环境操作" class="headerlink" title="本地环境操作"></a>本地环境操作</h3><ul>
@@ -68,7 +68,9 @@
 </li>
 <li><p><code>git remote -v</code> ————————————–查看当前项目有哪些远程仓库</p>
 </li>
-<li><p><code>git push origin master</code> ————————–将本地代码提交到远程仓库</p>
+<li><p><code>git push origin master</code> ————————–将本地代码提交到远程仓库 ( 需要先解决冲突 )</p>
+</li>
+<li><p><code>git push -f origin</code> ————————– 强制提交( 覆盖远程代码 )</p>
 </li>
 <li><p><code>git pull origin master</code> ————————- 更新远程仓库代码到本地</p>
 </li>
