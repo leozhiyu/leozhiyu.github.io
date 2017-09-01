@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.leozzy.com/"/>
-  <updated>2017-08-31T07:57:30.473Z</updated>
+  <updated>2017-09-01T01:26:31.960Z</updated>
   <id>www.leozzy.com/</id>
   
   <author>
@@ -14,6 +14,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github命令简记-基础</title>
+    <link href="www.leozzy.com/2017/09/01/Github%E5%91%BD%E4%BB%A4%E7%AE%80%E8%AE%B0-%E5%9F%BA%E7%A1%80/"/>
+    <id>www.leozzy.com/2017/09/01/Github命令简记-基础/</id>
+    <published>2017-08-31T21:21:32.000Z</published>
+    <updated>2017-09-01T01:26:31.960Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚刚学习github， 本文记录最基本的github命令， 网上教程一大把， 我简单将命令记录在此， 方便查找。</p>
+<h3 id="本地环境操作"><a href="#本地环境操作" class="headerlink" title="本地环境操作"></a>本地环境操作</h3><ul>
+<li><p><code>git</code> ————————————- 查看最常用的Git命令</p>
+</li>
+<li><p><code>git status</code>  —————————– 查看当前仓库的状态</p>
+</li>
+<li><p><code>git init</code>  ——————————– 初始化 git 仓库</p>
+</li>
+<li><p><code>git add  [ name ]</code> ——————— 将代码加入等待提交的缓存中（防止误提交）</p>
+</li>
+<li><p><code>git rm –-cached [ name ]</code>  ———- 从缓存中移除</p>
+</li>
+<li><p><code>git commit -m [ message ]</code> ——— 提交附带提交信息</p>
+</li>
+<li><p><code>git log</code>  ———————————- 查看commit记录</p>
+</li>
+<li><p><code>git branch</code> ——————————- 查看当前分支情况</p>
+</li>
+<li><p><code>git branch [ name ]</code> ——————- 创建新分支</p>
+</li>
+<li><p><code>git checkout [ name ]</code> —————- 切换分支</p>
+</li>
+<li><p><code>git checkout -b [ name ]</code> ———— 创建并切换分支</p>
+</li>
+<li><p><code>git merge [ name ]</code> ———————合并分支到主分支 </p>
+</li>
+<li><p><code>git branch -d [ name ]</code>—————- 删除分支</p>
+</li>
+<li><p><code>git branch -D [ name ]</code> ————— 强制删除分支</p>
+</li>
+<li><p><code>git tag</code> ————————————-查看版本记录</p>
+</li>
+<li><p><code>git tag [ version ]</code>———————新建版本信息</p>
+</li>
+<li><p><code>git checkout [ version ]</code>————–切换到对应的版本状态</p>
+</li>
+</ul>
+<h3 id="本地与远程仓库协作"><a href="#本地与远程仓库协作" class="headerlink" title="本地与远程仓库协作"></a>本地与远程仓库协作</h3><ul>
+<li><p><code>ssh -T git@github.com</code> ————————–查看SSH key 是否添加成功</p>
+</li>
+<li><p><code>git remote add origin [ url ]</code> —————建立本地目录与远程仓库的关联 ( 相当于给远程 url 取了别名 origin )</p>
+</li>
+<li><p><code>git remote remove origin</code> ———————-取消本地目录与远程仓库的关联 </p>
+</li>
+<li><p><code>git remote -v</code> ————————————–查看当前项目有哪些远程仓库</p>
+</li>
+<li><p><code>git push origin master</code> ————————–将本地代码提交到远程仓库</p>
+</li>
+<li><p><code>git pull origin master</code> ————————- 更新远程仓库代码到本地</p>
+</li>
+<li><p><code>git clone [ url ]</code> ——————————– Clone 项目</p>
+</li>
+<li><p><code>git checkout [ version ]</code> ————————切换到对应的版本状态</p>
+</li>
+<li><p><code>git config --global user.name 「 username 」</code>——- 全局设置用户名 ( 去除global 就是为某一个项目进行设置 )</p>
+</li>
+<li><p><code>git config --global user.email 「 email 」</code>———-全局设置邮箱 ( 去除global 就是为某一个项目进行设置 )</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;刚刚学习github， 本文记录最基本的github命令， 网上教程一大把， 我简单将命令记录在此， 方便查找。&lt;/p&gt;
+&lt;h3 id=&quot;本地环境操作&quot;&gt;&lt;a href=&quot;#本地环境操作&quot; class=&quot;headerlink&quot; title=&quot;本地环境操作&quot;&gt;&lt;/a&gt;本地环境
+    
+    </summary>
+    
+      <category term="工具" scheme="www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="github" scheme="www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/github/"/>
+    
+    
+      <category term="github" scheme="www.leozzy.com/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>Leo&#39;s start</title>
