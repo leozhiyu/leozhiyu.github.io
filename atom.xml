@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.leozzy.com/"/>
-  <updated>2017-09-08T02:25:09.807Z</updated>
+  <updated>2017-09-08T03:52:16.532Z</updated>
   <id>www.leozzy.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程</title>
+    <link href="www.leozzy.com/2017/09/08/hexo-sidebar-auto/"/>
+    <id>www.leozzy.com/2017/09/08/hexo-sidebar-auto/</id>
+    <published>2017-09-08T11:29:00.000Z</published>
+    <updated>2017-09-08T03:52:16.532Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>从搭建博客就想自动展开侧边栏， 结果网上找了很多方法都不生效， 今天找到一篇博客试着重新设置了下， 仍然无效， 但是找到了设置的思路， 于是自己找相关的文件进行设置， 在此分享。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>由于主题版本不同， 以下方法只是对应当前版本， 但是思路是一样的， 只是文件的路径和文件名称可能不同</p>
+<h2 id="Step-1-修改主题配置文件-display-always"><a href="#Step-1-修改主题配置文件-display-always" class="headerlink" title="Step 1 修改主题配置文件  display: always"></a>Step 1 修改主题配置文件  display: always</h2><p>路径：/hexo/themes/next/_config.yml</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sidebar: </div><div class="line">  # Sidebar Position, available value: left | right</div><div class="line">  position: left</div><div class="line">  #position: right</div><div class="line"></div><div class="line">  #display: post</div><div class="line">  display: always </div><div class="line">  #display: hide</div><div class="line">  #display: remove</div></pre></td></tr></table></figure>
+<h2 id="Step-2-修改-motion-js-文件"><a href="#Step-2-修改-motion-js-文件" class="headerlink" title="Step 2 修改 motion.js 文件"></a>Step 2 修改 motion.js 文件</h2><p>路径：/hexo/themes/next/source/js/src/motion.js</p>
+<p>在文件末尾</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sidebar: <span class="function"><span class="keyword">function</span> (<span class="params">integrator</span>) </span>&#123;</div><div class="line">  <span class="comment">//if (CONFIG.sidebar.display === 'always') &#123;  //注释</span></div><div class="line">    NexT.utils.displaySidebar();</div><div class="line">  <span class="comment">//&#125; //注释</span></div><div class="line">  integrator.next();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Step-3-修改post-details-js"><a href="#Step-3-修改post-details-js" class="headerlink" title="Step 3 修改post-details.js"></a>Step 3 修改post-details.js</h2><p>路径： /hexo/themes/next/source/js/src/post-details.js</p>
+<p>在文件末尾</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*var $tocContent = $('.post-toc-content');</span></div><div class="line"><span class="comment">  var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post' ||</span></div><div class="line"><span class="comment">      CONFIG.sidebar.display === 'always';</span></div><div class="line"><span class="comment">  var hasTOC = $tocContent.length &gt; 0 &amp;&amp; $tocContent.html().trim().length &gt; 0;</span></div><div class="line"><span class="comment">  if (isSidebarCouldDisplay &amp;&amp; hasTOC) &#123;</span></div><div class="line"><span class="comment">    CONFIG.motion ?</span></div><div class="line"><span class="comment">      (NexT.motion.middleWares.sidebar = function () &#123;</span></div><div class="line"><span class="comment">          NexT.utils.displaySidebar();</span></div><div class="line"><span class="comment">      &#125;) : NexT.utils.displaySidebar();</span></div><div class="line"><span class="comment">  &#125;*/</span></div></pre></td></tr></table></figure>
+<p>将以上代码段落全部注释， 只用最后一句</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NexT.utils.displaySidebar();</div></pre></td></tr></table></figure>
+<h5 id="这是我使用的主题版本的设置方法，-希望对需要的人有帮助"><a href="#这是我使用的主题版本的设置方法，-希望对需要的人有帮助" class="headerlink" title="这是我使用的主题版本的设置方法， 希望对需要的人有帮助"></a>这是我使用的主题版本的设置方法， 希望对需要的人有帮助</h5>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;从搭建博客就想自动展开侧边栏， 结果网上找了很多方法都不生效， 今天找到一篇博客试着重新设置了下， 仍然无效， 但是找到了设置的思路， 于是
+    
+    </summary>
+    
+      <category term="工具" scheme="www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="hexo" scheme="www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/hexo/"/>
+    
+    
+      <category term="hexo" scheme="www.leozzy.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Spring-IoC 容器</title>
