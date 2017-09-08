@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="www.leozzy.com/"/>
+  <link href="http://www.leozzy.com/"/>
   <updated>2017-09-08T03:52:16.532Z</updated>
-  <id>www.leozzy.com/</id>
+  <id>http://www.leozzy.com/</id>
   
   <author>
     <name>Leo</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程</title>
-    <link href="www.leozzy.com/2017/09/08/hexo-sidebar-auto/"/>
-    <id>www.leozzy.com/2017/09/08/hexo-sidebar-auto/</id>
+    <link href="http://www.leozzy.com/2017/09/08/hexo-sidebar-auto/"/>
+    <id>http://www.leozzy.com/2017/09/08/hexo-sidebar-auto/</id>
     <published>2017-09-08T11:29:00.000Z</published>
     <updated>2017-09-08T03:52:16.532Z</updated>
     
@@ -42,19 +42,19 @@
     
     </summary>
     
-      <category term="工具" scheme="www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="hexo" scheme="www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/hexo/"/>
+      <category term="hexo" scheme="http://www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/hexo/"/>
     
     
-      <category term="hexo" scheme="www.leozzy.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://www.leozzy.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>Spring-IoC 容器</title>
-    <link href="www.leozzy.com/2017/09/06/Spring-IoC/"/>
-    <id>www.leozzy.com/2017/09/06/Spring-IoC/</id>
+    <link href="http://www.leozzy.com/2017/09/06/Spring-IoC/"/>
+    <id>http://www.leozzy.com/2017/09/06/Spring-IoC/</id>
     <published>2017-09-06T09:15:29.000Z</published>
     <updated>2017-09-08T02:25:09.807Z</updated>
     
@@ -249,21 +249,21 @@
     
     </summary>
     
-      <category term="Java框架" scheme="www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/"/>
+      <category term="Java框架" scheme="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/"/>
     
-      <category term="Spring" scheme="www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/"/>
+      <category term="Spring" scheme="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/"/>
     
-      <category term="Ioc" scheme="www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/Ioc/"/>
+      <category term="Ioc" scheme="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/Ioc/"/>
     
     
-      <category term="Spring" scheme="www.leozzy.com/tags/Spring/"/>
+      <category term="Spring" scheme="http://www.leozzy.com/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Github命令简记-基础</title>
-    <link href="www.leozzy.com/2017/09/01/Github%E5%91%BD%E4%BB%A4%E7%AE%80%E8%AE%B0-%E5%9F%BA%E7%A1%80/"/>
-    <id>www.leozzy.com/2017/09/01/Github命令简记-基础/</id>
+    <link href="http://www.leozzy.com/2017/09/01/Github%E5%91%BD%E4%BB%A4%E7%AE%80%E8%AE%B0-%E5%9F%BA%E7%A1%80/"/>
+    <id>http://www.leozzy.com/2017/09/01/Github命令简记-基础/</id>
     <published>2017-08-31T21:21:32.000Z</published>
     <updated>2017-09-01T02:54:35.339Z</updated>
     
@@ -337,19 +337,19 @@
     
     </summary>
     
-      <category term="工具" scheme="www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="github" scheme="www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/github/"/>
+      <category term="github" scheme="http://www.leozzy.com/categories/%E5%B7%A5%E5%85%B7/github/"/>
     
     
-      <category term="github" scheme="www.leozzy.com/tags/github/"/>
+      <category term="github" scheme="http://www.leozzy.com/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>Leo&#39;s start</title>
-    <link href="www.leozzy.com/2017/08/31/Leo-s-start/"/>
-    <id>www.leozzy.com/2017/08/31/Leo-s-start/</id>
+    <link href="http://www.leozzy.com/2017/08/31/Leo-s-start/"/>
+    <id>http://www.leozzy.com/2017/08/31/Leo-s-start/</id>
     <published>2017-08-31T14:28:02.000Z</published>
     <updated>2017-08-31T07:57:30.473Z</updated>
     
@@ -384,10 +384,10 @@
     
     </summary>
     
-      <category term="时光" scheme="www.leozzy.com/categories/%E6%97%B6%E5%85%89/"/>
+      <category term="时光" scheme="http://www.leozzy.com/categories/%E6%97%B6%E5%85%89/"/>
     
     
-      <category term="时光" scheme="www.leozzy.com/tags/%E6%97%B6%E5%85%89/"/>
+      <category term="时光" scheme="http://www.leozzy.com/tags/%E6%97%B6%E5%85%89/"/>
     
   </entry>
   
