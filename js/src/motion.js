@@ -85,7 +85,7 @@ $(document).ready(function () {
     toggleEl: $('.sidebar-toggle'),
     dimmerEl: $('#sidebar-dimmer'),
     sidebarEl: $('.sidebar'),
-    isSidebarVisible: true,
+    isSidebarVisible: false,
     init: function () {
       this.toggleEl.on('click', this.clickHandler.bind(this));
       this.dimmerEl.on('click', this.clickHandler.bind(this));
@@ -331,9 +331,9 @@ $(document).ready(function () {
     },
 
     sidebar: function (integrator) {
-      if (CONFIG.sidebar.display === 'always') {
+      //if (CONFIG.sidebar.display === 'always') {
         NexT.utils.displaySidebar();
-      }
+      //}
       integrator.next();
     }
   };
