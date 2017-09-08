@@ -145,7 +145,8 @@ $(document).ready(function () {
           NexT.utils.displaySidebar();
       }) : NexT.utils.displaySidebar();
   }*/
-   if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+   /*if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
         NexT.utils.displaySidebar();
-      }  
+      }  */
+    NexT.utils.displaySidebar();
 });
