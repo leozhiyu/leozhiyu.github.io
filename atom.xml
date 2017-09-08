@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.leozzy.com/"/>
-  <updated>2017-09-01T02:54:35.339Z</updated>
+  <updated>2017-09-08T02:25:09.807Z</updated>
   <id>www.leozzy.com/</id>
   
   <author>
@@ -14,6 +14,215 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring-IoC 容器</title>
+    <link href="www.leozzy.com/2017/09/06/Spring-IoC/"/>
+    <id>www.leozzy.com/2017/09/06/Spring-IoC/</id>
+    <published>2017-09-06T09:15:29.000Z</published>
+    <updated>2017-09-08T02:25:09.807Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li><p>IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果</p>
+<ul>
+<li>某一接口具体实现类的选择控制权从调用类中移除，转交给第三方决定，由Spring容器借由Bean配置来进行控制</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>DI  ：  Dependency Injection ， 依赖注入， 此概念用来代替IoC</p>
+<ul>
+<li>让调用类对某一接口实现类的依赖关系由第三方（ 容器或协作类 ）注入，以移除调用类对某一接口实现类的依赖</li>
+</ul>
+</li>
+</ul>
+<h3 id="注入方式："><a href="#注入方式：" class="headerlink" title="注入方式："></a>注入方式：</h3><ul>
+<li><p>构造函数注入（ constructor-base ）</p>
+<p>   通过调用类的构造函数， 将接口实现类通过构造函数变量传入  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;bean id=<span class="string">"date"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"java.util.Date"</span> /&gt;</div><div class="line"></div><div class="line">&lt;!-- constructor --&gt;</div><div class="line">    &lt;bean id=<span class="string">"customer"</span>  <span class="class"><span class="keyword">class</span></span>=<span class="string">"io.spring.ioc.di.Customer"</span> &gt;</div><div class="line">    &lt;constructor-arg name=<span class="string">"id"</span> value=<span class="string">"1003"</span> /&gt;</div><div class="line">    &lt;constructor-arg name=<span class="string">"name"</span> value=<span class="string">"Leo"</span> /&gt;</div><div class="line">    &lt;constructor-arg name=<span class="string">"gender"</span> value=<span class="string">"男"</span> /&gt;</div><div class="line">    &lt;constructor-arg name=<span class="string">"birthdate"</span> ref=<span class="string">"date"</span> /&gt;</div><div class="line">&lt;/bean&gt;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Customer</span><span class="params">(Integer id, String name, <span class="keyword">char</span> gender, Date birthdate)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>();</div><div class="line">    <span class="keyword">this</span>.id = id;   </div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.gender = gender;</div><div class="line">    <span class="keyword">this</span>.birthdate = birthdate;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>属性注入（ setter-base ）</p>
+<p>  属性注入可以有选择地通过Setter方法完成调用类所需依赖的注入（ 方便灵活 ）</p>
+<h4 id="Spring-Framework-3-0-之前"><a href="#Spring-Framework-3-0-之前" class="headerlink" title="Spring Framework 3.0 之前"></a>Spring Framework 3.0 之前</h4>  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">    &lt;bean id=<span class="string">"date"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"java.util.Date"</span> /&gt;</div><div class="line"></div><div class="line">    &lt;!-- setter --&gt;</div><div class="line">    &lt;bean id=<span class="string">"customer"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"io.spring.ioc.di.Customer"</span> &gt;</div><div class="line">        &lt;property name=<span class="string">"id"</span> value=<span class="string">"1002"</span> /&gt;</div><div class="line">        &lt;property name=<span class="string">"name"</span> value=<span class="string">"Leo"</span> /&gt;</div><div class="line">        &lt;property name=<span class="string">"gender"</span> value=<span class="string">"男"</span> /&gt;</div><div class="line">        &lt;property name=<span class="string">"birthdate"</span> ref=<span class="string">"date"</span> /&gt;</div><div class="line">    &lt;/bean&gt;</div><div class="line">    ```                                         </div><div class="line">#### Spring Framework 3.0 开始支持 p 命名空间 :</div><div class="line"></div><div class="line">   ```java</div><div class="line">    &lt;bean id=<span class="string">"date"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"java.util.Date"</span> /&gt;</div><div class="line">    </div><div class="line">    &lt;!-- setter --&gt;</div><div class="line">    &lt;bean id=<span class="string">"customer"</span> </div><div class="line">        <span class="class"><span class="keyword">class</span></span>=<span class="string">"io.spring.ioc.di.Customer"</span> </div><div class="line">        p:id=<span class="string">"1002"</span> </div><div class="line">        p:name=<span class="string">"Leo"</span></div><div class="line">        p:gender=<span class="string">"男"</span></div><div class="line">        p:birthdate-ref=<span class="string">"date"</span> /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>接口注入（ interface-base ）</p>
+<p>  将调用类所有依赖注入的方法抽取到一个接口中， 调用类通过实现该接口提供相应的注入方法（ 额外声明接口， 增加类的数目， 效果和属性并无本质区别， 不提倡 ）</p>
+</li>
+</ul>
+<h3 id="自动装配（-autowiring-）"><a href="#自动装配（-autowiring-）" class="headerlink" title="自动装配（ autowiring ）"></a>自动装配（ autowiring ）</h3><h6 id="将某个Bean实例中所应用的其它的Bean自动注入到当前Bean实例中"><a href="#将某个Bean实例中所应用的其它的Bean自动注入到当前Bean实例中" class="headerlink" title="将某个Bean实例中所应用的其它的Bean自动注入到当前Bean实例中"></a>将某个Bean实例中所应用的其它的Bean自动注入到当前Bean实例中</h6><ol>
+<li><p>no ： 默认值， 不启用自动装配，需要显示引用相应的Bean</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;bean id=<span class="string">"date"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"java.util.Date"</span>/&gt;</div><div class="line"></div><div class="line">&lt;bean id=<span class="string">"student"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Student"</span>&gt;</div><div class="line">&lt;property name=<span class="string">"birthdate"</span> ref=<span class="string">"date"</span> /&gt; &lt;!-- 显示引用Bean --&gt;</div><div class="line">&lt;/bean&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>byName ： 根据属性名称和被引用的Bean的名称来实现自动注入(setter)</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;bean id=<span class="string">"birthdate"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"java.util.Date"</span>/&gt;</div><div class="line">    </div><div class="line">&lt;!-- 假设Student类内部有一个birthdate属性(有getter和setter) --&gt;</div><div class="line">&lt;bean id=<span class="string">"student"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Student"</span> autowire=<span class="string">"byName"</span>/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>byType： 根据属性类型和被引用的Bean的类型来实现自动注入(setter)</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;bean id=<span class="string">"d"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"java.util.Date"</span>/&gt;</div><div class="line">    </div><div class="line">&lt;!-- 假设Student类内部有一个Date类型的属性(有getter和setter) --&gt;</div><div class="line">&lt;bean id=<span class="string">"student"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Student"</span> autowire=<span class="string">"byType"</span>/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>constructor： 根据构造方法的参数类型和被引用的Bean的类型来实现自动注入(constructor)</p>
+<ul>
+<li><p>当存在多个同种类型的Bean与构造方法中的参数类型相同时</p>
+<p>   a-&gt;  如果某个Bean的名称跟构造方法的参数的名称一致， 则根据名称自动装配</p>
+<p>   b-&gt;  如果所有Bean的名称跟构造方法的参数的名称都不相同， 则不装配，抛出空指针异常， 不抛出NoUniqueBeanDefinitionException异常</p>
+</li>
+<li><p>当且仅当与构造方法中的参数类型相同的Bean只有一个时， 此时根据类型自动装配</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 不使用构造实现自动装配时的写法 --&gt;</div><div class="line">&lt;bean id=<span class="string">"dog"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Dog"</span> /&gt;</div><div class="line">&lt;bean id=<span class="string">"p"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Person"</span>&gt;</div><div class="line">    &lt;property name=<span class="string">"id"</span> value=<span class="string">"1111"</span> /&gt;</div><div class="line">    &lt;property name=<span class="string">"name"</span> value=<span class="string">"华安"</span> /&gt;</div><div class="line">    &lt;constructor-arg name=<span class="string">"wangcai"</span> ref=<span class="string">"dog"</span> /&gt; </div><div class="line">&lt;/bean&gt;</div><div class="line">    </div><div class="line">&lt;!-- 使用构造实现自动装配时的写法 --&gt;</div><div class="line">&lt;bean id=<span class="string">"dog"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Dog"</span> /&gt;</div><div class="line">&lt;bean id=<span class="string">"p"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"Person"</span> autowire=<span class="string">"constructor"</span>&gt;</div><div class="line">    &lt;property name=<span class="string">"id"</span> value=<span class="string">"1111"</span> /&gt;</div><div class="line">    &lt;property name=<span class="string">"name"</span> value=<span class="string">"华安"</span> /&gt;</div><div class="line">&lt;/bean&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="资源加载"><a href="#资源加载" class="headerlink" title="资源加载"></a>资源加载</h3><h6 id="Spring-支持的资源类型的地址前缀"><a href="#Spring-支持的资源类型的地址前缀" class="headerlink" title="Spring 支持的资源类型的地址前缀"></a>Spring 支持的资源类型的地址前缀</h6><table>
+<thead>
+<tr>
+<th>地址前缀</th>
+<th>示例</th>
+<th>对应的资源类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> classpath:</td>
+<td>classpath:com/smart/beanfactory/beans.xml</td>
+<td>从类路径中加载资源， classpath: 和 classpath:/是等价的， 都是相对于类的根路径。 资源文件可以在标准的文件系统中， 也可以在 JAR 或 ZIP 的类包中</td>
+</tr>
+<tr>
+<td>file:</td>
+<td>file:/conf/com/smart/beanfactory/beans.xml</td>
+<td>使用 UrlResource 从文件系统目录中装置资源，可以采用绝对或相对路径</td>
+</tr>
+<tr>
+<td>http://</td>
+<td><a href="http://www.smart.com/resource/beans.xml" target="_blank" rel="external">http://www.smart.com/resource/beans.xml</a></td>
+<td>使用 UrlResource 从Web 服务器中装载资源</td>
+</tr>
+<tr>
+<td>ftp://</td>
+<td><a href="http://www.smart.com/resource/beans.xml" target="_blank" rel="external">http://www.smart.com/resource/beans.xml</a></td>
+<td>使用 UrlResource 从FTP 服务器中装载资源</td>
+</tr>
+<tr>
+<td>没有前缀</td>
+<td>com/smart/beanfactory/beans.xml</td>
+<td>根据 ApplicationContext 的具体实现类采用对应类型的Resource</td>
+</tr>
+</tbody>
+</table>
+<h6 id="三种通配符的使用"><a href="#三种通配符的使用" class="headerlink" title="三种通配符的使用"></a>三种通配符的使用</h6><p>  假设io.spring.ioc.autowiring 包中有个 constructor-autowiring.xml</p>
+<ul>
+<li><p>（*）匹配同一级别路径的多个字符：io/*/ioc/autowiring/constructor-autowiring.xml</p>
+</li>
+<li><p>（**）匹配多级路径中的多个字符：io/**/constructor-autowiring.xml</p>
+</li>
+<li><p>（？） 仅匹配一个字符</p>
+</li>
+</ul>
+<p>Ant风格资源路径的示例</p>
+<ul>
+<li><p>classpath:com/t ? st.xml： 匹配 com 类路径下的 com/test.xml、com/tast.xml 或者 com/txst.xml 文件</p>
+</li>
+<li><p>file:D:/conf/*.xml： 匹配文件系统 D:/conf 目录下所有以 .xml 为后缀的文件。</p>
+</li>
+<li><p>classpath:/com/**/test.xml： 匹配 com 类路径下（ 当前 目录及其子孙目录 ）的 test.xml 文件。</p>
+</li>
+<li><p>classpath:org/springframework/**/*.xml： 匹配类路径 org/springframework 下所有以 .xml  为后缀的文件。</p>
+</li>
+<li><p>classpath:org/**/servlet/servlet/bla.xml： 不仅匹配类路径 org/springframework/servlet/bla.xml， 也匹配 org/springframework/testing/servlet/bla.xml， 还匹配 org/servlet/bla.xml</p>
+</li>
+</ul>
+<h4 id="BeanFactory-和-ApplicationContext"><a href="#BeanFactory-和-ApplicationContext" class="headerlink" title="BeanFactory 和 ApplicationContext"></a>BeanFactory 和 ApplicationContext</h4><ul>
+<li><p>BeanFactory （Bean工厂， IoC 容器）</p>
+<ol>
+<li><p>BeanFactory 是Spring 框架最核心的接口， 它提供了高级 IoC 的配置机制</p>
+</li>
+<li><p>BeanFactory 是Spring 框架的基础设施， 面向Spring本身</p>
+</li>
+<li><p>类的通用工厂， 可以创建并管理各种类的对象</p>
+</li>
+<li><p>在初始化 BeanFactory ， 必须提供一种日志框架， 如Log4J</p>
+</li>
+<li><p>初始化容器时， 并未实例化 Bean， 第一次访问某个 Bean 时才实例化目标 Bean （ “ 第一次惩罚 ” ）</p>
+</li>
+</ol>
+</li>
+<li><p>ApplicationContext （ 应用上下文， Spring 容器 ）</p>
+<ol>
+<li><p>ApplicationContext 建立在 BeanFactory 基础之上， 提供了面向应用的功能</p>
+</li>
+<li><p>ApplicationContext 面向使用 Spring 框架的开发者， 几乎在所有场景都可以直接使用</p>
+</li>
+<li><p>主要实现类：</p>
+<ul>
+<li><p>ClassPathXmlApplicationContext ： 默认从类路径加载配置文件</p>
+</li>
+<li><p>FileSystemXmlApplicationContext ： 默认从文件系统中加载配置文件</p>
+</li>
+</ul>
+</li>
+<li><p>ApplicationContext 初始化</p>
+<ul>
+<li>配置文件在类路径下， 优先考虑 ClassPathXmlApplicationContext</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ApplicationContext ctx = </div><div class="line">    <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"com/smart/context/beans.xml"</span>);</div></pre></td></tr></table></figure>
+<pre><code>- 配置文件在文件系统路径下， 优先考虑 FileSystemXmlApplicationContext
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ApplicationContext ctx = </div><div class="line">    <span class="keyword">new</span> FileSystemXmlApplicationContext(<span class="string">"com/smart/context/beans.xml"</span>);</div></pre></td></tr></table></figure>
+<pre><code>- 指定一组配置文件， Spring 会自动将多个配置文件在内存中 “ 整合 ”  成一个配置文件
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ApplicationContext ctx = </div><div class="line">    <span class="keyword">new</span> ClassPathXmlApplicationContext(</div><div class="line">    <span class="keyword">new</span> String[] &#123; <span class="string">"conf/beans1.xml"</span>, <span class="string">"conf/beans2.xml"</span> &#125;);</div></pre></td></tr></table></figure>
+<pre><code>- 初始化应用上下文时就实例化所有单实例的 Bean 
+</code></pre></li>
+</ul>
+<ul>
+<li><p>WebApplicationContext </p>
+<ol>
+<li><p>专门为 Web 应用准备， 允许从相对于 Web 根目录的路径中装载配置文件完成初始化工作</p>
+</li>
+<li><p>从 WebApplicationContext 中可以获得 ServletContext 的引用， 整个 WebApplicationContext 将作为属性放置到ServletContext 中</p>
+</li>
+<li><p>WebApplicationContext 作用域 ： singleton 、 prototype、 request 、 session、 global session </p>
+</li>
+<li><p>Spring 的 Web 应用上下文和 Web 容器的上下文应用实现互访： WebApplicationContextUtils # getWebApplicationContext(ServletContext sc)</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">WebApplicationContext wac = (WebApplicationContext)servletContext.getAttribute</div><div class="line">(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE)</div></pre></td></tr></table></figure>
+<ol>
+<li><p>WebApplicationContext  初始化， 需要 ServletContext 实例，必须在拥有 Web 容器的前提下才能完成启动工作<br> Spring 分别提供了用于启动 WebApplicationContext 的 Servlet 和 Web 容器监听器( 需要在 web.xml 中完成配置 )：</p>
+<pre><code>- org.springframework.web.context.ContextLoaderServlet
+
+- org.springframework.web.context.ContextLoaderListener
+</code></pre></li>
+</ol>
+</li>
+</ul>
+<p>总结： </p>
+<ol>
+<li><p>发现自己还有太多东西不懂， 对 Servlet 不够熟悉导致有些内容不能理解</p>
+</li>
+<li><p>涉及到原理性的东西比如 Bean 生命周期以及核心工作原理的很难看懂</p>
+</li>
+<li><p>知识学了但是运用得太少， 只是知道有这个东西不会运用， 应该多动手， 尝试着读别人的代码并且自己写</p>
+</li>
+</ol>
+<p>注： 以上内容来自上课笔记以及《 Spring4.x-企业应用开发实战》</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务
+    
+    </summary>
+    
+      <category term="Java框架" scheme="www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="Spring" scheme="www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/"/>
+    
+      <category term="Ioc" scheme="www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/Ioc/"/>
+    
+    
+      <category term="Spring" scheme="www.leozzy.com/tags/Spring/"/>
+    
+  </entry>
   
   <entry>
     <title>Github命令简记-基础</title>

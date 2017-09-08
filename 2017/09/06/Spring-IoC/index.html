@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java, Web" />
+  <meta name="keywords" content="Spring," />
 
 
 
@@ -111,16 +111,18 @@
 
 
 
-<meta name="description" content="技术源于分享 - 成长的码农">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Leo">
-<meta property="og:url" content="www.leozzy.com/index.html">
+<meta name="description" content="概念 IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果  某一接口具体实现类的选择控制权从调用类中移除，转交给第三方决定，由Spring容器借由Bean配置来进行控制     DI  ：  Dependency Injection ， 依赖注入， 此概念用来代替IoC  让调用类对某一接口实现类的依赖">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring-IoC 容器">
+<meta property="og:url" content="www.leozzy.com/2017/09/06/Spring-IoC/index.html">
 <meta property="og:site_name" content="Leo">
-<meta property="og:description" content="技术源于分享 - 成长的码农">
+<meta property="og:description" content="概念 IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果  某一接口具体实现类的选择控制权从调用类中移除，转交给第三方决定，由Spring容器借由Bean配置来进行控制     DI  ：  Dependency Injection ， 依赖注入， 此概念用来代替IoC  让调用类对某一接口实现类的依赖">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-08T02:25:09.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leo">
-<meta name="twitter:description" content="技术源于分享 - 成长的码农">
+<meta name="twitter:title" content="Spring-IoC 容器">
+<meta name="twitter:description" content="概念 IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果  某一接口具体实现类的选择控制权从调用类中移除，转交给第三方决定，由Spring容器借由Bean配置来进行控制     DI  ：  Dependency Injection ， 依赖注入， 此概念用来代替IoC  让调用类对某一接口实现类的依赖">
 
 
 
@@ -150,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="www.leozzy.com/"/>
+  <link rel="canonical" href="www.leozzy.com/2017/09/06/Spring-IoC/"/>
 
 
 
 
 
-  <title>Leo</title>
+  <title>Spring-IoC 容器 | Leo</title>
   
 
 
@@ -185,8 +187,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/leozhiyu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
@@ -290,9 +291,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -322,9 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/06/Spring-IoC/" itemprop="url">Spring-IoC 容器</a></h1>
+          <h1 class="post-title" itemprop="name headline">Spring-IoC 容器</h1>
         
 
         <div class="post-meta">
@@ -336,7 +335,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T09:15:29Z">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T17:15:29+08:00">
                 2017-09-06
               </time>
             
@@ -460,9 +459,7 @@
       
 
       
-        
-          
-            <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+        <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
 <li><p>IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果</p>
 <ul>
 <li>某一接口具体实现类的选择控制权从调用类中移除，转交给第三方决定，由Spring容器借由Bean配置来进行控制</li>
@@ -645,8 +642,6 @@
 </ol>
 <p>注： 以上内容来自上课笔记以及《 Spring4.x-企业应用开发实战》</p>
 
-          
-        
       
     </div>
     
@@ -655,505 +650,117 @@
 	
 	<div>
       
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript"  src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2017/09/06/Spring-IoC/">Spring-IoC 容器</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Leo 的个人博客">Leo</a></p>
+  <p><span>发布时间:</span>2017年09月06日 - 09:09</p>
+  <p><span>最后更新:</span>2017年09月08日 - 10:09</p>
+  <p><span>原始链接:</span><a href="/2017/09/06/Spring-IoC/" title="Spring-IoC 容器">www.leozzy.com/2017/09/06/Spring-IoC/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="www.leozzy.com/2017/09/06/Spring-IoC/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"></a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
 	</div>
 
     
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赞赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Leo WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
 	
 	<div>
 	
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
+		<div>
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.leozzy.com/2017/09/01/Github命令简记-基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/01/Github命令简记-基础/" itemprop="url">Github命令简记-基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T21:21:32Z">
-                2017-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/github/" itemprop="url" rel="index">
-                    <span itemprop="name">github</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/01/Github命令简记-基础/" class="leancloud_visitors" data-flag-title="Github命令简记-基础">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  432
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
         </div>
-      </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>刚刚学习github， 本文记录最基本的github命令， 网上教程一大把， 我简单将命令记录在此， 方便查找。</p>
-<h3 id="本地环境操作"><a href="#本地环境操作" class="headerlink" title="本地环境操作"></a>本地环境操作</h3><ul>
-<li><p><code>git</code> ————————————- 查看最常用的Git命令</p>
-</li>
-<li><p><code>git status</code>  —————————– 查看当前仓库的状态</p>
-</li>
-<li><p><code>git init</code>  ——————————– 初始化 git 仓库</p>
-</li>
-<li><p><code>git add  [ name ]</code> ——————— 将代码加入等待提交的缓存中（防止误提交）</p>
-</li>
-<li><p><code>git rm –-cached [ name ]</code>  ———- 从缓存中移除</p>
-</li>
-<li><p><code>git commit -m [ message ]</code> ——— 提交附带提交信息</p>
-</li>
-<li><p><code>git log</code>  ———————————- 查看commit记录</p>
-</li>
-<li><p><code>git branch</code> ——————————- 查看当前分支情况</p>
-</li>
-<li><p><code>git branch [ name ]</code> ——————- 创建新分支</p>
-</li>
-<li><p><code>git checkout [ name ]</code> —————- 切换分支</p>
-</li>
-<li><p><code>git checkout -b [ name ]</code> ———— 创建并切换分支</p>
-</li>
-<li><p><code>git merge [ name ]</code> ———————合并分支到主分支 </p>
-</li>
-<li><p><code>git branch -d [ name ]</code>—————- 删除分支</p>
-</li>
-<li><p><code>git branch -D [ name ]</code> ————— 强制删除分支</p>
-</li>
-<li><p><code>git tag</code> ————————————-查看版本记录</p>
-</li>
-<li><p><code>git tag [ version ]</code>———————新建版本信息</p>
-</li>
-<li><p><code>git checkout [ version ]</code>————–切换到对应的版本状态</p>
-</li>
-</ul>
-<h3 id="本地与远程仓库协作"><a href="#本地与远程仓库协作" class="headerlink" title="本地与远程仓库协作"></a>本地与远程仓库协作</h3><ul>
-<li><p><code>ssh -T git@github.com</code> ————————–查看SSH key 是否添加成功</p>
-</li>
-<li><p><code>git remote add origin [ url ]</code> —————建立本地目录与远程仓库的关联 ( 相当于给远程 url 取了别名 origin )</p>
-</li>
-<li><p><code>git remote remove origin</code> ———————-取消本地目录与远程仓库的关联 </p>
-</li>
-<li><p><code>git remote -v</code> ————————————–查看当前项目有哪些远程仓库</p>
-</li>
-<li><p><code>git push origin master</code> ————————–将本地代码提交到远程仓库 ( 需要先解决冲突 )</p>
-</li>
-<li><p><code>git push -f origin</code> ————————– 强制提交( 覆盖远程代码 )</p>
-</li>
-<li><p><code>git pull origin master</code> ————————- 更新远程仓库代码到本地</p>
-</li>
-<li><p><code>git clone [ url ]</code> ——————————– Clone 项目</p>
-</li>
-<li><p><code>git checkout [ version ]</code> ————————切换到对应的版本状态</p>
-</li>
-<li><p><code>git config --global user.name 「 username 」</code>——- 全局设置用户名 ( 去除global 就是为某一个项目进行设置 )</p>
-</li>
-<li><p><code>git config --global user.email 「 email 」</code>———-全局设置邮箱 ( 去除global 就是为某一个项目进行设置 )</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	<div>
-      
-	</div>
-
-    
-
-    
-
-    
-	
-	<div>
+</div>
 	
 	</div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.leozzy.com/2017/08/31/Leo-s-start/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/31/Leo-s-start/" itemprop="url">Leo's start</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T14:28:02Z">
-                2017-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/时光/" itemprop="url" rel="index">
-                    <span itemprop="name">时光</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tag"></i> Spring</a>
           
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/08/31/Leo-s-start/" class="leancloud_visitors" data-flag-title="Leo's start">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  488
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="这是一篇记录-Leo-站点成立的博客"><a href="#这是一篇记录-Leo-站点成立的博客" class="headerlink" title="这是一篇记录 Leo 站点成立的博客"></a>这是一篇记录 Leo 站点成立的博客</h5><p>也许是受「帅张」和圈友的影响，终于把博客当一回事了，花了两天时间把博客草草地搭建起来， 还有许多地方不完善。 尽管之前也有想过学着写博客， 最终还是停留在口头上， 今天作为新的开始。「可能吧」里面的一篇文章：<a href="http://mp.weixin.qq.com/s/ZACwzaP9lhjluHvA-o-z2A" target="_blank" rel="external">别做口头上的学习者</a>。</p>
-<p>简单叙述一下我搭建博客的流程：</p>
-<ol>
-<li><p>准备好 Google ( 这当然是学习必不可少的神器 )  </p>
-</li>
-<li><p>根据教程使用 Github + Hexo 方式搭建静态博客</p>
-</li>
-<li><p>修改博客主题以及对页面的一些配置</p>
-</li>
-<li><p>阿里云购买域名并连接 Github 博客站点</p>
-</li>
-<li><p>学习 Github + Git， 掌握最基本的命令</p>
-</li>
-<li><p>学习 Markdown 基本语法</p>
-</li>
-<li><p>开启博客之旅</p>
-</li>
-</ol>
-<p>至于为什么用 Leo 作为站点的名称， 那当然是英文名啊， 这么简单。</p>
-<p>告诉你们个秘密： 我写作能力是真的差。所以在这里除了记录自己的成长路线， 最重要的当然是与他人分享学习到的技术经验啊， 写作能力那只是附带的。</p>
-<p>目前的技术还真的不行， 所以只能从一些基础开始分享， 自己也从小白开始成长， 渴望成为所谓的「大神」。坚持当然是最重要的一点了， 很多人是按时间来约束自己， 一个月或者一周或者每天一篇博客， 但是对于我这种小白， 我的选择是学到了东西就发一篇， 也当是对知识的整理， 除了分享给他人还有重要的一点就是把自己积累的知识记录在这里。 </p>
-<p>技术源于分享， 分享阮一峰老师的一本书与大家共勉：<a href="http://survivor.ruanyifeng.com/" target="_blank" rel="external">未来世界的幸存者</a></p>
-<p>附上帅照一张<br><img src="/2017/08/31/Leo-s-start/leo.jpg" alt="This is Leo" title="This is Leo"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	<div>
-      
-	</div>
-
-    
-
-    
-
-    
-	
-	<div>
-	
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/01/Github命令简记-基础/" rel="next" title="Github命令简记-基础">
+                <i class="fa fa-chevron-left"></i> Github命令简记-基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -1163,10 +770,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1174,6 +782,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -1194,8 +808,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -1272,6 +895,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注入方式："><span class="nav-number">2.</span> <span class="nav-text">注入方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-Framework-3-0-之前"><span class="nav-number">2.1.</span> <span class="nav-text">Spring Framework 3.0 之前</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动装配（-autowiring-）"><span class="nav-number">3.</span> <span class="nav-text">自动装配（ autowiring ）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#将某个Bean实例中所应用的其它的Bean自动注入到当前Bean实例中"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">将某个Bean实例中所应用的其它的Bean自动注入到当前Bean实例中</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源加载"><span class="nav-number">4.</span> <span class="nav-text">资源加载</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Spring-支持的资源类型的地址前缀"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">Spring 支持的资源类型的地址前缀</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#三种通配符的使用"><span class="nav-number">4.0.0.2.</span> <span class="nav-text">三种通配符的使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BeanFactory-和-ApplicationContext"><span class="nav-number">4.1.</span> <span class="nav-text">BeanFactory 和 ApplicationContext</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1390,6 +1029,9 @@
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
 
   
 
@@ -1415,6 +1057,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143068"></script>
+      <!-- UY END -->
     
   
 
