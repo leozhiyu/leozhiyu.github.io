@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozzy.com/"/>
-  <updated>2017-09-13T08:03:49.478Z</updated>
+  <updated>2017-09-13T08:38:33.951Z</updated>
   <id>http://www.leozzy.com/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="http://www.leozzy.com/2017/09/13/%E5%88%9D%E8%AF%86JavaScript%E5%8E%9F%E5%9E%8B/"/>
     <id>http://www.leozzy.com/2017/09/13/初识JavaScript原型/</id>
     <published>2017-09-13T15:54:31.000Z</published>
-    <updated>2017-09-13T08:03:49.478Z</updated>
+    <updated>2017-09-13T08:38:33.951Z</updated>
     
-    <content type="html"><![CDATA[<p>刚开始学习 JavaScript ， 感觉很多细节， 很多需要注意的地方， 把自己觉得细节的地方整理了一篇文章放在后面。</p>
+    <content type="html"><![CDATA[<p>刚开始学习 JavaScript ， 感觉很多细节， 很多需要注意的地方， 把自己觉得细节的地方整理了一篇文章放在前面。</p>
 <p>这里是解决碰到的第一个难点， 如何理解 JavaScript 原型。 在网上看到一篇文章， 看完之后豁然开朗， 对原型大概理解了。 为什么说大概呢， 毕竟自己还没运用起来， 只有深入理解并且会用了才是理解到位。</p>
 <p>感谢作者的分享， 链接： <a href="http://www.cnblogs.com/wilber2013/p/4924309.html" target="_blank" rel="external">彻底理解 JavaScript 原型</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;刚开始学习 JavaScript ， 感觉很多细节， 很多需要注意的地方， 把自己觉得细节的地方整理了一篇文章放在后面。&lt;/p&gt;
+      &lt;p&gt;刚开始学习 JavaScript ， 感觉很多细节， 很多需要注意的地方， 把自己觉得细节的地方整理了一篇文章放在前面。&lt;/p&gt;
 &lt;p&gt;这里是解决碰到的第一个难点， 如何理解 JavaScript 原型。 在网上看到一篇文章， 看完之后豁然开朗， 对原型大概理解了。 为什么
     
     </summary>
@@ -46,7 +46,7 @@
     <link href="http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</id>
     <published>2017-09-11T11:25:04.000Z</published>
-    <updated>2017-09-13T08:34:52.883Z</updated>
+    <updated>2017-09-13T08:39:34.920Z</updated>
     
     <content type="html"><![CDATA[<h2 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h2><ol>
 <li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
