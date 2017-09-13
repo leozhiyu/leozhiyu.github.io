@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="javascript 基础知识," />
 
 
 
@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="背景从搭建博客就想自动展开侧边栏， 结果网上找了很多方法都不生效， 今天找到一篇博客试着重新设置了下， 仍然无效， 但是找到了设置的思路， 于是自己找相关的文件进行设置， 在此分享。 说明由于主题版本不同， 以下方法只是对应当前版本， 但是思路是一样的， 只是文件的路径和文件名称可能不同 Step 1 修改主题配置文件  display: always路径：/hexo/themes/next/_c">
-<meta name="keywords" content="hexo">
+<meta name="description" content="基础部分 type属性： 默认的 type 就是javascript， 所以不必显式指定 type 为javascript 123&amp;lt;script  type=&quot;text/javascript&quot;&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ，javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”">
+<meta name="keywords" content="javascript 基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程">
-<meta property="og:url" content="http://www.leozzy.com/2017/09/08/hexo-sidebar-auto/index.html">
+<meta property="og:title" content="javascript基础-注意点汇总">
+<meta property="og:url" content="http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/index.html">
 <meta property="og:site_name" content="Leo">
-<meta property="og:description" content="背景从搭建博客就想自动展开侧边栏， 结果网上找了很多方法都不生效， 今天找到一篇博客试着重新设置了下， 仍然无效， 但是找到了设置的思路， 于是自己找相关的文件进行设置， 在此分享。 说明由于主题版本不同， 以下方法只是对应当前版本， 但是思路是一样的， 只是文件的路径和文件名称可能不同 Step 1 修改主题配置文件  display: always路径：/hexo/themes/next/_c">
+<meta property="og:description" content="基础部分 type属性： 默认的 type 就是javascript， 所以不必显式指定 type 为javascript 123&amp;lt;script  type=&quot;text/javascript&quot;&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ，javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-08T03:52:16.532Z">
+<meta property="og:updated_time" content="2017-09-13T07:19:41.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程">
-<meta name="twitter:description" content="背景从搭建博客就想自动展开侧边栏， 结果网上找了很多方法都不生效， 今天找到一篇博客试着重新设置了下， 仍然无效， 但是找到了设置的思路， 于是自己找相关的文件进行设置， 在此分享。 说明由于主题版本不同， 以下方法只是对应当前版本， 但是思路是一样的， 只是文件的路径和文件名称可能不同 Step 1 修改主题配置文件  display: always路径：/hexo/themes/next/_c">
+<meta name="twitter:title" content="javascript基础-注意点汇总">
+<meta name="twitter:description" content="基础部分 type属性： 默认的 type 就是javascript， 所以不必显式指定 type 为javascript 123&amp;lt;script  type=&quot;text/javascript&quot;&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ，javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”">
 
 
 
@@ -152,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://www.leozzy.com/2017/09/08/hexo-sidebar-auto/"/>
+  <link rel="canonical" href="http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/"/>
 
 
 
 
 
-  <title>2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程 | Leo</title>
+  <title>javascript基础-注意点汇总 | Leo</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/09/08/hexo-sidebar-auto/">
+    <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Leo">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程</h1>
+          <h1 class="post-title" itemprop="name headline">javascript基础-注意点汇总</h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T11:29:00Z">
-                2017-09-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-11T11:25:04Z">
+                2017-09-11
               </time>
             
 
@@ -358,19 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -386,7 +375,7 @@
 
           
           
-             <span id="/2017/09/08/hexo-sidebar-auto/" class="leancloud_visitors" data-flag-title="2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程">
+             <span id="/2017/09/11/javascript基础-注意点汇总/" class="leancloud_visitors" data-flag-title="javascript基础-注意点汇总">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  315
+                  1,474
                 </span>
               
 
@@ -427,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  6
                 </span>
               
             </div>
@@ -448,19 +437,103 @@
       
 
       
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>从搭建博客就想自动展开侧边栏， 结果网上找了很多方法都不生效， 今天找到一篇博客试着重新设置了下， 仍然无效， 但是找到了设置的思路， 于是自己找相关的文件进行设置， 在此分享。</p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>由于主题版本不同， 以下方法只是对应当前版本， 但是思路是一样的， 只是文件的路径和文件名称可能不同</p>
-<h2 id="Step-1-修改主题配置文件-display-always"><a href="#Step-1-修改主题配置文件-display-always" class="headerlink" title="Step 1 修改主题配置文件  display: always"></a>Step 1 修改主题配置文件  display: always</h2><p>路径：/hexo/themes/next/_config.yml</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sidebar: </div><div class="line">  # Sidebar Position, available value: left | right</div><div class="line">  position: left</div><div class="line">  #position: right</div><div class="line"></div><div class="line">  #display: post</div><div class="line">  display: always </div><div class="line">  #display: hide</div><div class="line">  #display: remove</div></pre></td></tr></table></figure>
-<h2 id="Step-2-修改-motion-js-文件"><a href="#Step-2-修改-motion-js-文件" class="headerlink" title="Step 2 修改 motion.js 文件"></a>Step 2 修改 motion.js 文件</h2><p>路径：/hexo/themes/next/source/js/src/motion.js</p>
-<p>在文件末尾</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sidebar: <span class="function"><span class="keyword">function</span> (<span class="params">integrator</span>) </span>&#123;</div><div class="line">  <span class="comment">//if (CONFIG.sidebar.display === 'always') &#123;  //注释</span></div><div class="line">    NexT.utils.displaySidebar();</div><div class="line">  <span class="comment">//&#125; //注释</span></div><div class="line">  integrator.next();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Step-3-修改post-details-js"><a href="#Step-3-修改post-details-js" class="headerlink" title="Step 3 修改post-details.js"></a>Step 3 修改post-details.js</h2><p>路径： /hexo/themes/next/source/js/src/post-details.js</p>
-<p>在文件末尾</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*var $tocContent = $('.post-toc-content');</span></div><div class="line"><span class="comment">  var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post' ||</span></div><div class="line"><span class="comment">      CONFIG.sidebar.display === 'always';</span></div><div class="line"><span class="comment">  var hasTOC = $tocContent.length &gt; 0 &amp;&amp; $tocContent.html().trim().length &gt; 0;</span></div><div class="line"><span class="comment">  if (isSidebarCouldDisplay &amp;&amp; hasTOC) &#123;</span></div><div class="line"><span class="comment">    CONFIG.motion ?</span></div><div class="line"><span class="comment">      (NexT.motion.middleWares.sidebar = function () &#123;</span></div><div class="line"><span class="comment">          NexT.utils.displaySidebar();</span></div><div class="line"><span class="comment">      &#125;) : NexT.utils.displaySidebar();</span></div><div class="line"><span class="comment">  &#125;*/</span></div></pre></td></tr></table></figure>
-<p>将以上代码段落全部注释， 只用最后一句</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NexT.utils.displaySidebar();</div></pre></td></tr></table></figure>
-<h5 id="这是我使用的主题版本的设置方法，-希望对需要的人有帮助"><a href="#这是我使用的主题版本的设置方法，-希望对需要的人有帮助" class="headerlink" title="这是我使用的主题版本的设置方法， 希望对需要的人有帮助"></a>这是我使用的主题版本的设置方法， 希望对需要的人有帮助</h5>
+        <h2 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h2><ol>
+<li><p>type属性： 默认的 type 就是javascript， 所以不必显式指定 type 为javascript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script  type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">...</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>javascript 不强制在每个语句结尾加 “；” ，javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”</p>
+</li>
+<li><p>两个相等运算符比较</p>
+<ul>
+<li><p>‘==’ 相等（  值相等 ）， 它会自动转换数据类型再比较，很多时候会得到非常诡异的结果</p>
+</li>
+<li><p>‘===’ 严格相等（ 数据类型和值都相等 ） ,  它不会自动转换数据类型， 如果数据类型不一致，返回false， 如果一致， 再比较</p>
+</li>
+</ul>
+</li>
+<li><p>NaN 与所有其他值都不相等， 包括它自己：</p>
+<p> <code>NaN === NaN; // false</code></p>
+<p> 唯一能判断NaN的方法是通过isNaN()函数：</p>
+<p> <code>isNaN(NaN); // true</code></p>
+</li>
+<li><p>浮点数比较</p>
+<p> 浮点数在运算过程中会产生误差，因为计算机无法精确表示无限循环小数。要比较两个浮点数是否相等，只能计算它们之差的绝对值，看是否小于某个阈值：</p>
+<p> <code>Math.abs(1 / 3 - (1 - 2 / 3)) &lt; 0.0000001; // true</code></p>
+</li>
+<li><p>null 和 undefined</p>
+<p> 大多数情况下， 我们都应该用 <code>null</code>， <code>undefined</code> 仅仅在判断函数参数是否传递的情况下有用</p>
+</li>
+<li><p>出于代码的可读性考虑， 创建数组建议用 <code>[]</code>， 而不使用 <code>new Array()</code></p>
+</li>
+<li><p>如果一个变量没有通过 <code>var</code> 申明就被使用， 那么该变量就自动被申明为全局变量。 使用 <code>var</code> 申明的变量则不是全局变量， 它的范围被限制在该变量被申明的函数体内</p>
+</li>
+<li><p>启用 strict 模式（ 强制通过 <code>var</code> 声明变量）： 在 javascript 代码第一行写上<br><code>&#39;use strict&#39;;</code></p>
+</li>
+<li><p>多行字符串用反引号表示  ` … ` </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">`这是一个</span></div><div class="line"><span class="string">多行</span></div><div class="line"><span class="string">字符串`</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>模版字符串<br><code>alert(</code>你好, ${name}, 你今年${age}岁了!<code>);</code></p>
+</li>
+<li><p>要获取字符串某个指定位置的字符， 使用类似 <code>Array</code> 的下标操作，    索引号从 0 开始。字符串是不可变的， 如果对字符串的某个索引赋值， 不会有任何错误， 但是， 也没有任何效果</p>
+</li>
+<li><p>直接给 <code>Array</code> 的 <code>length</code> 赋一个新的值会导致 <code>Array</code> 大小的变化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">arr.length; <span class="comment">// 3</span></div><div class="line">arr.length = <span class="number">6</span>;</div><div class="line">arr; <span class="comment">// arr变为[1, 2, 3, undefined, undefined, undefined]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>如果通过索引赋值时， 索引超过了范围， 同样会引起 <code>Array</code> 大小的变化， 但是不会有任何错误， 在编写代码时， 不建议直接修改 <code>Array</code> 的大小， 访问索引时要确保索引不会越界</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">arr[<span class="number">5</span>] = <span class="string">'x'</span>;</div><div class="line">arr; <span class="comment">// arr变为[1, 2, 3, undefined, undefined, 'x']</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>数字30和字符串’30’是不同的元素</p>
+</li>
+<li><p><code>slice()</code> 的起止参数包括开始索引， 不包括结束索引。</p>
+</li>
+<li><p>如果不给 <code>slice()</code> 传递任何参数， 它就会从头到尾截取所有元素。 利用这一点， 我们可以很容易地复制一个 <code>Array</code></p>
+</li>
+<li><p>空数组继续 <code>pop</code> 不会报错，而是返回 <code>undefined</code></p>
+</li>
+<li><p><code>concat()</code> 方法并没有修改当前 <code>Array</code>， 而是返回了一个新的 <code>Array</code>，<code>concat()</code> 方法可以接收任意个元素和 <code>Array</code>， 并且自动把<code>Array</code>拆开， 然后全部添加到新的<code>Array</code>里</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</div><div class="line">arr.concat(<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// ['A', 'B', 'C', 1, 2, 3, 4]</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>20.<code>javascript</code> 对象属性名必须是一个有效的变量名。 如果属性名包含特殊字符， 就必须用 <code>&#39;&#39;</code> 括起来<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaohong = &#123;</div><div class="line">    name: <span class="string">'小红'</span>,</div><div class="line">    <span class="string">'middle-school'</span>: <span class="string">'No.1 Middle School'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><code>xiaohong</code> 的属性名 <code>middle-school</code> 不是一个有效的变量， 就需要用 <code>&#39;&#39;</code> 括起来。 访问这个属性也无法使用.操作符， 必须用 <code>[&#39;xxx&#39;]</code> 来访问：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xiaohong[<span class="string">'middle-school'</span>]; <span class="comment">// 'No.1 Middle School'</span></div><div class="line">xiaohong[<span class="string">'name'</span>]; <span class="comment">// '小红'</span></div><div class="line">xiaohong.name; <span class="comment">// '小红'</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li><p>如果我们要检测 <code>xiaoming</code> 是否拥有某一属性， 可以用in操作符,  不过要小心， 如果 <code>in</code> 判断一个属性存在， 这个属性不一定是<code>xiaoming</code> 的， 它可能是 <code>xiaoming</code> 继承得到的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'name'</span> <span class="keyword">in</span> xiaoming; <span class="comment">// true</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>要判断一个属性是否是 <code>xiaoming</code> 自身拥有的，而不是继承得到的，可以用 <code>hasOwnProperty()</code> 方法</p>
+</li>
+<li><p>JavaScript把 <code>null</code>、<code>undefined</code>、<code>0</code>、<code>NaN</code> 和空字符串  <code>&#39;&#39;</code> 视为 <code>false</code>，其他值一概视为 <code>true</code></p>
+</li>
+<li><p>由于 <code>Array</code> 也是对象， 而它的每个元素的索引被视为对象的属性， 因此， <code>for ... in</code> 循环可以直接循环出 <code>Array</code> 的索引</p>
+</li>
+<li><p><code>for ... in</code> 循环由于历史遗留问题， 它遍历的实际上是对象的属性名称， <code>for ... of</code> 循环则完全修复了这些问题， 它只循环集合本身的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</div><div class="line">a.name = <span class="string">'Hello'</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">in</span> a) &#123;</div><div class="line">    alert(x); <span class="comment">// '0', '1', '2', 'name'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</div><div class="line">a.name = <span class="string">'Hello'</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> a) &#123;</div><div class="line">    alert(x); <span class="comment">// 'A', 'B', 'C'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
+<li><p>函数如果没有 <code>return</code> 语句， 函数执行完毕后也会返回结果， 只是结果为 <code>undefined</code></p>
+</li>
+<li><p>由于 <code>JavaScript</code> 允许传入任意个参数而不影响调用， 因此传入的参数比定义的参数多也没有问题， 虽然函数内部并不需要这些参数， 传入的参数比定义的少也没有问题</p>
+</li>
+<li><p>关键字 <code>arguments</code> 类似 <code>Array</code> 但它不是一个 <code>Array</code></p>
+</li>
+<li><p>不在任何函数内定义的变量就具有全局作用域。 实际上， <code>JavaScript</code> 默认有一个全局对象 <code>window</code>。 以变量方式 <code>var foo = function () {}</code> 定义的函数实际上也是一个全局变量。</p>
+</li>
+<li><p>用 <code>var that = this;</code> ， 你就可以放心地在方法内部定义其他函数，而不是把所有语句都堆到一个方法中。 对于普通函数调用， 通常把 <code>this</code> 绑定为 <code>null</code>。</p>
+</li>
+<li><p><code>apply()</code> 与 <code>call()</code>的唯一区别</p>
+<ul>
+<li><p><code>apply()</code> 把参数打包成 <code>Array</code> 再传入；</p>
+</li>
+<li><p><code>call()</code> 把参数按顺序传入。</p>
+</li>
+</ul>
+</li>
+<li><p>所有实例的原型引用的是函数的prototype属性</p>
+</li>
+</ol>
+
       
     </div>
     
@@ -477,12 +550,12 @@
   <script type="text/javascript"  src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2017/09/08/hexo-sidebar-auto/">2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程</a></p>
+  <p><span>本文标题:</span><a href="/2017/09/11/javascript基础-注意点汇总/">javascript基础-注意点汇总</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Leo 的个人博客">Leo</a></p>
-  <p><span>发布时间:</span>2017年09月08日 - 11:09</p>
-  <p><span>最后更新:</span>2017年09月08日 - 11:09</p>
-  <p><span>原始链接:</span><a href="/2017/09/08/hexo-sidebar-auto/" title="2017版 Hexo Next主题侧边栏 Sidebar 配置自动展开教程">http://www.leozzy.com/2017/09/08/hexo-sidebar-auto/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.leozzy.com/2017/09/08/hexo-sidebar-auto/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2017年09月11日 - 11:09</p>
+  <p><span>最后更新:</span>2017年09月13日 - 15:09</p>
+  <p><span>原始链接:</span><a href="/2017/09/11/javascript基础-注意点汇总/" title="javascript基础-注意点汇总">http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"></a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -552,7 +625,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+            <a href="/tags/javascript-基础知识/" rel="tag"><i class="fa fa-tag"></i> javascript 基础知识</a>
           
         </div>
       
@@ -565,8 +638,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/06/Spring-IoC/" rel="next" title="Spring-IoC 容器">
-                <i class="fa fa-chevron-left"></i> Spring-IoC 容器
+              <a href="/2017/09/11/计算机网络-网络结构/" rel="next" title="计算机网络 网络结构">
+                <i class="fa fa-chevron-left"></i> 计算机网络 网络结构
               </a>
             
           </div>
@@ -575,8 +648,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/11/计算机网络-网络结构/" rel="prev" title="计算机网络 网络结构">
-                计算机网络 网络结构 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/13/初识JavaScript原型/" rel="prev" title="初识JavaScript原型">
+                初识JavaScript原型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -728,7 +801,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-1-修改主题配置文件-display-always"><span class="nav-number">3.</span> <span class="nav-text">Step 1 修改主题配置文件  display: always</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-2-修改-motion-js-文件"><span class="nav-number">4.</span> <span class="nav-text">Step 2 修改 motion.js 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-3-修改post-details-js"><span class="nav-number">5.</span> <span class="nav-text">Step 3 修改post-details.js</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#这是我使用的主题版本的设置方法，-希望对需要的人有帮助"><span class="nav-number">5.0.0.1.</span> <span class="nav-text">这是我使用的主题版本的设置方法， 希望对需要的人有帮助</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础部分"><span class="nav-number">1.</span> <span class="nav-text">基础部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">1.1.</span> <span class="nav-text">函数</span></a></li></ol></li></ol></div>
             
 
           </div>

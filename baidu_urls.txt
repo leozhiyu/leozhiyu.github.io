@@ -1,1 +1,1 @@
-http://www.leozzy.com/2017/09/11/计算机网络-网络结构/
+http://www.leozzy.com/2017/09/13/初识JavaScript原型/
