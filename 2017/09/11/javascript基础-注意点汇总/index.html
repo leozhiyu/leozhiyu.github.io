@@ -119,7 +119,7 @@
 <meta property="og:site_name" content="Leo">
 <meta property="og:description" content="基础部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两个相等运算符比较  ‘==’ 相等（">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-13T08:41:55.577Z">
+<meta property="og:updated_time" content="2017-09-13T08:43:12.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-细节汇总">
 <meta name="twitter:description" content="基础部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两个相等运算符比较  ‘==’ 相等（">
@@ -511,9 +511,9 @@
 </li>
 <li><p><code>for ... in</code> 循环由于历史遗留问题， 它遍历的实际上是对象的属性名称， <code>for ... of</code> 循环则完全修复了这些问题， 它只循环集合本身的元素</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</div><div class="line">a.name = <span class="string">'Hello'</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">in</span> a) &#123;</div><div class="line">    alert(x); <span class="comment">// '0', '1', '2', 'name'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</div><div class="line">a.name = <span class="string">'Hello'</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> a) &#123;</div><div class="line">    alert(x); <span class="comment">// 'A', 'B', 'C'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</div><div class="line">a.name = <span class="string">'Hello'</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> x <span class="keyword">of</span> a) &#123;</div><div class="line">    alert(x); <span class="comment">// 'A', 'B', 'C'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ol>
 <li><p>函数如果没有 <code>return</code> 语句， 函数执行完毕后也会返回结果， 只是结果为 <code>undefined</code></p>
 </li>
