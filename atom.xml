@@ -46,7 +46,7 @@
     <link href="http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</id>
     <published>2017-09-11T11:25:04.000Z</published>
-    <updated>2017-09-13T08:33:45.361Z</updated>
+    <updated>2017-09-13T08:34:52.883Z</updated>
     
     <content type="html"><![CDATA[<h2 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h2><ol>
 <li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
@@ -65,7 +65,7 @@
 <li><p>NaN 与所有其他值都不相等， 包括它自己：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>; <span class="comment">// false</span></div></pre></td></tr></table></figure>
 <p> 唯一能判断 <code>NaN</code> 的方法是通过 <code>isNaN()</code> 函数：</p>
-<p> <code>isNaN(NaN); // true</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">isNaN</span>(<span class="literal">NaN</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>浮点数比较</p>
 <p> 浮点数在运算过程中会产生误差， 因为计算机无法精确表示无限循环小数。 要比较两个浮点数是否相等， 只能计算它们之差的绝对值， 看是否小于某个阈值：</p>
