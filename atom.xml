@@ -46,7 +46,7 @@
     <link href="http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</id>
     <published>2017-09-11T11:25:04.000Z</published>
-    <updated>2017-09-13T08:29:54.433Z</updated>
+    <updated>2017-09-13T08:32:03.055Z</updated>
     
     <content type="html"><![CDATA[<h2 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h2><ol>
 <li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
@@ -111,8 +111,10 @@
 <li><p><code>concat()</code> 方法并没有修改当前 <code>Array</code>， 而是返回了一个新的 <code>Array</code>，<code>concat()</code> 方法可以接收任意个元素和 <code>Array</code>， 并且自动把 <code>Array</code> 拆开， 然后全部添加到新的 <code>Array</code> 里</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>];</div><div class="line">arr.concat(<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]); <span class="comment">// ['A', 'B', 'C', 1, 2, 3, 4]</span></div></pre></td></tr></table></figure>
 </li>
+<li><p><code>javascript</code> 对象属性名必须是一个有效的变量名。 如果属性名包含特殊字符， 就必须用 <code>&#39;&#39;</code> 括起来</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaohong = &#123;</div><div class="line">    name: <span class="string">'小红'</span>,</div><div class="line">    <span class="string">'middle-school'</span>: <span class="string">'No.1 Middle School'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>20.<code>javascript</code> 对象属性名必须是一个有效的变量名。 如果属性名包含特殊字符， 就必须用 <code>&#39;&#39;</code> 括起来<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xiaohong = &#123;</div><div class="line">    name: <span class="string">'小红'</span>,</div><div class="line">    <span class="string">'middle-school'</span>: <span class="string">'No.1 Middle School'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p><code>xiaohong</code> 的属性名 <code>middle-school</code> 不是一个有效的变量， 就需要用 <code>&#39;&#39;</code> 括起来。 访问这个属性也无法使用 <code>.</code> 操作符， 必须用 <code>[&#39;xxx&#39;]</code> 来访问：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xiaohong[<span class="string">'middle-school'</span>]; <span class="comment">// 'No.1 Middle School'</span></div><div class="line">xiaohong[<span class="string">'name'</span>]; <span class="comment">// '小红'</span></div><div class="line">xiaohong.name; <span class="comment">// '小红'</span></div></pre></td></tr></table></figure></p>
 <ol>
 <li><p>如果我们要检测 <code>xiaoming</code> 是否拥有某一属性， 可以用in操作符,  不过要小心， 如果 <code>in</code> 判断一个属性存在， 这个属性不一定是<code>xiaoming</code> 的， 它可能是 <code>xiaoming</code> 继承得到的</p>
