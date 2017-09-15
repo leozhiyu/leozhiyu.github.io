@@ -46,10 +46,9 @@
     <link href="http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</id>
     <published>2017-09-11T11:25:04.000Z</published>
-    <updated>2017-09-15T07:54:05.907Z</updated>
+    <updated>2017-09-15T07:56:34.411Z</updated>
     
-    <content type="html"><![CDATA[<p>注：以下内容整理自<a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
-<h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
+    <content type="html"><![CDATA[<h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
 <li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">...</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 </li>
@@ -185,14 +184,16 @@
 <li><p><code>number</code> 对象调用 <code>toString()</code> 报 <code>SyntaxError</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>toString(); <span class="comment">// SyntaxError</span></div></pre></td></tr></table></figure>
 <p>解决办法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></div><div class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></div></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></div><div class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></div></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>注：以上内容整理自<a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;注：以下内容整理自&lt;a href=&quot;https://www.liaoxuefeng.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;廖雪峰的官方网站&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;语法部分&quot;&gt;&lt;a href=&quot;#语法部分&quot; class=&quot;head
+      &lt;h3 id=&quot;语法部分&quot;&gt;&lt;a href=&quot;#语法部分&quot; class=&quot;headerlink&quot; title=&quot;语法部分&quot;&gt;&lt;/a&gt;语法部分&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 java
     
     </summary>
     

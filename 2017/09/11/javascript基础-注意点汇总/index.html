@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="注：以下内容整理自廖雪峰的官方网站 语法部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两">
+<meta name="description" content="语法部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两个相等运算符比较  ‘==’ 相等（">
 <meta name="keywords" content="javascript 基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-基础细节汇总">
 <meta property="og:url" content="http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/index.html">
 <meta property="og:site_name" content="Leo">
-<meta property="og:description" content="注：以下内容整理自廖雪峰的官方网站 语法部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两">
+<meta property="og:description" content="语法部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两个相等运算符比较  ‘==’ 相等（">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-15T07:54:05.907Z">
+<meta property="og:updated_time" content="2017-09-15T07:56:34.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-基础细节汇总">
-<meta name="twitter:description" content="注：以下内容整理自廖雪峰的官方网站 语法部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两">
+<meta name="twitter:description" content="语法部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两个相等运算符比较  ‘==’ 相等（">
 
 
 
@@ -437,8 +437,7 @@
       
 
       
-        <p>注：以下内容整理自<a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
-<h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
+        <h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
 <li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">...</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 </li>
@@ -574,8 +573,10 @@
 <li><p><code>number</code> 对象调用 <code>toString()</code> 报 <code>SyntaxError</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>toString(); <span class="comment">// SyntaxError</span></div></pre></td></tr></table></figure>
 <p>解决办法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></div><div class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></div></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></div><div class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></div></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>注：以上内容整理自<a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
 
       
     </div>
