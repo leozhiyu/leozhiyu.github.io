@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="基础部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两个相等运算符比较  ‘==’ 相等（">
+<meta name="description" content="注：以下内容整理自廖雪峰的官方网站 基础部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两">
 <meta name="keywords" content="javascript 基础知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript-基础细节汇总">
 <meta property="og:url" content="http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/index.html">
 <meta property="og:site_name" content="Leo">
-<meta property="og:description" content="基础部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两个相等运算符比较  ‘==’ 相等（">
+<meta property="og:description" content="注：以下内容整理自廖雪峰的官方网站 基础部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-15T03:52:55.806Z">
+<meta property="og:updated_time" content="2017-09-15T06:19:33.535Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript-基础细节汇总">
-<meta name="twitter:description" content="基础部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两个相等运算符比较  ‘==’ 相等（">
+<meta name="twitter:description" content="注：以下内容整理自廖雪峰的官方网站 基础部分 type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript 123&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt;  javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”  两">
 
 
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,820
+                  1,883
                 </span>
               
 
@@ -437,7 +437,8 @@
       
 
       
-        <h2 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h2><ol>
+        <p>注：以下内容整理自<a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
+<h2 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h2><ol>
 <li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">...</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 </li>
@@ -568,7 +569,13 @@
 </li>
 <li><p>函数内部判断某个变量是否存在用 <code>typeof myVar === &#39;undefined&#39;</code>。</p>
 </li>
+<li><p>任何对象都有 <code>toString()</code> 方法吗？ <code>null</code> 和 <code>undefined</code> 就没有！</p>
+</li>
+<li><p><code>number</code> 对象调用 <code>toString()</code> 报 <code>SyntaxError</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>toString(); <span class="comment">// SyntaxError</span></div></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>解决办法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></div><div class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -589,7 +596,7 @@
   <p><span>本文标题:</span><a href="/2017/09/11/javascript基础-注意点汇总/">javascript-基础细节汇总</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Leo 的个人博客">Leo</a></p>
   <p><span>发布时间:</span>2017年09月11日 - 11:09</p>
-  <p><span>最后更新:</span>2017年09月15日 - 11:09</p>
+  <p><span>最后更新:</span>2017年09月15日 - 14:09</p>
   <p><span>原始链接:</span><a href="/2017/09/11/javascript基础-注意点汇总/" title="javascript-基础细节汇总">http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/"  aria-label="复制成功！"></i></span>
   </p>
