@@ -46,7 +46,7 @@
     <link href="http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</id>
     <published>2017-09-11T11:25:04.000Z</published>
-    <updated>2017-09-15T07:52:41.107Z</updated>
+    <updated>2017-09-15T07:54:05.907Z</updated>
     
     <content type="html"><![CDATA[<p>注：以下内容整理自<a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
 <h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
@@ -184,8 +184,8 @@
 </li>
 <li><p><code>number</code> 对象调用 <code>toString()</code> 报 <code>SyntaxError</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>toString(); <span class="comment">// SyntaxError</span></div></pre></td></tr></table></figure>
-<pre><code>解决办法：
-</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></div><div class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></div></pre></td></tr></table></figure></li>
+<p>解决办法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></div><div class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></div></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
     
