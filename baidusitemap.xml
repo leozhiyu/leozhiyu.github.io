@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://www.leozzy.com/2017/08/31/Leo-s-start/</loc>
-    <lastmod>2017-09-15T11:58:57.648Z</lastmod>
+    <loc>http://www.leozzy.com/2017/09/23/%E6%9C%AC%E5%91%A8%E6%80%BB%E7%BB%93-bug%E5%9B%B0%E6%89%B0/</loc>
+    <lastmod>2017-09-23T09:15:24.123Z</lastmod>
     <data>
         <display>
-        <title>Leo's start</title>
-        <pubTime>2017-08-31T14:28:02.000Z</pubTime>
+        <title>本周总结(bug困扰)</title>
+        <pubTime>2017-09-23T14:58:45.000Z</pubTime>
         
         <tag>时光</tag>
          
@@ -24,19 +24,59 @@
 
     
   <url>
-    <loc>http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/</loc>
-    <lastmod>2017-09-15T07:56:34.411Z</lastmod>
+    <loc>http://www.leozzy.com/2017/09/18/javascript-%E7%BB%86%E8%8A%82-%E8%BF%9B%E9%98%B6/</loc>
+    <lastmod>2017-09-18T01:28:35.029Z</lastmod>
     <data>
         <display>
-        <title>javascript-基础细节汇总</title>
-        <pubTime>2017-09-11T11:25:04.000Z</pubTime>
+        <title>javascript 细节-进阶</title>
+        <pubTime>2017-09-18T09:26:32.000Z</pubTime>
         
-        <tag>javascript 基础知识</tag>
+        <tag>javascript 细节</tag>
          
          
            
              
               <breadCrumb title="javascript" url="http://www.leozzy.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/</loc>
+    <lastmod>2017-09-18T01:28:20.932Z</lastmod>
+    <data>
+        <display>
+        <title>javascript 细节 - 基础</title>
+        <pubTime>2017-09-11T11:25:04.000Z</pubTime>
+        
+        <tag>javascript 细节</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://www.leozzy.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.leozzy.com/2017/08/31/Leo-s-start/</loc>
+    <lastmod>2017-09-15T11:58:57.648Z</lastmod>
+    <data>
+        <display>
+        <title>Leo's start</title>
+        <pubTime>2017-08-31T14:28:02.000Z</pubTime>
+        
+        <tag>时光</tag>
+         
+         
+           
+             
+              <breadCrumb title="时光" url="http://www.leozzy.com/categories/%E6%97%B6%E5%85%89/"/>
           
         </display>
     </data>

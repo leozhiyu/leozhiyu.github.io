@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozzy.com/"/>
-  <updated>2017-09-13T08:38:33.951Z</updated>
+  <updated>2017-09-23T09:15:24.123Z</updated>
   <id>http://www.leozzy.com/</id>
   
   <author>
@@ -14,6 +14,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本周总结(bug困扰)</title>
+    <link href="http://www.leozzy.com/2017/09/23/%E6%9C%AC%E5%91%A8%E6%80%BB%E7%BB%93-bug%E5%9B%B0%E6%89%B0/"/>
+    <id>http://www.leozzy.com/2017/09/23/本周总结-bug困扰/</id>
+    <published>2017-09-23T14:58:45.000Z</published>
+    <updated>2017-09-23T09:15:24.123Z</updated>
+    
+    <content type="html"><![CDATA[<p>Error : java.lang.LinkageError: loader constraint violation: loader (instance of org/apache/jasper/servlet/J</p>
+<p>大概就是这个错误， 困扰了三天。</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>周三：</p>
+<ul>
+<li><p>开心地准备开发， leader 分配好任务</p>
+</li>
+<li><p>把基础环境配置好， 需求大致了解清楚</p>
+</li>
+<li><p>统一用 maven 方式启动， 加载启动没问题</p>
+</li>
+<li><p>访问页面时就出现上面那个从未见过的 Error </p>
+</li>
+<li><p>Google 的结果都是说 jar 包冲突， 那么就开始对比 maven 项目与 jdk 中的 jar 包， 把 Google 搜出来前两页答案都试了一遍， 结果还是 Error </p>
+</li>
+<li><p>leader 远程帮忙找问题， 也说是 jar 包的问题， 但是工作忙也暂时解决不了</p>
+</li>
+<li><p>换 tomcat 方式启动， 成功访问， 着手写代码</p>
+</li>
+</ul>
+<p>周四</p>
+<ul>
+<li><p>上午把基本的代码写完了，下午 tomcat 启动报错， 都是关于 bean 注入的错误</p>
+</li>
+<li><p>怎么找也找不出哪里有问题， 远程服务也刚好出现问题， 结果不知道到底是哪边产生的错误</p>
+</li>
+<li><p>一天差不多就这样过去了</p>
+</li>
+</ul>
+<p>周五</p>
+<ul>
+<li><p>远程服务已经正确， 队友都能正常跑起来了， 然后自己还在找 bug </p>
+</li>
+<li><p>又是 Google + 远程排错， 结果还是回到周三出现的错误， tomcat 和 maven 两种启动都报错</p>
+</li>
+<li><p>从半上午一直到下午都是在找 bug， 可能是自己不信没有解决不了的问题吧</p>
+</li>
+<li><p>从配环境 N 次到重装 Eclipse， 问题仍无法解决， leader 也在考虑要不要重装系统， 这似乎不切实际</p>
+</li>
+</ul>
+<p>周六</p>
+<ul>
+<li>一大早把 maven 、jdk 重装了一遍， maven 启动居然正常了！！！</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>因为一个错误花费了大量的时间， 不能说没有收获， 但是这太不值了。 所以以后如果用了比较长的时间还不能解决一个问题的话， 最好把底层的东西都给重新配置下， 很有可能不是表面错误引起的。</p>
+<p>每周都觉得时间过得特别快， 很大一部分原因就是自己没有把握好时间， 还有最重要的一点就是效率问题， 必须提高自学能力和效率。</p>
+<p>解决问题也是一种必须的能力， 在积累中成长， 在这里记录自己的成长。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Error : java.lang.LinkageError: loader constraint violation: loader (instance of org/apache/jasper/servlet/J&lt;/p&gt;
+&lt;p&gt;大概就是这个错误， 困扰了三天。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="时光" scheme="http://www.leozzy.com/categories/%E6%97%B6%E5%85%89/"/>
+    
+    
+      <category term="时光" scheme="http://www.leozzy.com/tags/%E6%97%B6%E5%85%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript 细节-进阶</title>
+    <link href="http://www.leozzy.com/2017/09/18/javascript-%E7%BB%86%E8%8A%82-%E8%BF%9B%E9%98%B6/"/>
+    <id>http://www.leozzy.com/2017/09/18/javascript-细节-进阶/</id>
+    <published>2017-09-18T09:26:32.000Z</published>
+    <updated>2017-09-18T01:28:35.029Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://www.leozzy.com/categories/javascript/"/>
+    
+    
+      <category term="javascript 细节" scheme="http://www.leozzy.com/tags/javascript-%E7%BB%86%E8%8A%82/"/>
+    
+  </entry>
   
   <entry>
     <title>初识JavaScript原型</title>
@@ -42,11 +130,11 @@
   </entry>
   
   <entry>
-    <title>javascript-基础细节汇总</title>
+    <title>javascript 细节 - 基础</title>
     <link href="http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</id>
     <published>2017-09-11T11:25:04.000Z</published>
-    <updated>2017-09-15T07:56:34.411Z</updated>
+    <updated>2017-09-18T01:28:20.932Z</updated>
     
     <content type="html"><![CDATA[<h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
 <li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
@@ -200,7 +288,7 @@
       <category term="javascript" scheme="http://www.leozzy.com/categories/javascript/"/>
     
     
-      <category term="javascript 基础知识" scheme="http://www.leozzy.com/tags/javascript-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+      <category term="javascript 细节" scheme="http://www.leozzy.com/tags/javascript-%E7%BB%86%E8%8A%82/"/>
     
   </entry>
   
