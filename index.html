@@ -305,6 +305,213 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/09/30/一张图理解javascript原型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/30/一张图理解javascript原型/" itemprop="url">用结果理解 javascript 原型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T11:49:48Z">
+                2017-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/30/一张图理解javascript原型/" class="leancloud_visitors" data-flag-title="用结果理解 javascript 原型">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  139
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。"><a href="#每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。" class="headerlink" title="每个函数都有一个 prototype 属性， 对象都有 proto 属性，所有实例的原型引用的是函数的 prototype 属性，还得注意函数也是对象。"></a>每个函数都有一个 prototype 属性， 对象都有 <strong>proto</strong> 属性，所有实例的原型引用的是函数的 prototype 属性，还得注意函数也是对象。</h5><ul>
+<li>对于所有的对象，都有<strong>proto</strong>属性，这个属性对应该对象的原型</li>
+<li>对于函数对象，除了<strong>proto</strong>属性之外，还有prototype属性，当一个函数被用作构造函数来创建实例时，该函数的prototype属性值将被作为原型赋值给所有对象实例（也就是设置实例的<strong>proto</strong>属性）</li>
+</ul>
+<hr>
+<p><img src="https://i.imgur.com/AXiNJPB.png" alt="代码1"></p>
+<hr>
+<p><img src="https://i.imgur.com/rxKS5Wr.png" alt="代码运行结果1"></p>
+<hr>
+<p><img src="https://i.imgur.com/hamoDrc.png" alt="代码2"></p>
+<hr>
+<p><img src="https://i.imgur.com/lAvstEk.png" alt="代码运行结果2"></p>
+<hr>
+<p><img src="https://i.imgur.com/QGgHLKk.png" alt="代码3"></p>
+<hr>
+<p><img src="https://i.imgur.com/HR0Ek5X.png" alt="代码运行结果3"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+	</div>
+
+    
+
+    
+
+    
+	
+	<div>
+	
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/09/23/本周总结-bug困扰/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2720,7 +2927,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

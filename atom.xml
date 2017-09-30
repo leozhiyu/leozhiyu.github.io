@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozzy.com/"/>
-  <updated>2017-09-23T09:15:24.123Z</updated>
+  <updated>2017-09-30T06:05:41.356Z</updated>
   <id>http://www.leozzy.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用结果理解 javascript 原型</title>
+    <link href="http://www.leozzy.com/2017/09/30/%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%90%86%E8%A7%A3javascript%E5%8E%9F%E5%9E%8B/"/>
+    <id>http://www.leozzy.com/2017/09/30/一张图理解javascript原型/</id>
+    <published>2017-09-30T11:49:48.000Z</published>
+    <updated>2017-09-30T06:05:41.356Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。"><a href="#每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。" class="headerlink" title="每个函数都有一个 prototype 属性， 对象都有 proto 属性，所有实例的原型引用的是函数的 prototype 属性，还得注意函数也是对象。"></a>每个函数都有一个 prototype 属性， 对象都有 <strong>proto</strong> 属性，所有实例的原型引用的是函数的 prototype 属性，还得注意函数也是对象。</h5><ul>
+<li>对于所有的对象，都有<strong>proto</strong>属性，这个属性对应该对象的原型</li>
+<li>对于函数对象，除了<strong>proto</strong>属性之外，还有prototype属性，当一个函数被用作构造函数来创建实例时，该函数的prototype属性值将被作为原型赋值给所有对象实例（也就是设置实例的<strong>proto</strong>属性）</li>
+</ul>
+<hr>
+<p><img src="https://i.imgur.com/AXiNJPB.png" alt="代码1"></p>
+<hr>
+<p><img src="https://i.imgur.com/rxKS5Wr.png" alt="代码运行结果1"></p>
+<hr>
+<p><img src="https://i.imgur.com/hamoDrc.png" alt="代码2"></p>
+<hr>
+<p><img src="https://i.imgur.com/lAvstEk.png" alt="代码运行结果2"></p>
+<hr>
+<p><img src="https://i.imgur.com/QGgHLKk.png" alt="代码3"></p>
+<hr>
+<p><img src="https://i.imgur.com/HR0Ek5X.png" alt="代码运行结果3"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。&quot;&gt;&lt;a href=&quot;#每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://www.leozzy.com/categories/javascript/"/>
+    
+    
+      <category term="javascript 原型" scheme="http://www.leozzy.com/tags/javascript-%E5%8E%9F%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>本周总结(bug困扰)</title>
