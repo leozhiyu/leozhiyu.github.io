@@ -445,7 +445,7 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 810px;
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -454,7 +454,7 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 810px;
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
@@ -468,7 +468,7 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: 810px;
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -1992,7 +1992,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4281ff;
+  background: #ff45fc;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3070,15 +3070,8 @@ hr {
     text-align: center;
   }
 }
-body {
-  background: url("/images/background.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-}
 .main-inner {
   margin-top: 60px;
-  padding: 60px 60px 60px 60px;
   background: #fff;
   min-height: 500px;
 }
