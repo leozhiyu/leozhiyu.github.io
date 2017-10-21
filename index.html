@@ -450,290 +450,14 @@
 
       
         
-          
-            <p>个人建议：学习 jQuery 前先掌握基本的 JavaScrpit 语法，特别是对函数要掌握，jQuery 基本上是使用函数。</p>
-<h1 id="jQuery-简介"><a href="#jQuery-简介" class="headerlink" title="jQuery 简介"></a>jQuery 简介</h1><ul>
-<li><p>jQuery 是一个轻量级 JavaScript 库</p>
-</li>
-<li><p>jQuery 库位于一个 JavaScript 文件中，其中包含了所有的 jQuery 函数，需要通过 <code>&lt;script&gt;</code> 标签引入 jQuery 库才能进行使用</p>
-</li>
-</ul>
-<h1 id="jQuery-库的三种引入来源"><a href="#jQuery-库的三种引入来源" class="headerlink" title="jQuery 库的三种引入来源"></a>jQuery 库的三种引入来源</h1><ul>
-<li><p>本地引入<br>共有两个版本的 jQuery 可供下载 <a href="http://jQuery.com" target="_blank" rel="external">http://jQuery.com</a>：一份是精简过的，另一份是未压缩的（供调试或阅读）</p>
-</li>
-<li><p>从 Google 加载 CDN jQuery 核心文件（ 版本可更换 ）</p>
-<blockquote>
-<pre><code>src = http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js
-</code></pre></blockquote>
-</li>
-<li><p>从 Microsoft 加载 CDN jQuery 核心文件（ 版本可更换 ）</p>
-<blockquote>
-<pre><code>src = http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js
-</code></pre></blockquote>
-</li>
-</ul>
-<h1 id="jQuery语法"><a href="#jQuery语法" class="headerlink" title="jQuery语法"></a>jQuery语法</h1><p><strong>基础语法：<code>$(selector).action()</code> </strong></p>
-<ul>
-<li><p>美元符号（$）定义 jQuery</p>
-</li>
-<li><p>选择符（selector）“ 查询 ” 和 “ 查找 ” HTML 元素</p>
-</li>
-<li><p>jQuery 的 <code>action()</code> 执行对元素的操作</p>
-</li>
-</ul>
-<p><strong>文档就绪函数</strong></p>
-<ul>
-<li><p>文档就绪函数，用于在页面加载成功后执行的指定代码  </p>
-</li>
-<li><p>如果在文档没有完全加载之前就运行函数，操作可能失败</p>
-</li>
-<li><p>通常该函数用于替换 <code>window.onload</code> 事件，文档就绪函数的执行效率更高  </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    code block</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>可以简写为:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    code block</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><strong>jQuery 标识符</strong><br>jQuery 使用 $ 符号作为 jQuery 的简写</p>
-<ul>
-<li><p>使用 jQuery 全名 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  jQuery(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    code block</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用 jQuery 简写</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        code block</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>自定义 jQuery 别名</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> jq = $.noConflict();</div><div class="line">jq(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    jq(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        code block</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>注：因为 javascrpit 某些框架中也使用 $ 作为简写( 就像 jQuery )，<code>noConflict()</code> 方法是为了解决 javascrpit 框架之间符号冲突而定义的方法，它会释放 $ 标识符的控制，这样其他脚本也可以使用这个符号</p>
-<h1 id="jQuery-选择器"><a href="#jQuery-选择器" class="headerlink" title="jQuery 选择器"></a>jQuery 选择器</h1><p><strong> jQuery 元素选择器和属性选择器允许您通过标签名、属性名或内容对 HTML 元素进行选择 </strong></p>
-<h4 id="jQuery-元素选择器"><a href="#jQuery-元素选择器" class="headerlink" title="jQuery 元素选择器"></a>jQuery 元素选择器</h4><p>jQuery 使用 CSS 选择器来选取 HTML 元素</p>
-<ul>
-<li><code>$(this)</code> 当前 HTML 元素</li>
-<li><code>$(&quot;p&quot;)</code>  选取 <code>&lt;p&gt;</code> 元素</li>
-<li><code>$(&quot;p.intro&quot;)</code> 选取所有 <code>class=&quot;intro&quot;</code> 的 <code>&lt;p&gt;</code> 元素</li>
-<li><code>$(&quot;p#demo&quot;)</code> 选取所有 <code>id=&quot;demo&quot;</code> 的 <code>&lt;p&gt;</code> 元素</li>
-<li><code>$(&quot;div#intro .head&quot;)</code> 选取 <code>id=&quot;intro&quot;</code> 的 <code>&lt;div&gt;</code> 元素中的所有 <code>class=&quot;head&quot;</code> 的元素</li>
-</ul>
-<h4 id="jQuery-属性选择器"><a href="#jQuery-属性选择器" class="headerlink" title="jQuery 属性选择器"></a>jQuery 属性选择器</h4><p>jQuery 使用 XPath 表达式来选择带有给定属性的元素</p>
-<ul>
-<li><code>$(&quot;[href]&quot;)</code> 选取所有带有<code>href</code> 属性的元素</li>
-<li><code>$(&quot;[href=&#39;#&#39;]&quot;)</code> 选取所有带有 <code>href</code> 值等于<code>&quot;#&quot;</code> 的元素</li>
-<li><code>$(&quot;[href!=&#39;#&#39;]&quot;)</code> 选取所有带有 <code>href</code> 值不等于 <code>&quot;#&quot;</code> 的元素</li>
-<li><code>$(&quot;[href$=&#39;.jpg&#39;]&quot;)</code> 选取所有 <code>href</code> 值以 <code>&quot;.jpg&quot;</code> 结尾的元素</li>
-</ul>
-<h4 id="jQuery-CSS-选择器"><a href="#jQuery-CSS-选择器" class="headerlink" title="jQuery CSS 选择器"></a>jQuery CSS 选择器</h4><p>jQuery CSS 选择器可用于改变 HTML 元素的 CSS 属性</p>
-<ul>
-<li>把所有 p 元素的背景颜色更改为红色：<code>$(&quot;p&quot;).css(&quot;background-color&quot;,&quot;red&quot;)</code></li>
-</ul>
-<h1 id="jQuery-事件"><a href="#jQuery-事件" class="headerlink" title="jQuery 事件"></a>jQuery 事件</h1><ul>
-<li><p>jQuery 事件处理方法是 jQuery 中的核心函数</p>
-</li>
-<li><p>事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。术语由事件“触发”（或“激发”）经常会被使用</p>
-</li>
-<li><p>例子：按钮的点击事件被触发时会调用一个函数<br><code>$(&quot;button&quot;).click(function() {..some code... } )</code></p>
-</li>
-</ul>
-<p><strong>常用事件函数</strong></p>
-<ul>
-<li><code>$(document).ready(function)</code> 将函数绑定到文档的就绪事件（当文档完成加载时）</li>
-<li><code>$(selector).click(function)</code>    触发或将函数绑定到被选元素的点击事件</li>
-<li><code>$(selector).change(function)</code>    触发、或将函数绑定到指定元素的 change 事件</li>
-<li><code>$(selector).dblclick(function)</code>    触发或将函数绑定到被选元素的双击事件</li>
-<li><code>$(selector).focus(function)</code>    触发或将函数绑定到被选元素的获得焦点事件</li>
-<li><code>$(selector).mouseover(function)</code>    触发或将函数绑定到被选元素的鼠标悬停事件</li>
-</ul>
-<h1 id="jQuery-效果"><a href="#jQuery-效果" class="headerlink" title="jQuery 效果"></a>jQuery 效果</h1><p>效果通常绑定在某在事件上，例如通过点击按钮产生隐藏效果</p>
-<p><strong> 常见的用于效果的函数 </strong></p>
-<p>1.隐藏、显示、切换</p>
-<pre><code>- 隐藏 `$(selector).hide(speed,callback)` ： `$(&quot;p&quot;).hide();`
-
-- 显示`$(selector).show(speed,callback)` ： `$(&quot;p&quot;).show(1000);`
-
-- 切换隐藏/显示`$(selector).toggle(speed,callback)` ： `$(&quot;p&quot;).toggle();`
-</code></pre><p>speed 和 callback 都是可选参数</p>
-<p>speed 参数规定显示/隐藏的速度，可选值为：”slow”、”fast” 或毫秒值</p>
-<p>callback 参数是显示/隐藏完成后所执行的函数名称</p>
-<p>2.淡入、淡出</p>
-<pre><code>- 淡入 `$(selector).fadeIn(speed,callback)` ： `$(&quot;#div1&quot;).fadeIn(&quot;slow&quot;);`
-
-- 淡出 `$(selector).fadeOut(speed,callback)` ： `$(&quot;#div3&quot;).fadeOut(3000);`
-
-- 切换淡入/淡出 `$(selector).fadeToggle(speed,callback)` ： ` $(&quot;#div1&quot;).fadeToggle();`
-
-- 渐变为特定透明度 `$(selector).fadeTo(speed,opacity,callback)` ：`$(&quot;#div2&quot;).fadeTo(&quot;slow&quot;,0.4);` 
-</code></pre><p>speed 和 callback 都是可选参数，opacity 为必需参数</p>
-<p>speed 参数规定淡入/淡出的速度，可选值为：”slow”、”fast” 或毫秒值</p>
-<p>callback 参数是显示/隐藏完成后所执行的函数名称</p>
-<p>opacity 参数将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间)</p>
-<p>3.滑动</p>
-<pre><code>- 向下滑动 `$(selector).slideDown(speed,callback)` ： `$(&quot;#panel&quot;).slideDown();`
-
-- 向上滑动 `$(selector).slideUp(speed,callback)` : `$(&quot;#panel&quot;).slideUp();`
-
-- 切换向上滑动/向下滑动 `slideToggle()` : `$(&quot;#panel&quot;).slideToggle();`
-</code></pre><p>speed 和 callback 都是可选参数</p>
-<p>speed 参数规定向上滑动/向下滑动的速度，可选值为：”slow”、”fast” 或毫秒值</p>
-<p>callback 参数是向上滑动/向下滑动完成后所执行的函数名称</p>
-<p>4.动画</p>
-<pre><code>- 自定义动画 `$(selector).animate({params},speed,callback)`
-</code></pre><p>params 是必需参数， speed 和 callback 是可选参数</p>
-<p>params 参数定义形成动画的 CSS 属性</p>
-<p>speed 参数规定效果的时长，可选值为：”slow”、”fast” 或毫秒值</p>
-<p>callback 参数是动画完成后所执行的函数名称</p>
-<p>注： 默认地，所有 HTML 元素都有一个静态位置，且无法移动，如需对位置进行操作，要记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute！</p>
-<pre><code>- 停止动画 ·`$(selector).stop(stopAll,goToEnd);`
-</code></pre><p>stopAll 和 goToEnd 都是可选参数</p>
-<p>stopAll 参数规定是否应该清除动画队列。默认是 false，即仅停止活动的动画，允许任何排入队列的动画向后执行</p>
-<p>goToEnd 参数规定是否立即完成当前动画。默认是 false。</p>
-<p>默认地，stop() 会清除在被选元素上指定的当前动画</p>
-<p><strong> 实例 </strong></p>
-<p>使用绝对值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"div"</span>).animate(&#123;</div><div class="line">    left:<span class="string">'250px'</span>,</div><div class="line">    opacity:<span class="string">'0.5'</span>,</div><div class="line">    height:<span class="string">'150px'</span>,</div><div class="line">    width:<span class="string">'150px'</span></div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
-<p>使用相对值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"div"</span>).animate(&#123;</div><div class="line">    left:<span class="string">'250px'</span>,</div><div class="line">    height:<span class="string">'+=150px'</span>,</div><div class="line">    width:<span class="string">'+=150px'</span></div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>使用队列功能 ( 逐一进行 animate 调用 )<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> div=$(<span class="string">"div"</span>);</div><div class="line">  div.animate(&#123;<span class="attr">height</span>:<span class="string">'300px'</span>,<span class="attr">opacity</span>:<span class="string">'0.4'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;<span class="attr">width</span>:<span class="string">'300px'</span>,<span class="attr">opacity</span>:<span class="string">'0.8'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;<span class="attr">height</span>:<span class="string">'100px'</span>,<span class="attr">opacity</span>:<span class="string">'0.4'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;<span class="attr">width</span>:<span class="string">'100px'</span>,<span class="attr">opacity</span>:<span class="string">'0.8'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>5.方法连接<br>允许我们在相同的元素上运行多条 jQuery 命令，一条接着另一条，这样的话，浏览器就不必多次查找相同的元素。如需链接一个动作，您只需简单地把该动作追加到之前的动作上</p>
-<p>例如： 把 <code>css()</code>, <code>slideUp()</code> 和  <code>slideDown()</code> 链接在一起。”p1” 元素首先会变为红色，然后向上滑动，然后向下滑动<br><code>$(&quot;#p1&quot;).css(&quot;color&quot;,&quot;red&quot;).slideUp(2000).slideDown(2000);</code></p>
-<h1 id="jQuery-操作-HTML-元素和属性"><a href="#jQuery-操作-HTML-元素和属性" class="headerlink" title="jQuery 操作 HTML 元素和属性"></a>jQuery 操作 HTML 元素和属性</h1><p><strong> 对内容操作 </strong></p>
-<p>1.获取内容 </p>
-<pre><code>- `$(selector).text();` 设置或返回所选元素的文本内容
-
-- `$(selector).html();` 设置或返回所选元素的内容（包括 HTML 标记）
-
-- `$(selector).val();` 设置或返回表单字段的值
-</code></pre><p>2.设置内容</p>
-<pre><code>- `$(selector).text(string);` 设置所选元素的文本内容
-
-- `$(selector).val(string);` 设置所选元素的内容（包括 HTML 标记）
-
-- `$(selector).html(string);` 设置表单字段的值
-</code></pre><p>3.回调函数</p>
-<p>i：被选元素列表中当前元素的下标</p>
-<p>origText：原始（旧的）值</p>
-<p>res：以函数新值返回您希望使用的字符串</p>
-<pre><code>- `$(selector).text(function(i,origText){return res;});` 设置或返回所选元素的文本内容
-
-- `$(selector).val(function(i,origText){return res;});` 设置或返回所选元素的内容（包括 HTML 标记）
-
-- `$(selector).html(function(i,origText){return res;});` 设置或返回表单字段的值
-</code></pre><p><strong> 对属性操作 </strong></p>
-<p>1.获取属性</p>
-<pre><code>- `$(selector).attr(&quot;attribute&quot;);` 获取指定元素的所选属性
-</code></pre><p>2.设置属性</p>
-<pre><code>- `$(selector).attr(&quot;attribute&quot;,&quot;value&quot;);` 设置所选属性的值
-
-- `$(selector).attr({&quot;attribute1&quot;:&quot;value1&quot;, &quot;attribute2&quot;:&quot;value2&quot;});` 同时设置多个属性的值
-</code></pre><p>3.attr() 的回调函数</p>
-<p>i ： 被选元素列表中当前元素的下标</p>
-<p>origValue : 原始（旧的）值</p>
-<p>res ： 以函数新值返回您希望使用的字符串</p>
-<pre><code>- `$(selector).attr(&quot;attribute&quot;,function(i,origValue){return res});`
-</code></pre><p><strong> 对元素/内容操作 </strong></p>
-<p>与前面的 对内容操作 不同的是：上面的三个方法会将原来的值覆盖，而这里的方法是在原值基础上进行修改</p>
-<p>1.添加</p>
-<p>参数可以是多个，如果多个含有 html 的内容，则相当于增加了多个 html 元素</p>
-<pre><code>- `$(selector).append(&quot;text&quot;);` 在被选元素的结尾插入内容
-
-- `$(selector).prepend(&quot;text&quot;);` 在被选元素的开头插入内容
-
-- `$(selector).prepend(&quot;text&quot;);` 在被选元素之后插入内容
-
-- `$(selector).before(&quot;text&quot;);` 在被选元素之前插入内容
-</code></pre><p>2.删除</p>
-<pre><code>- `$(selector).remove();` 删除被选元素（及其子元素）
-
-- `$(selector).empty();` 从被选元素中删除子元素
-
-- `$(selector).remove(selector);` 删除指定选择器的元素
-</code></pre><p><strong> 对 CSS 元素操作 </strong></p>
-<p>前三种方法是针对已经写好的样式</p>
-<pre><code>- `$(selector).addClass(&quot;className1 className2&quot;);` 向被选元素添加一个或多个类
-
-- `$(selector).removeClass(&quot;className1 className2&quot;);` 从被选元素删除一个或多个类
-
-- `$(selector).toggleClass(&quot;className&quot;);` 对被选元素进行添加/删除类的切换操作
-
-- `$(selector).css();`返回样式属性
-
-- `$(selector).css(&quot;attribute&quot;,&quot;value&quot;);`设置单个样式属性
-
-- `$(selector).css({&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&quot;value&quot;,...});`设置多个样式属性
-</code></pre><p><strong> 对尺寸操作 </strong></p>
-<p>注意参数，中间四种没有没有参数，不能进行设置</p>
-<pre><code>- `$(selector).width(&quot;text&quot;);` 设置或返回元素的宽度（不包括内边距、边框或外边距）
-
-- `$(selector).height(&quot;text&quot;);` 设置或返回元素的高度（不包括内边距、边框或外边距）
-
-- `$(selector).innerWidth();`返回元素的宽度（包括内边距）
-
-- `$(selector).innerHeight(&quot;);`返回元素的高度（包括内边距）
-
-- `$(selector).outerWidth();`返回元素的宽度（包括内边距和边框）
-
-- `$(selector).outerHeight();` 返回元素的高度（包括内边距和边框）
-
-- `$(selector).outerWidth(true);`返回元素的宽度（包括内边距、边框和外边距）
-
-- `$(selector).outerHeight(true);` 返回元素的高度（包括内边距、边框和外边距）
-</code></pre><h1 id="jQuery-遍历-DOM"><a href="#jQuery-遍历-DOM" class="headerlink" title="jQuery 遍历 DOM"></a>jQuery 遍历 DOM</h1><p><strong> 祖先 </strong></p>
-<p>向上遍历 DOM 树</p>
-<pre><code>- `$(selector).parent();` 返回被选元素的直接父元素，该方法只会向上一级对 DOM 树进行遍历
-
-- `$(selector).parents();` 返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (&lt;html&gt;)
-
-- `$(selector).parents(selector);` 返回经过过滤的所有祖先元素，它一路向上直到文档的根元素 (&lt;html&gt;)
-
-- `$(selector).parentsUntil() ;`返回介于两个给定元素之间的所有祖先元素
-</code></pre><p><strong> 祖先 </strong></p>
-<p>向下遍历 DOM 树，以查找元素的后代</p>
-<pre><code>- `$(selector).children();` 返回被选元素的所有直接子元素，该方法只会向下一级对 DOM 树进行遍历
-
- - `$(selector).children(selector);` 返回被选元素的经过过滤的子元素，该方法只会向下一级对 DOM 树进行遍历
-
-- `$(selector).find(&quot;selector&quot;);` 返回被选元素的后代元素，一路向下直到最后一个后代(此方法必须有参数，如果是全部则为 &quot;*&quot; )
-</code></pre><p><strong> 同胞 </strong></p>
-<p> DOM 树中遍历元素的同胞元素</p>
-<pre><code>- `$(selector).siblings(selector);` 返回被选元素的所有同胞元素（selector可选）
-
- - `$(selector).next();` 返回被选元素的下一个同胞元素
-
-- `$(selector).nextAll();` 返回被选元素的所有跟随的同胞元素
-
-- `$(selector).nextUntil(selecotr);` 返回介于两个给定参数之间的所有跟随的同胞元素
-
-- prev(), prevAll() 以及 prevUntil() 方法的工作方式与上面的方法类似，只不过方向相反而已：它们返回的是前面的同胞元素（在 DOM 树中沿着同胞元素向后遍历，而不是向前）
-</code></pre><p><strong> 过滤 </strong></p>
-<p>允许您基于其在一组元素中的位置来选择一个特定的元素</p>
-<pre><code> - `$(selector).first();` 返回被选元素的首个元素
-
-- `$(selector).last();` 返回被选元素的最后一个元素
-
-- `$(selector).eq();` 返回被选元素中带有指定索引号的元素（索引号从 0 开始）
-
-- `$(selector).filter(selector);` 不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回
-
-- `$(selector).not(selector);` not() 方法与 filter() 相反，返回不匹配标准的所有元素
-</code></pre><h1 id="jQuery-Ajax"><a href="#jQuery-Ajax" class="headerlink" title="jQuery Ajax"></a>jQuery Ajax</h1><p>AJAX = 异步 JavaScript 和 XML（Asynchronous JavaScript and XML）</p>
-<p>简短地说，在不重载整个网页的情况下，AJAX 通过后台加载数据，并在网页上进行显示</p>
-<p><strong> load 方法</strong></p>
-<pre><code>- `$(selector).load(URL,data,callback);` 
-方法从服务器加载数据，并把返回的数据放入被选元素中
-</code></pre><p>必需的 URL 参数规定您希望加载的 URL。<br>可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。<br>可选的 callback 参数是 load() 方法完成后所执行的函数名称</p>
-<p>callback 回调函数</p>
-<p><code>$(selector).load(URL,data,function(responseTxt,statusTxt,xhr){});</code></p>
-<p>responseTxt - 包含调用成功时的结果内容<br>statusTXT - 包含调用的状态<br>xhr - 包含 XMLHttpRequest 对象</p>
-<p>responseTxt - 包含调用成功时的结果内容<br>statusTXT - 包含调用的状态<br>xhr - 包含 XMLHttpRequest 对象</p>
-<p><strong> get/post 方法</strong></p>
-<p>必需的 URL 参数规定您希望请求的 URL<br>可选的 callback 参数是请求成功后所执行的函数名</p>
-<pre><code>- `$.get(URL,callback);`
-通过 HTTP GET 请求从服务器上请求数据
-</code></pre><p>GET - 从指定的资源请求数据<br>GET 基本上用于从服务器获得（取回）数据。注释：GET 方法可能返回缓存数据</p>
-<pre><code>- `$.post(URL,data,callback);`
-通过 HTTP POST 请求从服务器上请求数据
-</code></pre><p>data 是要提交给服务器的数据，如果数据有多个，使用 json 格式<br>POST - 向指定的资源提交要处理的数据<br>POST 也可用于从服务器获取数据。不过，POST 方法不会缓存数据，并且常用于连同请求一起发送数据</p>
-<p>回调函数</p>
-<p>data : 存有被请求页面的内容<br>status : 存有请求的状态( success/fail )<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params">data,status</span>)</span>&#123;</div><div class="line">    alert(<span class="string">"Data: "</span> + data + <span class="string">"\nStatus: "</span> + status);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
-<p>注意： ajax 不能访问本地文件，需要解决跨域访问的问题</p>
-
-          
+          <p>个人建议：学习 jQuery 前先掌握基本的 JavaScrpit 语法，特别是对函数要掌握，jQuery 基本上是使用函数。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/15/jQuery学习总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -922,25 +646,14 @@
 
       
         
-          
-            <h5 id="每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。"><a href="#每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。" class="headerlink" title="每个函数都有一个 prototype 属性， 对象都有 proto 属性，所有实例的原型引用的是函数的 prototype 属性，还得注意函数也是对象。"></a>每个函数都有一个 prototype 属性， 对象都有 <strong>proto</strong> 属性，所有实例的原型引用的是函数的 prototype 属性，还得注意函数也是对象。</h5><ul>
-<li>对于所有的对象，都有__proto__属性，这个属性对应该对象的原型</li>
-<li>对于函数对象，除了__proto__属性之外，还有prototype属性，当一个函数被用作构造函数来创建实例时，该函数的prototype属性值将被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性）</li>
-</ul>
-<hr>
-<p><img src="https://i.imgur.com/AXiNJPB.png" alt="代码1"></p>
-<hr>
-<p><img src="https://i.imgur.com/rxKS5Wr.png" alt="代码运行结果1"></p>
-<hr>
-<p><img src="https://i.imgur.com/hamoDrc.png" alt="代码2"></p>
-<hr>
-<p><img src="https://i.imgur.com/lAvstEk.png" alt="代码运行结果2"></p>
-<hr>
-<p><img src="https://i.imgur.com/QGgHLKk.png" alt="代码3"></p>
-<hr>
-<p><img src="https://i.imgur.com/HR0Ek5X.png" alt="代码运行结果3"></p>
-
-          
+          <h5 id="每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。"><a href="#每个函数都有一个-prototype-属性，-对象都有-proto-属性，所有实例的原型引用的是函数的-prototype-属性，还得注意函数也是对象。" class="headerlink" title="每个函数都有一个 prototype 属性， 对象都有 proto 属性，所有实例的原型引用的是函数的 prototype 属性，还得注意函数也是对象。"></a>每个函数都有一个 prototype 属性， 对象都有 <strong>proto</strong> 属性，所有实例的原型引用的是函数的 prototype 属性，还得注意函数也是对象。</h5>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/30/一张图理解javascript原型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1129,51 +842,14 @@
 
       
         
-          
-            <p>Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式</p>
-<hr>
-<h4 id="“继承”（原型指向）"><a href="#“继承”（原型指向）" class="headerlink" title="“继承”（原型指向）"></a>“继承”（原型指向）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Student = &#123;</div><div class="line">  name : <span class="string">"Robot"</span>,</div><div class="line">  height : <span class="number">1.2</span>,</div><div class="line">  run:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" is running"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xiaoming = &#123;</div><div class="line">  name : <span class="string">"小明"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">xiaoming.__proto__ = Student;</div><div class="line"><span class="built_in">console</span>.log(xiaoming.name);  <span class="comment">//小明</span></div><div class="line">xiaoming.run(); <span class="comment">// 小明 is running</span></div></pre></td></tr></table></figure>
-<ol>
-<li><p>通过指定 <code>xiaoming</code> 的原型， 看上去 <code>xiaoming</code> 仿佛是从 <code>Student</code> 继承下来的</p>
-</li>
-<li><p>JavaScript 的原型链和 Java 的 Class 区别就在，它没有 “Class” 的概念，所有对象都是实例，所谓继承关系不过是把一个对象的原型指向另一个对象而已</p>
-</li>
-<li><p>在编写 JavaScript 代码时，不要直接用 <code>obj.__proto__</code> 去改变一个对象的原型，并且，低版本的 IE 也无法使用 <code>__proto__</code></p>
-</li>
-</ol>
-<hr>
-<h4 id="使用-Object-create-创建对象"><a href="#使用-Object-create-创建对象" class="headerlink" title="使用 Object.create() 创建对象"></a>使用 <code>Object.create()</code> 创建对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Student = &#123;</div><div class="line">  name : <span class="string">"Robot"</span>,</div><div class="line">  height : <span class="number">1.2</span>,</div><div class="line">  run:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">"is running"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xiaoming = <span class="built_in">Object</span>.create(Student);</div><div class="line">xiaoming.name = <span class="string">"小明"</span>;</div><div class="line"><span class="built_in">console</span>.log(xiaoming.name);<span class="comment">//小明</span></div><div class="line"><span class="built_in">console</span>.log(Student.name);<span class="comment">//Robot</span></div><div class="line">xiaoming.__proto__ === Student; <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<p>此种方法不同与构造函数，刚创建的对象只有原型中的默认值</p>
-<hr>
-<h4 id="基于-Object-create-创建可初始化的对象"><a href="#基于-Object-create-创建可初始化的对象" class="headerlink" title="基于 Object.create() 创建可初始化的对象"></a>基于 <code>Object.create()</code> 创建可初始化的对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Student = &#123;</div><div class="line">    name: <span class="string">'Robot'</span>,</div><div class="line">    height: <span class="number">1.2</span>,</div><div class="line">    run: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' is running...'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createStudent</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> stu = <span class="built_in">Object</span>.create(Student);</div><div class="line">  stu.name = name;</div><div class="line">  <span class="keyword">return</span> stu;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xiaoming = createStudent(<span class="string">"小明"</span>);</div><div class="line">xiaoming.run();</div><div class="line"><span class="built_in">console</span>.log(xiaoming.name);</div></pre></td></tr></table></figure>
-<hr>
-<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.hello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'hello,'</span> + <span class="keyword">this</span>.name + <span class="string">'!'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xiaoming = <span class="keyword">new</span> Student(<span class="string">'小明'</span>);</div><div class="line">xiaoming.hello();</div><div class="line"><span class="built_in">console</span>.log(xiaoming.name);</div></pre></td></tr></table></figure>
-<ol>
-<li>通过 <code>new</code> 关键字创建对象并且可以初始化值</li>
-<li>如果不写 <code>new</code>，这就是一个普通函数，它返回 <code>undefined</code>。但是，如果写了 <code>new</code>，它就变成了一个构造函数，它绑定的 <code>this</code> 指向新创建的对象，并默认返回 <code>this</code>，也就是说，不需要在最后写 <code>return this</code>;</li>
-<li>原型链： <code>xiaoming ----&gt; Student.prototype ----&gt; Object.prototype ----&gt; null</code></li>
-</ol>
-<hr>
-<h4 id="构造函数，并且创建共享函数，节省内存"><a href="#构造函数，并且创建共享函数，节省内存" class="headerlink" title="构造函数，并且创建共享函数，节省内存"></a>构造函数，并且创建共享函数，节省内存</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Student.prototype.hello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span> + <span class="keyword">this</span>.name + <span class="string">'!'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xiaoming = <span class="keyword">new</span> Student(<span class="string">'小明'</span>);</div><div class="line">xiaoming.hello();</div><div class="line"><span class="built_in">console</span>.log(xiaoming.name);</div></pre></td></tr></table></figure>
-<ol>
-<li><code>Student.prototype</code> 是所有 <code>Student</code> 实例的共同原型，所以将方法定义在它上面</li>
-<li>如果写在构造函数里面，每创建一个实例，每个函数也会开辟内存</li>
-</ol>
-<h4 id="创建对象忘记写关键字-new-如何应对"><a href="#创建对象忘记写关键字-new-如何应对" class="headerlink" title="创建对象忘记写关键字 new 如何应对"></a>创建对象忘记写关键字 new 如何应对</h4><ol>
-<li>在 <code>strict</code> 模式下，<code>this.name = name</code>将报错，因为 <code>this</code> 绑定为 <code>undefined</code>，在非 <code>strict</code> 模式下，<code>this.name = name</code> 不报错，因为 <code>this</code> 绑定为 <code>window</code>，于是无意间创建了全局变量<code>name</code>，并且返回 <code>undefined</code>，这个结果更糟糕。</li>
-<li><p>封装 <code>new</code> 操作</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = obj.name || <span class="string">'匿名'</span>;</div><div class="line">  <span class="keyword">this</span>.grade = obj.grade || <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Student.prototype.hello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello'</span> + <span class="keyword">this</span>.name + <span class="string">'!'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createStudent</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Student(obj || &#123;&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xiaoming = createStudent(&#123;<span class="attr">name</span>:<span class="string">'小明'</span>&#125;);</div><div class="line"><span class="built_in">console</span>.log(xiaoming.name);<span class="comment">//小明</span></div><div class="line"><span class="built_in">console</span>.log(xiaoming.grade);<span class="comment">//1</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>不需要用 <code>new</code> 创建对象</p>
-</li>
-<li>与 基于 <code>Object.create()</code> 创建可初始化的对象 的方式类似，但优点在于通过 JSON 作为参数，参数非常灵活，可以不传参数使用默认值</li>
-<li>参数没有顺序，传一个 JSON 对象即可</li>
-</ol>
-<hr>
-<p>以上就是总结的几种创建对象的方法，注意对比它们之间的差别</p>
-<p>资料参考来源：<a href="http://www.liaoxuefeng.com" target="_blank" rel="external">廖雪峰的官方网站</a></p>
-
-          
+          <p>Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/30/javascript创建对象的方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1362,246 +1038,14 @@
 
       
         
-          
-            <p>Error : java.lang.LinkageError: loader constraint violation: loader (instance of org/apache/jasper/servlet/J</p>
-<p>大概就是这个错误， 困扰了三天。</p>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>周三：</p>
-<ul>
-<li><p>开心地准备开发， leader 分配好任务</p>
-</li>
-<li><p>把基础环境配置好， 需求大致了解清楚</p>
-</li>
-<li><p>统一用 maven 方式启动， 加载启动没问题</p>
-</li>
-<li><p>访问页面时就出现上面那个从未见过的 Error </p>
-</li>
-<li><p>Google 的结果都是说 jar 包冲突， 那么就开始对比 maven 项目与 jdk 中的 jar 包， 把 Google 搜出来前两页答案都试了一遍， 结果还是 Error </p>
-</li>
-<li><p>leader 远程帮忙找问题， 也说是 jar 包的问题， 但是工作忙也暂时解决不了</p>
-</li>
-<li><p>换 tomcat 方式启动， 成功访问， 着手写代码</p>
-</li>
-</ul>
-<p>周四</p>
-<ul>
-<li><p>上午把基本的代码写完了，下午 tomcat 启动报错， 都是关于 bean 注入的错误</p>
-</li>
-<li><p>怎么找也找不出哪里有问题， 远程服务也刚好出现问题， 结果不知道到底是哪边产生的错误</p>
-</li>
-<li><p>一天差不多就这样过去了</p>
-</li>
-</ul>
-<p>周五</p>
-<ul>
-<li><p>远程服务已经正确， 队友都能正常跑起来了， 然后自己还在找 bug </p>
-</li>
-<li><p>又是 Google + 远程排错， 结果还是回到周三出现的错误， tomcat 和 maven 两种启动都报错</p>
-</li>
-<li><p>从半上午一直到下午都是在找 bug， 可能是自己不信没有解决不了的问题吧</p>
-</li>
-<li><p>从配环境 N 次到重装 Eclipse， 问题仍无法解决， leader 也在考虑要不要重装系统， 这似乎不切实际</p>
-</li>
-</ul>
-<p>周六</p>
-<ul>
-<li>一大早把 maven 、jdk 重装了一遍， maven 启动居然正常了！！！</li>
-</ul>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>因为一个错误花费了大量的时间， 不能说没有收获， 但是这太不值了。 所以以后如果用了比较长的时间还不能解决一个问题的话， 最好把底层的东西都给重新配置下， 很有可能不是表面错误引起的。</p>
-<p>每周都觉得时间过得特别快， 很大一部分原因就是自己没有把握好时间， 还有最重要的一点就是效率问题， 必须提高自学能力和效率。</p>
-<p>解决问题也是一种必须的能力， 在积累中成长， 在这里记录自己的成长。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-	
-	<div>
-      
-	</div>
-
-    
-
-    
-
-    
-	
-	<div>
-	
-	</div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/09/18/javascript-细节-进阶/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Leo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Leo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/18/javascript-细节-进阶/" itemprop="url">javascript 细节-进阶</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T09:26:32Z">
-                2017-09-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/09/18/javascript-细节-进阶/" class="leancloud_visitors" data-flag-title="javascript 细节-进阶">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  0
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
+          <p>Error : java.lang.LinkageError: loader constraint violation: loader (instance of org/apache/jasper/servlet/J</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/23/本周总结-bug困扰/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1790,12 +1234,14 @@
 
       
         
-          
-            <p>刚开始学习 JavaScript ， 感觉很多细节， 很多需要注意的地方， 把自己觉得细节的地方整理了一篇文章放在前面。</p>
-<p>这里是解决碰到的第一个难点， 如何理解 JavaScript 原型。 在网上看到一篇文章， 看完之后豁然开朗， 对原型大概理解了。 为什么说大概呢， 毕竟自己还没运用起来， 只有深入理解并且会用了才是理解到位。</p>
-<p>感谢作者的分享， 链接： <a href="http://www.cnblogs.com/wilber2013/p/4924309.html" target="_blank" rel="external">彻底理解 JavaScript 原型</a></p>
-
-          
+          <p>刚开始学习 JavaScript ， 感觉很多细节， 很多需要注意的地方， 把自己觉得细节的地方整理了一篇文章放在前面。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/13/初识JavaScript原型/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1985,7 +1431,8 @@
       
         
           
-            <h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
+            <a id="more"></a>
+<h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
 <li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">...</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 </li>
@@ -2315,161 +1762,19 @@
 
       
         
-          
-            <h2 id="基本组成"><a href="#基本组成" class="headerlink" title="基本组成"></a>基本组成</h2><ul>
-<li><p>计算机网络</p>
-<ul>
-<li><p>结点： 计算机、 集线器、 交换机或路由器等</p>
-</li>
-<li><p>链路： 连接结点</p>
-</li>
-</ul>
-</li>
-<li><p>互联网的组成</p>
-<ul>
-<li><p>边缘部分： 由所有连接在互联网上的主机（ 端系统 ）组成， 用户直接使用。以下是端系统间的通信方式</p>
-<ol>
-<li><p>客户-服务器方式</p>
-</li>
-<li><p>对等连接方式（ P2P ）</p>
-</li>
-</ol>
-</li>
-<li><p>核心部分： 由大量网络和连接网络的路由器组成， 为边缘部分提供连通性和交换</p>
-<ul>
-<li>路由器： 实现分组交换的关键构件</li>
+          <h2 id="基本组成"><a href="#基本组成" class="headerlink" title="基本组成"></a>基本组成</h2><ul>
+<li>计算机网络<ul>
+<li>结点： 计算机、 集线器、 交换机或路由器等</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="三种交换方式"><a href="#三种交换方式" class="headerlink" title="三种交换方式"></a>三种交换方式</h2><ul>
-<li><p>电路交换： 建立连接（ 占用通信资源 ） -&gt; 通话（ 一直占用通信资源 ） -&gt; 释放连接（ 归还通信资源 ）</p>
-<ul>
-<li>特点：在通话的全部时间内，通话的两个用户始终占用端到端的通信资源</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>分组交换： 采用存储转发技术。 路由器收到一个分组， 先暂时存储， 检查其首部， 查找转发表， 按照首部中的目的地址， 找到合适的接口转发出去， 把分组交给下一个路由器。</p>
-<ul>
-<li><p>构成： 报文 = n 个分组， 分组 = 首部 + 数据段</p>
-</li>
-<li><p>特点</p>
-<ol>
-<li><p>高效： 在分组传输的过程中动态分配传输宽带， 对通信链路是逐段占用</p>
-</li>
-<li><p>灵活： 为每一个分组独立地选择最合适的转发路由</p>
-</li>
-<li><p>迅速： 以分组作为传送单位， 可以先不建立连接就能向其他主机发送分组</p>
-</li>
-<li><p>可靠： 保证可靠性的网络协议： 分布式多路由的分组交换网， 使网络有很好的生存性</p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-<li><p>报文交换： 20 世纪 40 年代用于电报通信， 基于存储转发原理</p>
-</li>
-</ul>
-<h5 id="三种交换方式的对比"><a href="#三种交换方式的对比" class="headerlink" title="三种交换方式的对比"></a>三种交换方式的对比</h5><ul>
-<li><p>电路交换： 整个报文的比特流连续地从源点直达重点， 好像在一个管道中传送</p>
-</li>
-<li><p>报文交换： 整个报文先传送到相邻结点， 全部存储下来后查找转发表， 转发到下一个结点</p>
-</li>
-<li><p>分组交换： 单个分组（ 这只是整个报文的一部分 ）传送到相邻结点， 存储下来后查找转发表， 转发到下一个结点</p>
-</li>
-</ul>
-<h2 id="计算机网络的分类"><a href="#计算机网络的分类" class="headerlink" title="计算机网络的分类"></a>计算机网络的分类</h2><ul>
-<li><p>按照网络的作用范围分类</p>
-<ol>
-<li><p>广域网 WAN： 几十到几千公里</p>
-</li>
-<li><p>城域网 MAN： 5- 50 KM</p>
-</li>
-<li><p>局域网 LAN： 1 KM</p>
-</li>
-<li><p>个人区域网 PAN： 10M</p>
-</li>
-</ol>
-</li>
-<li><p>按照网络的使用者分类</p>
-<ol>
-<li><p>公用网： 电信公司（ 国有或私有 ）出资建造的大型网络</p>
-</li>
-<li><p>专用网： 某个部门为满足本单位的特殊业务工作的需要而建造的网络</p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="计算机网络的性能"><a href="#计算机网络的性能" class="headerlink" title="计算机网络的性能"></a>计算机网络的性能</h2><ul>
-<li><p>计算机网络的性能指标</p>
-<ol>
-<li><p>速率（ 数据率、 比特率 ），单位： bit/s</p>
-</li>
-<li><p>带宽</p>
-<ul>
-<li><p>某个信号具有的带宽频度，单位： Hz</p>
-</li>
-<li><p>单位时间内某信道所能通过的 “最高数据率”， 单位：bit/s</p>
-</li>
-</ul>
-</li>
-<li><p>吞吐量： 单位时间内通过某个网络的实际的数据量</p>
-</li>
-<li><p>时延（ 延迟、 迟延 ）： 数据从网络的一段传送到另一端所需的时间，总时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延</p>
-<ul>
-<li><p>发送时延： 主机或路由器发送数据帧所需要的时间</p>
-</li>
-<li><p>传播时延： 电磁波在信道中传播一定距离需要花费的时间</p>
-</li>
-<li><p>处理时延： 主机或路由器在收到分组时要花费一定的时间进行处理</p>
-</li>
-<li><p>排队时延： 分组在经过网络传输时， 要经过许多路由器， 分组在进入路由器后要先在输入队列中排队等待处理</p>
-</li>
-</ul>
-</li>
-<li><p>时延带宽积： 传播时延 * 带宽</p>
-</li>
-<li><p>往返时间RTT： 双向交互一次所需的时间</p>
-</li>
-<li><p>利用率： 信道利用率和网络利用率</p>
-</li>
-</ol>
-</li>
-<li><p>计算机网络的非性能特征</p>
-<ol>
-<li>费用</li>
-<li>质量</li>
-<li>标准化</li>
-<li>可靠性</li>
-<li>可扩展性和可升级性</li>
-<li>易于管理和维护</li>
-</ol>
-</li>
-</ul>
-<h2 id="计算机网络的体系结构"><a href="#计算机网络的体系结构" class="headerlink" title="计算机网络的体系结构"></a>计算机网络的体系结构</h2><ul>
-<li><p>OSI 的七层协议： 1. 物理层 2.数据链路层 3. 网络层 4.运输层 5.会话层 6.表示层 7.应用层</p>
-</li>
-<li><p>TCP/IP 的四层协议： 1.网络接口层 2.网际层IP 3.运输层（ TCP 或 UDP） 4.应用层（ 各种应用层协议如TELNET, FTP, SMTP 等）</p>
-</li>
-<li><p>五层协议： </p>
-<ol>
-<li><p>物理层 ： 考虑用多大的电压代表 “1” 或 “0” ，以及接收方如何识别发送方所发送的比特。还要确定连接电缆的插头应当有多少根引脚以及各引脚应如何连接</p>
-</li>
-<li><p>数据链路层 ： 两个相邻结点之间传送数据时， 数据链路层将网络层交下来的 IP 数据报组装成帧， 在两个相邻结点间的链路上传送帧</p>
-</li>
-<li><p>网络层： 为分组交换网上的不同主机提供通信服务</p>
-</li>
-<li><p>运输层 ： 负责向两台主机进程之间的通信提供通用的网络传输服务</p>
-</li>
-<li><p>应用层： 通过应用进程间的交互来完成特定网络应用</p>
-</li>
-</ol>
-</li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/11/计算机网络-网络结构/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2669,21 +1974,14 @@
 
       
         
-          
-            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>从搭建博客就想自动展开侧边栏， 结果网上找了很多方法都不生效， 今天找到一篇博客试着重新设置了下， 仍然无效， 但是找到了设置的思路， 于是自己找相关的文件进行设置， 在此分享。</p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>由于主题版本不同， 以下方法只是对应当前版本， 但是思路是一样的， 只是文件的路径和文件名称可能不同</p>
-<h2 id="Step-1-修改主题配置文件-display-always"><a href="#Step-1-修改主题配置文件-display-always" class="headerlink" title="Step 1 修改主题配置文件  display: always"></a>Step 1 修改主题配置文件  display: always</h2><p>路径：/hexo/themes/next/_config.yml</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sidebar: </div><div class="line">  # Sidebar Position, available value: left | right</div><div class="line">  position: left</div><div class="line">  #position: right</div><div class="line"></div><div class="line">  #display: post</div><div class="line">  display: always </div><div class="line">  #display: hide</div><div class="line">  #display: remove</div></pre></td></tr></table></figure>
-<h2 id="Step-2-修改-motion-js-文件"><a href="#Step-2-修改-motion-js-文件" class="headerlink" title="Step 2 修改 motion.js 文件"></a>Step 2 修改 motion.js 文件</h2><p>路径：/hexo/themes/next/source/js/src/motion.js</p>
-<p>在文件末尾</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sidebar: <span class="function"><span class="keyword">function</span> (<span class="params">integrator</span>) </span>&#123;</div><div class="line">  <span class="comment">//if (CONFIG.sidebar.display === 'always') &#123;  //注释</span></div><div class="line">    NexT.utils.displaySidebar();</div><div class="line">  <span class="comment">//&#125; //注释</span></div><div class="line">  integrator.next();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Step-3-修改post-details-js"><a href="#Step-3-修改post-details-js" class="headerlink" title="Step 3 修改post-details.js"></a>Step 3 修改post-details.js</h2><p>路径： /hexo/themes/next/source/js/src/post-details.js</p>
-<p>在文件末尾</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*var $tocContent = $('.post-toc-content');</span></div><div class="line"><span class="comment">  var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post' ||</span></div><div class="line"><span class="comment">      CONFIG.sidebar.display === 'always';</span></div><div class="line"><span class="comment">  var hasTOC = $tocContent.length &gt; 0 &amp;&amp; $tocContent.html().trim().length &gt; 0;</span></div><div class="line"><span class="comment">  if (isSidebarCouldDisplay &amp;&amp; hasTOC) &#123;</span></div><div class="line"><span class="comment">    CONFIG.motion ?</span></div><div class="line"><span class="comment">      (NexT.motion.middleWares.sidebar = function () &#123;</span></div><div class="line"><span class="comment">          NexT.utils.displaySidebar();</span></div><div class="line"><span class="comment">      &#125;) : NexT.utils.displaySidebar();</span></div><div class="line"><span class="comment">  &#125;*/</span></div></pre></td></tr></table></figure>
-<p>将以上代码段落全部注释， 只用最后一句</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NexT.utils.displaySidebar();</div></pre></td></tr></table></figure>
-<h5 id="这是我使用的主题版本的设置方法，-希望对需要的人有帮助"><a href="#这是我使用的主题版本的设置方法，-希望对需要的人有帮助" class="headerlink" title="这是我使用的主题版本的设置方法， 希望对需要的人有帮助"></a>这是我使用的主题版本的设置方法， 希望对需要的人有帮助</h5>
-          
+          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>从搭建博客就想自动展开侧边栏， 结果网上找了很多方法都不生效， 今天找到一篇博客试着重新设置了下， 仍然无效， 但是找到了设置的思路， 于是自己找相关的文件进行设置， 在此分享。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/08/hexo-sidebar-auto/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2895,7 +2193,8 @@
       
         
           
-            <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+            <a id="more"></a>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
 <li><p>IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果</p>
 <ul>
 <li>某一接口具体实现类的选择控制权从调用类中移除，转交给第三方决定，由Spring容器借由Bean配置来进行控制</li>
@@ -3120,6 +2419,213 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/09/01/Github命令简记-基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/01/Github命令简记-基础/" itemprop="url">Github命令简记-基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T21:21:32Z">
+                2017-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/github/" itemprop="url" rel="index">
+                    <span itemprop="name">github</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/01/Github命令简记-基础/" class="leancloud_visitors" data-flag-title="Github命令简记-基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  432
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>刚刚学习github， 本文记录最基本的github命令， 网上教程一大把， 我简单将命令记录在此， 方便查找。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/01/Github命令简记-基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+	
+	<div>
+      
+	</div>
+
+    
+
+    
+
+    
+	
+	<div>
+	
+	</div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -3172,7 +2678,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

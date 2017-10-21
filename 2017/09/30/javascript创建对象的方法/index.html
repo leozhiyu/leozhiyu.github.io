@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式  “继承”（原型指向）123456789101112131415var Student = &amp;#123;  name : &quot;Robot&quot;,  height : 1.2,  run:function()&amp;#123;  console.log(this.name + &quot; is running&quot;);">
+<meta name="description" content="Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式">
 <meta name="keywords" content="javascript 对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript 创建对象的方法">
 <meta property="og:url" content="http://www.leozzy.com/2017/09/30/javascript创建对象的方法/index.html">
 <meta property="og:site_name" content="Leo">
-<meta property="og:description" content="Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式  “继承”（原型指向）123456789101112131415var Student = &amp;#123;  name : &quot;Robot&quot;,  height : 1.2,  run:function()&amp;#123;  console.log(this.name + &quot; is running&quot;);">
+<meta property="og:description" content="Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-30T07:17:01.452Z">
+<meta property="og:updated_time" content="2017-10-21T04:20:17.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript 创建对象的方法">
-<meta name="twitter:description" content="Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式  “继承”（原型指向）123456789101112131415var Student = &amp;#123;  name : &quot;Robot&quot;,  height : 1.2,  run:function()&amp;#123;  console.log(this.name + &quot; is running&quot;);">
+<meta name="twitter:description" content="Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式">
 
 
 
@@ -438,6 +438,7 @@
 
       
         <p>Javascript 对象和原型是一个重点难点，今天就总结一下 javascript 创建对象的几种方式</p>
+<a id="more"></a>
 <hr>
 <h4 id="“继承”（原型指向）"><a href="#“继承”（原型指向）" class="headerlink" title="“继承”（原型指向）"></a>“继承”（原型指向）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Student = &#123;</div><div class="line">  name : <span class="string">"Robot"</span>,</div><div class="line">  height : <span class="number">1.2</span>,</div><div class="line">  run:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">" is running"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> xiaoming = &#123;</div><div class="line">  name : <span class="string">"小明"</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">xiaoming.__proto__ = Student;</div><div class="line"><span class="built_in">console</span>.log(xiaoming.name);  <span class="comment">//小明</span></div><div class="line">xiaoming.run(); <span class="comment">// 小明 is running</span></div></pre></td></tr></table></figure>
 <ol>
@@ -499,7 +500,7 @@
   <p><span>本文标题:</span><a href="/2017/09/30/javascript创建对象的方法/">javascript 创建对象的方法</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Leo 的个人博客">Leo</a></p>
   <p><span>发布时间:</span>2017年09月30日 - 10:09</p>
-  <p><span>最后更新:</span>2017年09月30日 - 15:09</p>
+  <p><span>最后更新:</span>2017年10月21日 - 12:10</p>
   <p><span>原始链接:</span><a href="/2017/09/30/javascript创建对象的方法/" title="javascript 创建对象的方法">http://www.leozzy.com/2017/09/30/javascript创建对象的方法/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.leozzy.com/2017/09/30/javascript创建对象的方法/"  aria-label="复制成功！"></i></span>
   </p>
@@ -677,7 +678,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
