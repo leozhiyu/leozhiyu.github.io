@@ -907,17 +907,14 @@
     <link href="http://www.leozzy.com/2017/09/06/Spring-IoC/"/>
     <id>http://www.leozzy.com/2017/09/06/Spring-IoC/</id>
     <published>2017-09-06T09:15:29.000Z</published>
-    <updated>2017-10-21T04:20:39.459Z</updated>
+    <updated>2017-10-21T05:03:12.458Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>
-<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
-<li><p>IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果</p>
-<ul>
-<li>某一接口具体实现类的选择控制权从调用类中移除，转交给第三方决定，由Spring容器借由Bean配置来进行控制</li>
+    <content type="html"><![CDATA[<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果</li>
 </ul>
-</li>
-</ul>
-<ul>
+<a id="more"></a>
+<pre><code>-  某一接口具体实现类的选择控制权从调用类中移除，转交给第三方决定，由Spring容器借由Bean配置来进行控制
+</code></pre><ul>
 <li><p>DI  ：  Dependency Injection ， 依赖注入， 此概念用来代替IoC</p>
 <ul>
 <li>让调用类对某一接口实现类的依赖关系由第三方（ 容器或协作类 ）注入，以移除调用类对某一接口实现类的依赖</li>
@@ -1096,9 +1093,9 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;IoC ： Inversion of Control ， 控制反转， 是 Spring
+      &lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;IoC ： Inversion of Control ， 控制反转， 是 Spring 容器的内核， AOP、 声明式事务等功能在此基础上开花结果&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

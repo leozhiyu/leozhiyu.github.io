@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://www.leozzy.com/2017/09/06/Spring-IoC/</loc>
+    <lastmod>2017-10-21T05:03:12.458Z</lastmod>
+    <data>
+        <display>
+        <title>Spring-IoC 容器</title>
+        <pubTime>2017-09-06T09:15:29.000Z</pubTime>
+        
+        <tag>Spring</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java框架" url="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/"/>
+          
+             
+              <breadCrumb title="Spring" url="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/"/>
+          
+             
+              <breadCrumb title="Ioc" url="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/Ioc/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/</loc>
     <lastmod>2017-10-21T05:02:07.814Z</lastmod>
     <data>
@@ -120,32 +146,6 @@
            
              
               <breadCrumb title="时光" url="http://www.leozzy.com/categories/%E6%97%B6%E5%85%89/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.leozzy.com/2017/09/06/Spring-IoC/</loc>
-    <lastmod>2017-10-21T04:20:39.459Z</lastmod>
-    <data>
-        <display>
-        <title>Spring-IoC 容器</title>
-        <pubTime>2017-09-06T09:15:29.000Z</pubTime>
-        
-        <tag>Spring</tag>
-         
-         
-           
-             
-              <breadCrumb title="Java框架" url="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/"/>
-          
-             
-              <breadCrumb title="Spring" url="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/"/>
-          
-             
-              <breadCrumb title="Ioc" url="http://www.leozzy.com/categories/Java%E6%A1%86%E6%9E%B6/Spring/Ioc/"/>
           
         </display>
     </data>
