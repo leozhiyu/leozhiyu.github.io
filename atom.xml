@@ -525,13 +525,14 @@
     <link href="http://www.leozzy.com/2017/09/11/javascript%E5%9F%BA%E7%A1%80-%E6%B3%A8%E6%84%8F%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://www.leozzy.com/2017/09/11/javascript基础-注意点汇总/</id>
     <published>2017-09-11T11:25:04.000Z</published>
-    <updated>2017-10-21T04:20:24.401Z</updated>
+    <updated>2017-10-21T05:02:07.814Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>
-<h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
-<li><p>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</p>
+    <content type="html"><![CDATA[<h3 id="语法部分"><a href="#语法部分" class="headerlink" title="语法部分"></a>语法部分</h3><ol>
+<li>type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript</li>
+</ol>
+<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">...</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
-</li>
+<ol>
 <li><p>javascript 不强制在每个语句结尾加 “；” ， javascript 会自动加分号， 但是在某些情况下会改变程序的语义， 所以最好主动加 “；”</p>
 </li>
 <li><p>两个相等运算符比较</p>
@@ -672,9 +673,9 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;语法部分&quot;&gt;&lt;a href=&quot;#语法部分&quot; class=&quot;headerlink&quot; title=&quot;语法部分&quot;&gt;&lt;/a&gt;语法部分&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;type 属性： 默认的 type 就是 javascript， 所以
+      &lt;h3 id=&quot;语法部分&quot;&gt;&lt;a href=&quot;#语法部分&quot; class=&quot;headerlink&quot; title=&quot;语法部分&quot;&gt;&lt;/a&gt;语法部分&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;type 属性： 默认的 type 就是 javascript， 所以不必显式指定 type 为 javascript&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
