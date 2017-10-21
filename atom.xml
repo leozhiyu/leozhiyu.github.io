@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozzy.com/"/>
-  <updated>2017-10-21T04:19:35.879Z</updated>
+  <updated>2017-10-21T04:56:40.491Z</updated>
   <id>http://www.leozzy.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://www.leozzy.com/2017/10/15/jQuery%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
     <id>http://www.leozzy.com/2017/10/15/jQuery学习总结/</id>
     <published>2017-10-15T09:37:44.000Z</published>
-    <updated>2017-10-21T04:19:35.879Z</updated>
+    <updated>2017-10-21T04:56:40.491Z</updated>
     
     <content type="html"><![CDATA[<p>个人建议：学习 jQuery 前先掌握基本的 JavaScrpit 语法，特别是对函数要掌握，jQuery 基本上是使用函数。</p>
 <a id="more"></a>
 <h1 id="jQuery-简介"><a href="#jQuery-简介" class="headerlink" title="jQuery 简介"></a>jQuery 简介</h1><ul>
 <li><p>jQuery 是一个轻量级 JavaScript 库</p>
 </li>
-<li><p>jQuery 库位于一个 JavaScript 文件中，其中包含了所有的 jQuery 函数，需要通过 <code>&lt;script&gt;</code> 标签引入 jQuery 库才能进行使用</p>
+<li><p>jQuery 库位于一个 JavaScript 文件中，其中包含了所有的 jQuery 函数，需要通过 <code>&lt;script&gt;</code> 标签引入 jQuery 库才能使用</p>
 </li>
 </ul>
 <h1 id="jQuery-库的三种引入来源"><a href="#jQuery-库的三种引入来源" class="headerlink" title="jQuery 库的三种引入来源"></a>jQuery 库的三种引入来源</h1><ul>
