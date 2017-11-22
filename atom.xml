@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozzy.com/"/>
-  <updated>2017-11-14T12:23:25.660Z</updated>
+  <updated>2017-11-22T09:14:45.967Z</updated>
   <id>http://www.leozzy.com/</id>
   
   <author>
@@ -14,6 +14,88 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BigDecimal的正确打开方式</title>
+    <link href="http://www.leozzy.com/2017/11/23/BigDecimal%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/"/>
+    <id>http://www.leozzy.com/2017/11/23/BigDecimal的正确打开方式/</id>
+    <published>2017-11-22T16:41:27.000Z</published>
+    <updated>2017-11-22T09:14:45.967Z</updated>
+    
+    <content type="html"><![CDATA[<p>在学习 Java 的过程中是否对一些小数的计算结果感到困惑？</p>
+<p>0.01 + 0.05 的计算结果竟然是 0.060000000000000005 ？</p>
+<p>这就是 Java 中的精度丢失问题，具体是为什么呢？这就涉及到计算机存储的一些知识，这就不展开讨论，详情请使用 Google。</p>
+<p>那么这样的计算结果会带来什么问题呢？<br><a id="more"></a><br>假设你在天猫买一个 0.01 元和 0.05 元的东西，而此时你的余额刚好只有 0.06 元，如果天猫的后台系统用普通的方式进行小数运算，它要求你付款 0.060000000000000005 元，那岂不是买不起了。</p>
+<p>所以在商业计算方面，涉及到小数精度的运算的地方，这个问题都是需要解决的。</p>
+<p>我们先来看看几个奇怪的运算结果：</p>
+<pre><code>System.out.println(0.011 + 0.05);//0.061
+System.out.println(0.01 + 0.05);//0.060000000000000005
+System.out.println(1.0 - 0.42);//0.5800000000000001
+System.out.println(4.015 * 100);//401.49999999999994
+System.out.println(123.3/100);//1.2329999999999999
+</code></pre><p>对于这些情况我们都是无法理解的，那么我们用 <code>BigDecimal</code> 来解决这个问题</p>
+<pre><code>BigDecimal b1 = new BigDecimal(0.01);
+BigDecimal b2 = new BigDecimal(0.02);
+System.out.println(b1.add(b2));
+//0.03000000000000000062450045135165055398829281330108642578125
+</code></pre><p>结果竟然是更奇怪更长的一串数字，说好的 <code>BigDecimal</code> 大法呢？</p>
+<p>实际上，<code>BigDecimal</code> 重载了很多个构造函数，而能解决问题的并不是这个构造函数，而是 <code>BigDecimal(String)</code>，我们需要使用它才能解决问题。</p>
+<pre><code>BigDecimal b1 = new BigDecimal(&quot;0.01&quot;);
+BigDecimal b2 = new BigDecimal(&quot;0.02&quot;);
+System.out.println(b1.add(b2));//0.03
+</code></pre><p>所以我们要解决精度问题，不仅要使用 <code>BigDecimal</code>，而且还一定要使用它的 <code>String</code> 构造方法。</p>
+<p>那么在实际应用中都会涉及到从数据库中取值，而数据库中都是 <code>float</code> 或者 <code>double</code> 类型，此时我们最方便的做法便是手动写一个工具类 <code>BigDecimalUtil</code>，用来进行类型的转化，转成我们需要的 <code>String</code> 类型</p>
+<pre><code>public class BigDecimalUtil {
+//创建私有构造器，防止外界实例化该类
+private BigDecimalUtil(){
+}
+
+//加法
+public static BigDecimal add(double v1,double v2){
+    BigDecimal b1 = new BigDecimal(Double.toString(v1));
+    BigDecimal b2 = new BigDecimal(Double.toString(v2));
+    return b1.add(b2);
+}
+
+//减法
+public static BigDecimal sub(double v1,double v2){
+    BigDecimal b1 = new BigDecimal(Double.toString(v1));
+    BigDecimal b2 = new BigDecimal(Double.toString(v2));
+    return b1.subtract(b2);
+}
+
+//乘法
+public static BigDecimal mul(double v1,double v2){
+    BigDecimal b1 = new BigDecimal(Double.toString(v1));
+    BigDecimal b2 = new BigDecimal(Double.toString(v2));
+    return b1.multiply(b2);
+}
+
+//除法
+public static BigDecimal div(double v1,double v2){
+    BigDecimal b1 = new BigDecimal(Double.toString(v1));
+    BigDecimal b2 = new BigDecimal(Double.toString(v2));
+    return b1.divide(b2);
+}
+}
+</code></pre><p>看似一个小问题，但是不注意的话仍然会引发不可预算的灾难。所以很多细节都需要我们去把控，掌握一些基本的解决方法。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在学习 Java 的过程中是否对一些小数的计算结果感到困惑？&lt;/p&gt;
+&lt;p&gt;0.01 + 0.05 的计算结果竟然是 0.060000000000000005 ？&lt;/p&gt;
+&lt;p&gt;这就是 Java 中的精度丢失问题，具体是为什么呢？这就涉及到计算机存储的一些知识，这就不展开讨论，详情请使用 Google。&lt;/p&gt;
+&lt;p&gt;那么这样的计算结果会带来什么问题呢？&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://www.leozzy.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://www.leozzy.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>《通往财富自由之路》总结（二）</title>
@@ -358,7 +440,7 @@
 </li>
 </ul>
 <h1 id="jQuery-库的三种引入来源"><a href="#jQuery-库的三种引入来源" class="headerlink" title="jQuery 库的三种引入来源"></a>jQuery 库的三种引入来源</h1><ul>
-<li><p>本地引入<br>共有两个版本的 jQuery 可供下载 <a href="http://jQuery.com" target="_blank" rel="external">http://jQuery.com</a>：一份是精简过的，另一份是未压缩的（供调试或阅读）</p>
+<li><p>本地引入<br>共有两个版本的 jQuery 可供下载 <a href="http://jQuery.com" target="_blank" rel="noopener">http://jQuery.com</a>：一份是精简过的，另一份是未压缩的（供调试或阅读）</p>
 </li>
 <li><p>从 Google 加载 CDN jQuery 核心文件（ 版本可更换 ）</p>
 <blockquote>
@@ -736,7 +818,7 @@
 </ol>
 <hr>
 <p>以上就是总结的几种创建对象的方法，注意对比它们之间的差别</p>
-<p>资料参考来源：<a href="http://www.liaoxuefeng.com" target="_blank" rel="external">廖雪峰的官方网站</a></p>
+<p>资料参考来源：<a href="http://www.liaoxuefeng.com" target="_blank" rel="noopener">廖雪峰的官方网站</a></p>
 ]]></content>
     
     <summary type="html">
@@ -831,7 +913,7 @@
     <content type="html"><![CDATA[<p>刚开始学习 JavaScript ， 感觉很多细节， 很多需要注意的地方， 把自己觉得细节的地方整理了一篇文章放在前面。</p>
 <a id="more"></a>
 <p>这里是解决碰到的第一个难点， 如何理解 JavaScript 原型。 在网上看到一篇文章， 看完之后豁然开朗， 对原型大概理解了。 为什么说大概呢， 毕竟自己还没运用起来， 只有深入理解并且会用了才是理解到位。</p>
-<p>感谢作者的分享， 链接： <a href="http://www.cnblogs.com/wilber2013/p/4924309.html" target="_blank" rel="external">彻底理解 JavaScript 原型</a></p>
+<p>感谢作者的分享， 链接： <a href="http://www.cnblogs.com/wilber2013/p/4924309.html" target="_blank" rel="noopener">彻底理解 JavaScript 原型</a></p>
 ]]></content>
     
     <summary type="html">
@@ -995,7 +1077,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">123.</span>.toString(); <span class="comment">// '123', 注意是两个点！</span></div><div class="line">(<span class="number">123</span>).toString(); <span class="comment">// '123'</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>注：以上内容整理自<a href="https://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰的官方网站</a></p>
+<p>注：以上内容整理自<a href="https://www.liaoxuefeng.com/" target="_blank" rel="noopener">廖雪峰的官方网站</a></p>
 ]]></content>
     
     <summary type="html">
@@ -1304,12 +1386,12 @@
 </tr>
 <tr>
 <td>http://</td>
-<td><a href="http://www.smart.com/resource/beans.xml" target="_blank" rel="external">http://www.smart.com/resource/beans.xml</a></td>
+<td><a href="http://www.smart.com/resource/beans.xml" target="_blank" rel="noopener">http://www.smart.com/resource/beans.xml</a></td>
 <td>使用 UrlResource 从Web 服务器中装载资源</td>
 </tr>
 <tr>
 <td>ftp://</td>
-<td><a href="http://www.smart.com/resource/beans.xml" target="_blank" rel="external">http://www.smart.com/resource/beans.xml</a></td>
+<td><a href="http://www.smart.com/resource/beans.xml" target="_blank" rel="noopener">http://www.smart.com/resource/beans.xml</a></td>
 <td>使用 UrlResource 从FTP 服务器中装载资源</td>
 </tr>
 <tr>
@@ -1531,7 +1613,7 @@
     <updated>2017-10-21T04:20:29.751Z</updated>
     
     <content type="html"><![CDATA[<h5 id="这是一篇记录-Leo-站点成立的博客"><a href="#这是一篇记录-Leo-站点成立的博客" class="headerlink" title="这是一篇记录 Leo 站点成立的博客"></a>这是一篇记录 Leo 站点成立的博客</h5><a id="more"></a>
-<p>也许是受「帅张」和圈友的影响，终于把博客当一回事了，花了两天时间把博客草草地搭建起来， 还有许多地方不完善。 尽管之前也有想过学着写博客， 最终还是停留在口头上， 今天作为新的开始。「可能吧」里面的一篇文章：<a href="http://mp.weixin.qq.com/s/ZACwzaP9lhjluHvA-o-z2A" target="_blank" rel="external">别做口头上的学习者</a>。</p>
+<p>也许是受「帅张」和圈友的影响，终于把博客当一回事了，花了两天时间把博客草草地搭建起来， 还有许多地方不完善。 尽管之前也有想过学着写博客， 最终还是停留在口头上， 今天作为新的开始。「可能吧」里面的一篇文章：<a href="http://mp.weixin.qq.com/s/ZACwzaP9lhjluHvA-o-z2A" target="_blank" rel="noopener">别做口头上的学习者</a>。</p>
 <p>简单叙述一下我搭建博客的流程：</p>
 <ol>
 <li><p>准备好 Google ( 这当然是学习必不可少的神器 )  </p>
@@ -1550,8 +1632,8 @@
 </li>
 </ol>
 <p>目前的技术还真的不行， 所以只能从一些基础开始分享， 自己也从小白开始成长， 希望有一天成为「大神」。坚持当然是最重要的一点了， 很多人是按时间来约束自己， 一个月或者一周或者每天一篇博客， 但是对于我这种小白， 我的选择是学到了东西就发一篇， 也当是对知识的整理， 除了分享给他人还有重要的一点就是把自己积累的知识记录在这里。 </p>
-<p>技术源于分享， 分享阮一峰老师的一本书与大家共勉：<a href="http://survivor.ruanyifeng.com/" target="_blank" rel="external">未来世界的幸存者</a></p>
-<p>附上帅照一张<br><img src="/2017/08/31/Leo-s-start/leo.jpg" alt="This is Leo" title="This is Leo"></p>
+<p>技术源于分享， 分享阮一峰老师的一本书与大家共勉：<a href="http://survivor.ruanyifeng.com/" target="_blank" rel="noopener">未来世界的幸存者</a></p>
+<p>附上帅照一张<br><img src="/2017/08/31/Leo-s-start/leo.jpg" title="This is Leo"></p>
 ]]></content>
     
     <summary type="html">

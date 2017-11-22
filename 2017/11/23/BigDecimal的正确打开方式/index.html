@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java, Web" />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -111,16 +111,18 @@
 
 
 
-<meta name="description" content="技术源于分享 - 成长的码农">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Leo">
-<meta property="og:url" content="http://www.leozzy.com/archives/2017/08/index.html">
+<meta name="description" content="在学习 Java 的过程中是否对一些小数的计算结果感到困惑？ 0.01 + 0.05 的计算结果竟然是 0.060000000000000005 ？ 这就是 Java 中的精度丢失问题，具体是为什么呢？这就涉及到计算机存储的一些知识，这就不展开讨论，详情请使用 Google。 那么这样的计算结果会带来什么问题呢？">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BigDecimal的正确打开方式">
+<meta property="og:url" content="http://www.leozzy.com/2017/11/23/BigDecimal的正确打开方式/index.html">
 <meta property="og:site_name" content="Leo">
-<meta property="og:description" content="技术源于分享 - 成长的码农">
+<meta property="og:description" content="在学习 Java 的过程中是否对一些小数的计算结果感到困惑？ 0.01 + 0.05 的计算结果竟然是 0.060000000000000005 ？ 这就是 Java 中的精度丢失问题，具体是为什么呢？这就涉及到计算机存储的一些知识，这就不展开讨论，详情请使用 Google。 那么这样的计算结果会带来什么问题呢？">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-11-22T09:14:45.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leo">
-<meta name="twitter:description" content="技术源于分享 - 成长的码农">
+<meta name="twitter:title" content="BigDecimal的正确打开方式">
+<meta name="twitter:description" content="在学习 Java 的过程中是否对一些小数的计算结果感到困惑？ 0.01 + 0.05 的计算结果竟然是 0.060000000000000005 ？ 这就是 Java 中的精度丢失问题，具体是为什么呢？这就涉及到计算机存储的一些知识，这就不展开讨论，详情请使用 Google。 那么这样的计算结果会带来什么问题呢？">
 
 
 
@@ -150,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://www.leozzy.com/archives/2017/08/"/>
+  <link rel="canonical" href="http://www.leozzy.com/2017/11/23/BigDecimal的正确打开方式/"/>
 
 
 
 
 
-  <title>归档 | Leo</title>
+  <title>BigDecimal的正确打开方式 | Leo</title>
   
 
 
@@ -185,7 +187,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/leozhiyu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
@@ -290,74 +292,342 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/11/23/BigDecimal的正确打开方式/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Leo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Leo">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/08/31/Leo-s-start/" itemprop="url">
-              
-                <span itemprop="name">Leo's start</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">BigDecimal的正确打开方式</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-31T14:28:02Z"
-              content="2017-08-31" >
-          08-31
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-22T16:41:27Z">
+                2017-11-22
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/23/BigDecimal的正确打开方式/" class="leancloud_visitors" data-flag-title="BigDecimal的正确打开方式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  690
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <p>在学习 Java 的过程中是否对一些小数的计算结果感到困惑？</p>
+<p>0.01 + 0.05 的计算结果竟然是 0.060000000000000005 ？</p>
+<p>这就是 Java 中的精度丢失问题，具体是为什么呢？这就涉及到计算机存储的一些知识，这就不展开讨论，详情请使用 Google。</p>
+<p>那么这样的计算结果会带来什么问题呢？<br><a id="more"></a><br>假设你在天猫买一个 0.01 元和 0.05 元的东西，而此时你的余额刚好只有 0.06 元，如果天猫的后台系统用普通的方式进行小数运算，它要求你付款 0.060000000000000005 元，那岂不是买不起了。</p>
+<p>所以在商业计算方面，涉及到小数精度的运算的地方，这个问题都是需要解决的。</p>
+<p>我们先来看看几个奇怪的运算结果：</p>
+<pre><code>System.out.println(0.011 + 0.05);//0.061
+System.out.println(0.01 + 0.05);//0.060000000000000005
+System.out.println(1.0 - 0.42);//0.5800000000000001
+System.out.println(4.015 * 100);//401.49999999999994
+System.out.println(123.3/100);//1.2329999999999999
+</code></pre><p>对于这些情况我们都是无法理解的，那么我们用 <code>BigDecimal</code> 来解决这个问题</p>
+<pre><code>BigDecimal b1 = new BigDecimal(0.01);
+BigDecimal b2 = new BigDecimal(0.02);
+System.out.println(b1.add(b2));
+//0.03000000000000000062450045135165055398829281330108642578125
+</code></pre><p>结果竟然是更奇怪更长的一串数字，说好的 <code>BigDecimal</code> 大法呢？</p>
+<p>实际上，<code>BigDecimal</code> 重载了很多个构造函数，而能解决问题的并不是这个构造函数，而是 <code>BigDecimal(String)</code>，我们需要使用它才能解决问题。</p>
+<pre><code>BigDecimal b1 = new BigDecimal(&quot;0.01&quot;);
+BigDecimal b2 = new BigDecimal(&quot;0.02&quot;);
+System.out.println(b1.add(b2));//0.03
+</code></pre><p>所以我们要解决精度问题，不仅要使用 <code>BigDecimal</code>，而且还一定要使用它的 <code>String</code> 构造方法。</p>
+<p>那么在实际应用中都会涉及到从数据库中取值，而数据库中都是 <code>float</code> 或者 <code>double</code> 类型，此时我们最方便的做法便是手动写一个工具类 <code>BigDecimalUtil</code>，用来进行类型的转化，转成我们需要的 <code>String</code> 类型</p>
+<pre><code>public class BigDecimalUtil {
+//创建私有构造器，防止外界实例化该类
+private BigDecimalUtil(){
+}
+
+//加法
+public static BigDecimal add(double v1,double v2){
+    BigDecimal b1 = new BigDecimal(Double.toString(v1));
+    BigDecimal b2 = new BigDecimal(Double.toString(v2));
+    return b1.add(b2);
+}
+
+//减法
+public static BigDecimal sub(double v1,double v2){
+    BigDecimal b1 = new BigDecimal(Double.toString(v1));
+    BigDecimal b2 = new BigDecimal(Double.toString(v2));
+    return b1.subtract(b2);
+}
+
+//乘法
+public static BigDecimal mul(double v1,double v2){
+    BigDecimal b1 = new BigDecimal(Double.toString(v1));
+    BigDecimal b2 = new BigDecimal(Double.toString(v2));
+    return b1.multiply(b2);
+}
+
+//除法
+public static BigDecimal div(double v1,double v2){
+    BigDecimal b1 = new BigDecimal(Double.toString(v1));
+    BigDecimal b2 = new BigDecimal(Double.toString(v2));
+    return b1.divide(b2);
+}
+}
+</code></pre><p>看似一个小问题，但是不注意的话仍然会引发不可预算的灾难。所以很多细节都需要我们去把控，掌握一些基本的解决方法。</p>
+
+      
     </div>
+    
+    
+    
+	
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript"  src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2017/11/23/BigDecimal的正确打开方式/">BigDecimal的正确打开方式</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Leo 的个人博客">Leo</a></p>
+  <p><span>发布时间:</span>2017年11月22日 - 16:11</p>
+  <p><span>最后更新:</span>2017年11月22日 - 17:11</p>
+  <p><span>原始链接:</span><a href="/2017/11/23/BigDecimal的正确打开方式/" title="BigDecimal的正确打开方式">http://www.leozzy.com/2017/11/23/BigDecimal的正确打开方式/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.leozzy.com/2017/11/23/BigDecimal的正确打开方式/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"></a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+	</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赞赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Leo WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+	
+	<div>
+	
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+    
+</div>
+	
+	</div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/13/通往财富自由之路总结二/" rel="next" title="《通往财富自由之路》总结（二）">
+                <i class="fa fa-chevron-left"></i> 《通往财富自由之路》总结（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -365,6 +635,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="uyan_frame"></div>
+    
+  </div>
+
 
         </div>
         
@@ -610,6 +886,12 @@
 </script>
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2">
+        
+</script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2">
+</script>
+
 
   
 
@@ -635,6 +917,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2143068"></script>
+      <!-- UY END -->
     
   
 
