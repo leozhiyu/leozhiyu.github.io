@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="通往财富自由之路," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="本文总结如下章节内容  “活在当下” vs “活在未来” 遇到贵人的科学方法 你到底有没有资本">
-<meta name="keywords" content="通往财富自由之路">
+<meta name="description" content="Java 两种创建字符串的方式，在内存中的存取机制不同。12String a = &quot;abc&quot;;String b = new String(&quot;abc&quot;);">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《通往财富自由之路》总结（二）">
-<meta property="og:url" content="http://www.leozzy.com/2017/11/13/通往财富自由之路总结二/index.html">
+<meta property="og:title" content="String 的两种创建方式的区别以及 intern() 方法">
+<meta property="og:url" content="http://www.leozzy.com/2017/11/25/String的两种创建方式的区别/index.html">
 <meta property="og:site_name" content="Leo">
-<meta property="og:description" content="本文总结如下章节内容  “活在当下” vs “活在未来” 遇到贵人的科学方法 你到底有没有资本">
+<meta property="og:description" content="Java 两种创建字符串的方式，在内存中的存取机制不同。12String a = &quot;abc&quot;;String b = new String(&quot;abc&quot;);">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-14T12:23:25.660Z">
+<meta property="og:updated_time" content="2017-11-25T03:48:48.846Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《通往财富自由之路》总结（二）">
-<meta name="twitter:description" content="本文总结如下章节内容  “活在当下” vs “活在未来” 遇到贵人的科学方法 你到底有没有资本">
+<meta name="twitter:title" content="String 的两种创建方式的区别以及 intern() 方法">
+<meta name="twitter:description" content="Java 两种创建字符串的方式，在内存中的存取机制不同。12String a = &quot;abc&quot;;String b = new String(&quot;abc&quot;);">
 
 
 
@@ -152,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://www.leozzy.com/2017/11/13/通往财富自由之路总结二/"/>
+  <link rel="canonical" href="http://www.leozzy.com/2017/11/25/String的两种创建方式的区别/"/>
 
 
 
 
 
-  <title>《通往财富自由之路》总结（二） | Leo</title>
+  <title>String 的两种创建方式的区别以及 intern() 方法 | Leo</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/11/13/通往财富自由之路总结二/">
+    <link itemprop="mainEntityOfPage" href="http://www.leozzy.com/2017/11/25/String的两种创建方式的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Leo">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《通往财富自由之路》总结（二）</h1>
+          <h1 class="post-title" itemprop="name headline">String 的两种创建方式的区别以及 intern() 方法</h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T17:19:23+08:00">
-                2017-11-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-25T10:44:44Z">
+                2017-11-25
               </time>
             
 
@@ -358,19 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/成长/" itemprop="url" rel="index">
-                    <span itemprop="name">成长</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/成长/通往财富自由之路/" itemprop="url" rel="index">
-                    <span itemprop="name">通往财富自由之路</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -386,7 +375,7 @@
 
           
           
-             <span id="/2017/11/13/通往财富自由之路总结二/" class="leancloud_visitors" data-flag-title="《通往财富自由之路》总结（二）">
+             <span id="/2017/11/25/String的两种创建方式的区别/" class="leancloud_visitors" data-flag-title="String 的两种创建方式的区别以及 intern() 方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,978
+                  765
                 </span>
               
 
@@ -427,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  3
                 </span>
               
             </div>
@@ -448,163 +437,34 @@
       
 
       
-        <p>本文总结如下章节内容</p>
-<ul>
-<li>“活在当下” vs “活在未来”</li>
-<li>遇到贵人的科学方法</li>
-<li>你到底有没有资本</li>
-</ul>
+        <p><code>Java</code> 两种创建字符串的方式，在内存中的存取机制不同。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String a = <span class="string">"abc"</span>;</div><div class="line">String b = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<h2 id="“活在当下”-vs-“活在未来”"><a href="#“活在当下”-vs-“活在未来”" class="headerlink" title="“活在当下” vs “活在未来”"></a>“活在当下” vs “活在未来”</h2><p>人们常说：「活在当下」，这流行的建议本意是好的，应该把握好现在的时间，生活当然应该活在当下，生活的大部分，尤其是「肉身」，当然一直「活在当下」，但是思想应该「活在未来」，思维上活在未来。</p>
-<p><strong>怎样活在未来</strong></p>
-<ol>
-<li><p>你对未来有个预测</p>
-</li>
-<li><p>那个预测需要时间才能得到结果</p>
-</li>
-<li><p>你笃信你的预测是正确的</p>
-</li>
-<li><p>于是你提前按照那个预测的结果行动、选择、思考</p>
-</li>
-<li><p>你终将走到那个结果出现的时刻</p>
-</li>
-<li><p>最终证明你的预测是正确的</p>
-</li>
-<li><p>那么，由于你提前按未来正确的结果行动、选择、思考，于是，在相当长一段时间里，你的生活中的一部分，就是「活在未来」</p>
-</li>
-</ol>
-<p><strong>一个简单的预测</strong></p>
+<p><strong>前提</strong></p>
+<p>双等号==的含义：</p>
 <ul>
-<li><p>长期来看，脑力的产出率一定比体力的产出率高，且高出许多个量级</p>
-</li>
-<li><p>体力增长的玻璃顶很明显，脑力增长的玻璃顶不知道在哪儿</p>
-</li>
-<li><p>体力衰退的时间来得很早，脑力衰退的时间来得晚很多</p>
-</li>
-<li><p>通过暴力可获得的暴利正在减少，因为大趋势来看，一定是知识更可能产生更大的暴利</p>
-</li>
+<li>基本数据类型之间应用双等号，比较的是他们的数值。</li>
+<li>引用类型之间应用双等号，比较的是他们在内存中的存放地址。</li>
 </ul>
-<p>活在未来的人一定比活在当下的人有更多的财富</p>
-<p>所谓的投资，无非就是用现在的资源换取未来的资源</p>
-<p><strong>害怕自己预测错误</strong></p>
-<p>不要企图一次就预测对所有的事情，预测的能力是慢慢培养起来的。如果暂时没什么自信，就不要判断太远的未来。重要的是，判断过后，要用行动去验证，在这个过程中不断修正自己的想法。</p>
-<p>预测未来这件事并不容易，也没有一个万能公式可以套用。不要期待万能公式，所有的路都需要自己一步步试出来，在这种基础上建立起来的未来才可靠。</p>
-<p><strong>笃信</strong></p>
-<p>笃信的根基并非盲目的自信，而是源自扎实的推理和不断的拷问。没有足够的数据，不会轻易下结论。</p>
-<p>大多数人最终只停留在想一想的阶段，就是因为没有笃信自己的判断。其实未必是笃信，连相信都不足以让你采取行动。</p>
-<p><strong>践行</strong></p>
-<p>挂在嘴边永远比实际践行简单得多</p>
-<p>真正的道歉从来不只是嘴上说说的。真正有歉意的人不仅会用嘴道歉，更会马上用行动道歉，弥补过失，直至一切恢复原状，甚至比原来更好。</p>
-<p><strong>从开始就像专业人士一样生活</strong></p>
-<p>其实本质上，不论学习任何只是，还是打磨任何技巧，最重要的一点就是：从开始就像专业人士一样生活。<br>最好的学习方式从来不是「学」，而是「用」。开始就「玩真的」，绝对不拿自己当业余选手。</p>
-<p>这个方法，本质上就是让你提前活在那个专业领域。开始的时候，一定非常困难，但是只有开始就努力想专业人士一样生活，你才有机会最终真的那么生活。</p>
-<p>如果你希望成为什么样的人，不要等待任何时机成熟，今天就开始按照那个标准要求自己。这样你相当于某种程度上已经活在自己期待的未来里了。</p>
-<hr>
-<p>不要对别人的鼓励，抱有太大的期待，只有把这部分的支持都当作额外赠送的，你才有机会扛过开始阶段的困难。</p>
-<p>即便每个人的肉身都活在当下，但每个人的世界还是很不一样的。因为思考质量不同。他们其实生活在完全不同的世界里。</p>
-<p><strong>需要认真思考的问题</strong></p>
-<ol>
-<li><p>你曾经做出过的最重要的正确预测是什么？为什么它那么重要？</p>
-</li>
-<li><p>你做出过的最大的，而自己却最终并没有因此获益的预测是什么？为什么它是最大的，又，为什么你并没有因此获益？</p>
-</li>
-<li><p>过去的十年甚至二十年里，你也知道「知识就是力量」，「知识就是金钱」，可为什么你实际上并没有忠实这个道理？哪儿出了问题？</p>
-</li>
-<li><p>每天花三十分钟时间，预测一下明天，下一周可能发生的事情；有哪些是你能想到了但你身边大多数人估计想不到的？（也许你会失望，你想不到符合一个标准的东西，没关系，别有压力，那是因为你过去从来没做过这事儿造成的）</p>
-</li>
-<li><p>评估一下你身边的人，谁是预测能力最强的？再想想为什么你过去并没有与他建立深入的关系？为什么你很少与他有深入的讨论？</p>
-</li>
-</ol>
-<h2 id="遇到贵人的科学方法"><a href="#遇到贵人的科学方法" class="headerlink" title="遇到贵人的科学方法"></a>遇到贵人的科学方法</h2><p><strong>需要修正的观念</strong></p>
-<p>运气好只是外人看到的表象，我想真实的情况应该是这些人在一些事情上的积累已经达到了足够的深度和厚度，而好的结果的发生只不过是水到渠成的事。</p>
-<p>能够遇到贵人在一定程度上是偶然也是必然，它是自己生活的一面镜子。</p>
-<p><strong>方法</strong></p>
-<p>自己首先得是个贵人，才能遇到贵人，甚至更多贵人。</p>
-<p>做对的事情远比把事情做对重要得多。</p>
-<p><strong>朴素的道理、遇到贵人的原则</strong></p>
-<p>越是朴素的道理，越是永恒。认真琢磨那些朴素的、永恒的，乃至于被大多数人当作耳旁风、当作陈辞滥调的道理，研究透了，瞬间有相当于穿越到了未来 – 因为那些道理在未来依然成立。</p>
-<ol>
-<li><p>乐观的人更容易成为他人的贵人</p>
-</li>
-<li><p>贵人更容易遇到贵人</p>
-</li>
-<li><p>能帮助他人进步的才是真正的贵人</p>
-</li>
-<li><p>优秀的人，值得尊重的人更容易获得帮助</p>
-</li>
-<li><p>乐于分享的人更容易获得帮助</p>
-</li>
-<li><p>不给他人制造负担的人更容易获得帮助</p>
-</li>
-<li><p>不耻于求助的人更容易获得帮助</p>
-</li>
-<li><p>求助的时候不宜仅用金钱作为回报，帮助他人的时候不宜收取金钱回报</p>
-</li>
-<li><p>贵人不一定是牛人，牛人常常只不过是自顾自地牛，贵人不一样，他们常常「以和为贵」，更懂得「独贵贵不如众贵贵」</p>
-</li>
-<li><p>很多时候，人们的成功，源自于大量的人希望看到他成功。反过来，若是有大量的人不愿意看到某人成功，那么此人很难获得所谓的「贵人相助」</p>
-</li>
-<li><p>正在做正确事情的人，更容易获得贵人相助，所谓得道多助</p>
-</li>
-<li><p>活在未来的人更容易遇到贵人，因为别人能在他身上看到未来</p>
-</li>
-</ol>
-<p><strong>理解求助</strong></p>
-<p>大多数人把求助当作一个低声下气、卑躬屈膝、胁肩谄笑的行为 – 那不是求助，那是乞讨。事实上，求助是一种交易，不仅如此，它还是一种更为隐蔽却意义巨大的交易。</p>
-<p>求助不等于麻烦别人，比起觉得对方在麻烦自己，真正的贵人在帮助别人的时候，通常会觉得自己的能力得到了认可，并且很愿意给予对方这一点「举手之劳」。</p>
-<p>贵人之所以愿意帮助你，是因为他已经看到你的价值，要么这种价值帮助他确立自己的价值，要么这种价值让它看到未来的某种可能性 – 尽管不确定。</p>
-<p>在你出手相助的那一瞬间，你已经得到了自然的回报 – 这也很可能是你乐于相助的根本原因。求助根本就不是讨好的艺术，而是正确展示自我价值的艺术。帮助别人不是你赢我输，而是一个共同进步的过程。</p>
-<p><strong>聪明的人会做的两件事</strong></p>
+<p>重写 equals() 方法是比较数值，String 已经重写了该方法，所以直接使用。</p>
+<p><strong>双引号型</strong></p>
+<p>Java 为 String 类型提供了常量池机制，当使用双引号定义对象时，Java 环境首先去字符串常量池池寻找相同内容的字符串，如果存在就直接拿出来应用，如果不存在则创建一个新的字符串放在常量池中。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String a = <span class="string">"abc"</span>;</div><div class="line">String b = <span class="string">"abc"</span>;</div><div class="line">System.out.println(a == b); <span class="comment">// true</span></div><div class="line">System.out.println(a.equals(b)); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>变量 a 和 b 使用的是缓冲区中的同一个存储对象，该对象存放在方法区的常量池中。</p>
+<p><strong>new型</strong></p>
+<p>通过 <code>new</code>关键字创建 String 对象，每次调用都会创建一个新的对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String c = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</div><div class="line">String d = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</div><div class="line">System.out.println(c == d); <span class="comment">//false</span></div><div class="line">System.out.println(c.equals(d)); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+<p>new 出来的对象，每次调用时，都会产生一个新的对象，因此对象的引用是不同的，只是值相等而已。</p>
+<p><strong>字符串连接的情况</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">String a = <span class="string">"ab"</span>;</div><div class="line">String b = <span class="string">"abc"</span>;</div><div class="line">String c = <span class="string">"ab"</span> + <span class="string">"c"</span>;</div><div class="line">String d = a + <span class="string">"c"</span>;</div><div class="line">System.out.println(b == c); <span class="comment">// true</span></div><div class="line">System.out.println(b == d); <span class="comment">// false</span></div><div class="line">System.out.println(b.equals(d)); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>b 与 c 创建的字符串是完全等价的<br>d 等号右边有一个非常量，得到的结果相当于是 new 创建的一个对象</p>
+<p><strong>intern() 方法</strong></p>
+<p>intern()方法使用的特性是运行时常量池，具备动态性，常量不一定只有编译时产生，运行时也可能将新的常量放入池中</p>
+<p>intern 方法会返回一个字符串对应的常量值，在执行 intern 方法时，JVM 会检查常量池中是否存在和该字符串相同的常量值，如果有，则返回该常量值，若没有，则创建该常量值，并返回。即，intern 返回的是值常量池中的 String，不是堆上的String，相当于用双引号创建 String</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String a = <span class="string">"ab"</span>;</div><div class="line">String b = <span class="string">"abc"</span>;</div><div class="line">String d = (a + <span class="string">"c"</span>).intern();</div><div class="line">System.out.println(b == d); <span class="comment">// true</span></div><div class="line">System.out.println(b.equals(d)); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String a = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</div><div class="line">String b = <span class="keyword">new</span> String(<span class="string">"abc"</span>);</div><div class="line">System.out.println(a == b); <span class="comment">// false</span></div><div class="line">System.out.println(a.intern() == b.intern()); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<p><strong>常量池的好处</strong></p>
+<p>常量池是为了避免频繁的创建和销毁对象而影响系统性能，实现了对象的共享。<br>例如字符串常量池， 在编译阶段就把所有的字符串文字放到一个常量池中。</p>
 <ul>
-<li><p>储备人际价值</p>
-</li>
-<li><p>到人际价值高的地方去扎堆</p>
-</li>
+<li>节省内存空间：常量池中所有相同的字符串常量被合并，只占用一个空间。</li>
+<li>节省运行空间：比较字符串时，== 比 equals 快。对于两个引用变量，只用 == 判断引用是否相等，也就可以判断实际值是否相等。</li>
 </ul>
-<p><strong>需要认真思考的问题</strong></p>
-<ol>
-<li><p>文中提到的遇到贵人的原则你觉得是否有道理？或者你是否已经经历过它的神奇？</p>
-</li>
-<li><p>你自己有没有遇到过贵人？那人为什么可以被称为贵人？你若是没有遇见他，会是什么样子？</p>
-</li>
-<li><p>你自己有没有被别人当作贵人对待过？知不知道为什么？</p>
-</li>
-</ol>
-<h2 id="你到底有没有资本"><a href="#你到底有没有资本" class="headerlink" title="你到底有没有资本"></a>你到底有没有资本</h2><p><strong>对资本的理解</strong></p>
-<p>资本确实主要由钱构成，但，仅仅一堆钱放在那里肯定算不上是资本。</p>
-<p>钱本身顶多可以算作资金，而它想要称为有效的资本，还有需要至少另外三个要素：</p>
-<ol>
-<li><p>资金的金额大小</p>
-</li>
-<li><p>资金的使用时限</p>
-</li>
-<li><p>资金背后的智慧</p>
-</li>
-</ol>
-<p><strong>本金与盈亏比例</strong></p>
-<p>投资的重点并不在于盈亏绝对值大小，而是在于盈亏比例大小。看相对值而不是绝对值。</p>
-<p>把焦点放在盈亏比例上（相对值），而不是本金大小，盈亏金额上（绝对值），是 90% 以上的投资者终生没有学会的东西。本金大小相对来看其实根本不重要，重要的是盈亏比例。</p>
-<p><strong>无期徒刑</strong></p>
-<p>能不能给自己的投资款「判上个无期徒刑」</p>
-<p>拿出年收入的一部分作为投资款，并给这个投资款“判上个无期徒刑”，其实在很大的概率上并不会影响自己的生活质量。</p>
-<p><strong>成长公式</strong></p>
-<p>复利公式：(1+r)^n</p>
-<p>1 是你的起点，r 代表每天的进步，它可以很小，但是你要保证，它一定得是正的。</p>
-<p><strong>正确理解投资</strong></p>
-<p>我们每天做的都是投资。一天的时间如何利用，才能获得最多的回报；有限的注意力要投入在哪些领域，才能得到最有效的产出。这些本质上都是投资，而且是你不得不做的投资。</p>
-<p>投资不一定只有理财和股票，还有自我成长，尤其是在那些只有学会才能站在资本背后的技能上。</p>
-<p><strong>关于机遇</strong></p>
-<p>如果你没有准备好，那么那些所谓的机会并不属于你。</p>
-<p>如果你已经准备好了，你会发现原本在别人眼里称不上机会的事情，都有可能变成你的机遇。</p>
-<p><strong>需要认真思考的问题</strong></p>
-<ol>
-<li><p>如果用 5000 元人民币就可以开始正儿八经的投资活动的话（暂时别管究竟是哪一种投资活动），你最早什么时候可能开始？迄今已经多久了？你错过了多长时间？</p>
-</li>
-<li><p>如果用 5000 元人民币就可以开始正儿八经的投资活动的话，你身边有多大比例的人，事实上可以从事投资活动，可实际上却从未意识到自己竟然可以？你猜他们还要错过多久？</p>
-</li>
-<li><p>认真问自己：我到底现在可以有多少金额可以真的 “判它个无期徒刑”？如果觉得不够多，那么，你心里的那个数字究竟是多少？你要花多长时间搞定？</p>
-</li>
-</ol>
 
       
     </div>
@@ -622,12 +482,12 @@
   <script type="text/javascript"  src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2017/11/13/通往财富自由之路总结二/">《通往财富自由之路》总结（二）</a></p>
+  <p><span>本文标题:</span><a href="/2017/11/25/String的两种创建方式的区别/">String 的两种创建方式的区别以及 intern() 方法</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Leo 的个人博客">Leo</a></p>
-  <p><span>发布时间:</span>2017年11月13日 - 09:11</p>
-  <p><span>最后更新:</span>2017年11月14日 - 20:11</p>
-  <p><span>原始链接:</span><a href="/2017/11/13/通往财富自由之路总结二/" title="《通往财富自由之路》总结（二）">http://www.leozzy.com/2017/11/13/通往财富自由之路总结二/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.leozzy.com/2017/11/13/通往财富自由之路总结二/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2017年11月25日 - 10:11</p>
+  <p><span>最后更新:</span>2017年11月25日 - 11:11</p>
+  <p><span>原始链接:</span><a href="/2017/11/25/String的两种创建方式的区别/" title="String 的两种创建方式的区别以及 intern() 方法">http://www.leozzy.com/2017/11/25/String的两种创建方式的区别/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.leozzy.com/2017/11/25/String的两种创建方式的区别/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)"></a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -697,7 +557,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/通往财富自由之路/" rel="tag"><i class="fa fa-tag"></i> 通往财富自由之路</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
@@ -710,8 +570,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/22/通往财富自由之路总结一/" rel="next" title="《通往财富自由之路》总结（一）">
-                <i class="fa fa-chevron-left"></i> 《通往财富自由之路》总结（一）
+              <a href="/2017/11/23/BigDecimal的正确打开方式/" rel="next" title="BigDecimal的正确打开方式">
+                <i class="fa fa-chevron-left"></i> BigDecimal的正确打开方式
               </a>
             
           </div>
@@ -719,10 +579,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/23/BigDecimal的正确打开方式/" rel="prev" title="BigDecimal的正确打开方式">
-                BigDecimal的正确打开方式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -776,17 +632,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -874,22 +721,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#“活在当下”-vs-“活在未来”"><span class="nav-number">1.</span> <span class="nav-text">“活在当下” vs “活在未来”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到贵人的科学方法"><span class="nav-number">2.</span> <span class="nav-text">遇到贵人的科学方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你到底有没有资本"><span class="nav-number">3.</span> <span class="nav-text">你到底有没有资本</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
