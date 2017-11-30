@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozzy.com/"/>
-  <updated>2017-11-25T03:48:48.846Z</updated>
+  <updated>2017-11-30T07:08:15.890Z</updated>
   <id>http://www.leozzy.com/</id>
   
   <author>
@@ -14,6 +14,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深入理解 Java 中 protected 修饰符</title>
+    <link href="http://www.leozzy.com/2017/11/30/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3Java%E4%B8%ADProtected%E4%BF%AE%E9%A5%B0%E7%AC%A6/"/>
+    <id>http://www.leozzy.com/2017/11/30/深入理解Java中Protected修饰符/</id>
+    <published>2017-11-30T14:00:27.000Z</published>
+    <updated>2017-11-30T07:08:15.890Z</updated>
+    
+    <content type="html"><![CDATA[<p>看似简单的东西可以引出很多问题， 学习过程中很多概念我们都只是「好像了解」、「貌似是这样」、「应该没问题」， 其实缺乏的是仔细思考， 对自己少问了几个「为什么」。</p>
+<p>在 Java 中， 访问权限修饰符属于最最基础的知识， protected 修饰符只是其中一个， 如果你要问为什么不拿 public、default、private 来深究呢？ 那么看完这篇文章你会知道为何 protected 更值得深入考。</p>
+<a id="more"></a>
+<p>在 《Thinking in Java》 中，protected 的名称是「继承访问权限」，这也就是我们记忆中的 protected：protected 必须要有继承关系才能够访问。 所以你以为你懂了， 可是你真的理解了这句话吗？</p>
+<p>先思考几个问题：</p>
+<ol>
+<li><p>同一个包中， 子类对象能访问父类的 protected 方法吗？</p>
+</li>
+<li><p>不同包下， 在子类中创建该子类对象能访问父类的 protected 方法吗？</p>
+</li>
+<li><p>不同包下， 在子类中创建父类对象能访问父类的 protected 方法吗？</p>
+</li>
+<li><p>不同包下， 在子类中创建另一个子类的对象能访问公共父类的 protected 方法吗？</p>
+</li>
+<li><p>父类 protected 方法加上 static 修饰符又会如何呢？</p>
+</li>
+</ol>
+<p>《Thinking in Java》中有一句话：「protected 也提供包访问权限， 也就是说，相同包内的其他类可以访问 protected元素」， 其实就是 protected 修饰符包含了 default 默认修饰符的权限， 所以第 1 个问题你已经知道答案了， 在同一个包中， 普通类或者子类都可以访问基类的 protected 方法。</p>
+<h2 id="父类为非静态-protected-修饰类"><a href="#父类为非静态-protected-修饰类" class="headerlink" title="父类为非静态 protected 修饰类"></a>父类为非静态 protected 修饰类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">protected</span> String protect = <span class="string">"protect field"</span>;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">getMessage</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"i am parent"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>不同包下，在子类中通过父类引用不可以访问其 protected 方法</strong></p>
+<p>无论是创建 Parent 对象还是通过多态创建 Son1 对象， 只要 Parent 引用， 则不可访问， 编译器会提示错误。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage.sonpackage1;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.Parent;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son1</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Parent parent1 = <span class="keyword">new</span> Parent();</div><div class="line">        <span class="comment">// parent1.getMessage();   错误</span></div><div class="line"></div><div class="line">        Parent parent2 = <span class="keyword">new</span> Son1();</div><div class="line">        <span class="comment">// parent2.getMessage();  错误</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>不同包下，在子类中通过该子类引用可以访问其 protected 方法</strong></p>
+<p>子类中实际上把父类的方法继承下来了， 可以通过该子类对象访问， 也可以在子类方法中直接访问，  还可以通过 super 关键字调用父类中的该方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage.sonpackage1;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.Parent;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son1</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Son1 son1 = <span class="keyword">new</span> Son1();</div><div class="line">        son1.getMessage(); <span class="comment">// 输出：i am parent,</span></div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">message</span><span class="params">()</span></span>&#123;</div><div class="line">        getMessage();  <span class="comment">// 如果子类重写了该方法， 则输出重写方法中的内容</span></div><div class="line">        <span class="keyword">super</span>.getMessage(); <span class="comment">// 输出父类该方法中的内容</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>不同包下，在子类中不能通过另一个子类引用访问共同基类的 protected 方法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage.sonpackage2;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.Parent;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son2</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意是 Son2 是另一个子类， 在 Son1 中创建 Son2 的对象是无法访问父类的 protected 方法的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage.sonpackage1;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.Parent;</div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.sonpackage2.Son2;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son1</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Son2 son2 = <span class="keyword">new</span> Son2();</div><div class="line">        <span class="comment">// son2.getMessage(); 错误</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="父类为非静态-protected-修饰类-1"><a href="#父类为非静态-protected-修饰类-1" class="headerlink" title="父类为非静态 protected 修饰类"></a>父类为非静态 protected 修饰类</h2><p>对于protected的静态变量， 在子类中可以直接访问， 在不同包的非子类中则不可访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">protected</span> String protect = <span class="string">"protect field"</span>;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getMessage</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"i am parent"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>静态方法直接通过类名访问</p>
+<p><strong>无论是否同一个包，在子类中均可直接访问</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage.sonpackage1;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.Parent;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son3</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Parent.getMessage(); <span class="comment">// 输出： i am parent</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>在不同包下，非子类不可访问</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">package com.protectedaccess.parentpackage.sonpackage1;</div><div class="line"></div><div class="line">import com.protectedaccess.parentpackage.Parent;</div><div class="line"></div><div class="line">public class Son4&#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">       // Parent.getMessage(); 错误</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>看到这里你应该知道有多少种情况了， 针对不同的情况都可能出现意外的结果， 所以还是得多实践， 仅仅在书上看一遍 protected 修饰符的作用是无法真正发现它的微妙。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看似简单的东西可以引出很多问题， 学习过程中很多概念我们都只是「好像了解」、「貌似是这样」、「应该没问题」， 其实缺乏的是仔细思考， 对自己少问了几个「为什么」。&lt;/p&gt;
+&lt;p&gt;在 Java 中， 访问权限修饰符属于最最基础的知识， protected 修饰符只是其中一个， 如果你要问为什么不拿 public、default、private 来深究呢？ 那么看完这篇文章你会知道为何 protected 更值得深入考。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://www.leozzy.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://www.leozzy.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>String 的两种创建方式的区别以及 intern() 方法</title>
