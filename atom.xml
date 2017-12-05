@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozzy.com/"/>
-  <updated>2017-12-05T03:23:23.899Z</updated>
+  <updated>2017-12-05T03:27:06.652Z</updated>
   <id>http://www.leozzy.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.leozzy.com/2017/12/05/RandomAccess%E8%BF%99%E4%B8%AA%E7%A9%BA%E6%9E%B6%E5%AD%90%E6%9C%89%E4%BD%95%E7%94%A8%EF%BC%9F/"/>
     <id>http://www.leozzy.com/2017/12/05/RandomAccess这个空架子有何用？/</id>
     <published>2017-12-04T20:50:49.000Z</published>
-    <updated>2017-12-05T03:23:23.899Z</updated>
+    <updated>2017-12-05T03:27:06.652Z</updated>
     
     <content type="html"><![CDATA[<p>在学习 <code>Java</code> 集合时， 最先学习的便是 <code>List</code> 中的 <code>ArrayList</code> 和 <code>LinkedList</code>， 学习集合很关键的是学习其源码， 了解底层实现方式， 那么今天就讲讲 <code>ArrayList</code> 实现的一个接口 <code>RandomAccess</code>。</p>
 <a id="more"></a>
@@ -44,7 +44,7 @@
 <p>结果：</p>
 <p>ArrayList:<br>for 循环遍历时间: 3<br>迭代器遍历时间: 7</p>
 <p>LinkedList:<br>for 循环遍历时间: 2435<br>迭代器遍历时间: 3</p>
-<p>根据结果我们可以得出结论：<br><code>ArrayList</code> 使用 for 循环遍历优于迭代器遍历<br><code>LinkedList</code> 使用 迭代器遍历优于 for 循环遍历</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>根据结果我们可以得出结论：<br><code>ArrayList</code> 使用 for 循环遍历优于迭代器遍历<br><code>LinkedList</code> 使用 迭代器遍历优于 for 循环遍历</p>
 <p>根据以上结论便可利用 <code>RandomAccess</code> 在遍历前进行判断，根据 <code>List</code> 的不同子类选择不同的遍历方式， 提升算法性能。</p>
 <p>学习阅读源码， 发现底层实现的精妙之处， 改变自己的思维， 从每一个小细节提升代码的性能。</p>
 ]]></content>
