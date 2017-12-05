@@ -119,7 +119,7 @@
 <meta property="og:site_name" content="Leo">
 <meta property="og:description" content="看似简单的东西可以引出很多问题， 学习过程中很多概念我们都只是「好像了解」、「貌似是这样」、「应该没问题」， 其实缺乏的是仔细思考， 对自己少问了几个「为什么」。 在 Java 中， 访问权限修饰符属于最最基础的知识， protected 修饰符只是其中一个， 如果你要问为什么不拿 public、default、private 来深究呢？ 那么看完这篇文章你会知道为何 protected 更值得深">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-30T07:08:15.890Z">
+<meta property="og:updated_time" content="2017-11-30T10:41:22.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解 Java 中 protected 修饰符">
 <meta name="twitter:description" content="看似简单的东西可以引出很多问题， 学习过程中很多概念我们都只是「好像了解」、「貌似是这样」、「应该没问题」， 其实缺乏的是仔细思考， 对自己少问了几个「为什么」。 在 Java 中， 访问权限修饰符属于最最基础的知识， protected 修饰符只是其中一个， 如果你要问为什么不拿 public、default、private 来深究呢？ 那么看完这篇文章你会知道为何 protected 更值得深">
@@ -438,7 +438,7 @@
 
       
         <p>看似简单的东西可以引出很多问题， 学习过程中很多概念我们都只是「好像了解」、「貌似是这样」、「应该没问题」， 其实缺乏的是仔细思考， 对自己少问了几个「为什么」。</p>
-<p>在 Java 中， 访问权限修饰符属于最最基础的知识， protected 修饰符只是其中一个， 如果你要问为什么不拿 public、default、private 来深究呢？ 那么看完这篇文章你会知道为何 protected 更值得深入考。</p>
+<p>在 Java 中， 访问权限修饰符属于最最基础的知识， protected 修饰符只是其中一个， 如果你要问为什么不拿 public、default、private 来深究呢？ 那么看完这篇文章你会知道为何 protected 更值得深入思考。</p>
 <a id="more"></a>
 <p>在 《Thinking in Java》 中，protected 的名称是「继承访问权限」，这也就是我们记忆中的 protected：protected 必须要有继承关系才能够访问。 所以你以为你懂了， 可是你真的理解了这句话吗？</p>
 <p>先思考几个问题：</p>
@@ -466,7 +466,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage.sonpackage2;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.Parent;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son2</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>注意是 Son2 是另一个子类， 在 Son1 中创建 Son2 的对象是无法访问父类的 protected 方法的</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage.sonpackage1;</div><div class="line"></div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.Parent;</div><div class="line"><span class="keyword">import</span> com.protectedaccess.parentpackage.sonpackage2.Son2;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son1</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        Son2 son2 = <span class="keyword">new</span> Son2();</div><div class="line">        <span class="comment">// son2.getMessage(); 错误</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="父类为非静态-protected-修饰类-1"><a href="#父类为非静态-protected-修饰类-1" class="headerlink" title="父类为非静态 protected 修饰类"></a>父类为非静态 protected 修饰类</h2><p>对于protected的静态变量， 在子类中可以直接访问， 在不同包的非子类中则不可访问</p>
+<h2 id="父类为静态-protected-修饰类"><a href="#父类为静态-protected-修饰类" class="headerlink" title="父类为静态 protected 修饰类"></a>父类为静态 protected 修饰类</h2><p>对于protected的静态变量， 在子类中可以直接访问， 在不同包的非子类中则不可访问</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> com.protectedaccess.parentpackage;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">protected</span> String protect = <span class="string">"protect field"</span>;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getMessage</span><span class="params">()</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"i am parent"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>静态方法直接通过类名访问</p>
 <p><strong>无论是否同一个包，在子类中均可直接访问</strong></p>
@@ -494,7 +494,7 @@
   <p><span>本文标题:</span><a href="/2017/11/30/深入理解Java中Protected修饰符/">深入理解 Java 中 protected 修饰符</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Leo 的个人博客">Leo</a></p>
   <p><span>发布时间:</span>2017年11月30日 - 14:11</p>
-  <p><span>最后更新:</span>2017年11月30日 - 15:11</p>
+  <p><span>最后更新:</span>2017年11月30日 - 18:11</p>
   <p><span>原始链接:</span><a href="/2017/11/30/深入理解Java中Protected修饰符/" title="深入理解 Java 中 protected 修饰符">http://www.leozzy.com/2017/11/30/深入理解Java中Protected修饰符/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.leozzy.com/2017/11/30/深入理解Java中Protected修饰符/"  aria-label="复制成功！"></i></span>
   </p>
@@ -589,6 +589,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/12/05/RandomAccess这个空架子有何用？/" rel="prev" title="RandomAccess这个空架子有何用？">
+                RandomAccess这个空架子有何用？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -668,7 +672,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -749,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#父类为非静态-protected-修饰类"><span class="nav-number">1.</span> <span class="nav-text">父类为非静态 protected 修饰类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父类为非静态-protected-修饰类-1"><span class="nav-number">2.</span> <span class="nav-text">父类为非静态 protected 修饰类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#父类为非静态-protected-修饰类"><span class="nav-number">1.</span> <span class="nav-text">父类为非静态 protected 修饰类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父类为静态-protected-修饰类"><span class="nav-number">2.</span> <span class="nav-text">父类为静态 protected 修饰类</span></a></li></ol></div>
             
 
           </div>

@@ -1,1 +1,1 @@
-http://www.leozzy.com/2017/11/30/深入理解Java中Protected修饰符/
+http://www.leozzy.com/2017/12/05/RandomAccess这个空架子有何用？/
