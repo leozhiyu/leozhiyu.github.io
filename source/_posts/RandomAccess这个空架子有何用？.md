@@ -153,8 +153,8 @@ for 循环遍历时间: 2435
 
 学习阅读源码， 发现底层实现的精妙之处， 改变自己的思维， 从每一个小细节提升代码的性能。
 
-
-
+欢迎关注我的公众号：IT从业者说
+![IT从业者说](http://upload-images.jianshu.io/upload_images/6753966-2a33084ce1643224.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 

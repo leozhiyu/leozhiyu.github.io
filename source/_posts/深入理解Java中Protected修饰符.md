@@ -163,6 +163,9 @@ public class Son4{
 
 看到这里你应该知道有多少种情况了， 针对不同的情况都可能出现意外的结果， 所以还是得多实践， 仅仅在书上看一遍 protected 修饰符的作用是无法真正发现它的微妙。
 
+欢迎关注我的公众号：IT从业者说
+![IT从业者说](http://upload-images.jianshu.io/upload_images/6753966-2a33084ce1643224.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 
 
