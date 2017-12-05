@@ -10,7 +10,7 @@ categories:
 
 看似简单的东西可以引出很多问题， 学习过程中很多概念我们都只是「好像了解」、「貌似是这样」、「应该没问题」， 其实缺乏的是仔细思考， 对自己少问了几个「为什么」。
 
-在 Java 中， 访问权限修饰符属于最最基础的知识， protected 修饰符只是其中一个， 如果你要问为什么不拿 public、default、private 来深究呢？ 那么看完这篇文章你会知道为何 protected 更值得深入考。
+在 Java 中， 访问权限修饰符属于最最基础的知识， protected 修饰符只是其中一个， 如果你要问为什么不拿 public、default、private 来深究呢？ 那么看完这篇文章你会知道为何 protected 更值得深入思考。
 
 <!-- more -->
 
@@ -114,7 +114,7 @@ public class Son1 extends Parent{
 }
 ```
 
-## 父类为非静态 protected 修饰类 ##
+## 父类为静态 protected 修饰类 ##
 
 对于protected的静态变量， 在子类中可以直接访问， 在不同包的非子类中则不可访问
 
