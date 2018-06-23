@@ -1,1 +1,1 @@
-http://www.leozzy.com/2018/03/19/计算机组成原理/
+http://www.leozzy.com/2018/06/23/JVM-垃圾回收（GC）/
