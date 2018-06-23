@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.leozzy.com/"/>
-  <updated>2018-06-23T04:08:09.199Z</updated>
+  <updated>2018-06-23T04:11:37.135Z</updated>
   <id>http://www.leozzy.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://www.leozzy.com/2018/06/23/JVM-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%EF%BC%88GC%EF%BC%89/"/>
     <id>http://www.leozzy.com/2018/06/23/JVM-垃圾回收（GC）/</id>
     <published>2018-06-23T12:07:33.000Z</published>
-    <updated>2018-06-23T04:08:09.199Z</updated>
+    <updated>2018-06-23T04:11:37.135Z</updated>
     
     <content type="html"><![CDATA[<p>学习 JVM 发现挺有意思的，感觉都是知识干货，但是容易忘，为了准备秋招，本菜鸡只好把内容总结一遍，供各位看官点评点评，本文只涉及垃圾回收部分。</p>
+<a id="more"></a>
 <p><strong>少侠莫慌，先上一张图压压惊</strong><br><img src="https://user-gold-cdn.xitu.io/2018/6/23/1642aab8977333d7?w=912&amp;h=764&amp;f=png&amp;s=266747" alt="先上一张图压压惊"></p>
 <h2 id="why-为什么要了解垃圾回收"><a href="#why-为什么要了解垃圾回收" class="headerlink" title="why - 为什么要了解垃圾回收"></a>why - 为什么要了解垃圾回收</h2><ul>
 <li>排查各种内存溢出、内存泄漏的问题</li>
@@ -262,7 +263,6 @@
     <summary type="html">
     
       &lt;p&gt;学习 JVM 发现挺有意思的，感觉都是知识干货，但是容易忘，为了准备秋招，本菜鸡只好把内容总结一遍，供各位看官点评点评，本文只涉及垃圾回收部分。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;少侠莫慌，先上一张图压压惊&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;https://user-
     
     </summary>
     
