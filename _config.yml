@@ -85,7 +85,7 @@ deploy:
 - type: git
   repo:
     github: git@github.com:leozhiyu/leozhiyu.github.io.git
-    coding: https://git.coding.net/leozzy/leozzy.git        
+    coding: git@git.coding.net:leozzy/leozzy.git   
   branch: master
 
 
