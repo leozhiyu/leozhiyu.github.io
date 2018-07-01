@@ -1,1 +1,1 @@
-http://www.leozzy.com/2018/06/23/JVM-垃圾回收（GC）/
+http://www.leozzy.com/2018/07/01/你了解JVM中的-JIT-即时编译及优化技术吗？/
