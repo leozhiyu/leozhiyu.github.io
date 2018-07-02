@@ -1,1 +1,1 @@
-http://www.leozzy.com/2018/07/01/你了解JVM中的-JIT-即时编译及优化技术吗？/
+http://www.leozzy.com/2018/07/02/JVM-类加载机制及双亲委派模型/
